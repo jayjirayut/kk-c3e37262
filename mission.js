@@ -55,7 +55,7 @@
     var h = '<p class="q"><span class="th">' + dq[0] + '</span> <span class="en">' + dq[1] + '</span></p><div class="grid">';
     RIT.forEach(function (r) {
       var who = '<small class="who"><span class="th">' + r.who + '</span><span class="en">' + r.whoEn + '</span></small>';
-      if (r.id === 'his' && !his) { h += '<button type="button" class="r set" data-set="1">' + who + '<span class="th">ตั้งกิจกรรมของเจ</span><span class="en">set Jay\'s activity</span></button>'; return; }
+      if (r.id === 'his' && !his) { return; }
       var label = r.id === 'his' ? '<span class="th" data-his>' + his.replace(/</g, '&lt;') + '</span>' : '<span class="th">' + r.th + '</span>';
       h += '<button type="button" class="r' + (done.indexOf(r.id) > -1 ? ' done' : '') + '" data-id="' + r.id + '" aria-pressed="' + (done.indexOf(r.id) > -1) + '">' +
         who + label + '<span class="en">' + r.en + '</span></button>';
@@ -79,7 +79,8 @@
     setInterval(function () { if (el.dataset.day !== ymd()) render(); }, 60000);
   }
 
-  // ---------- Story card 1080x1920: her stirred coffee galaxy inside one hairline gold ring ----------
+  // ---------- Story card 1080x1920: ink ground, a muted gold hairline frame, her stirred coffee galaxy inside one gold ring ----------
+  // Type: Cormorant headline, Inter tracked capitals, IBM Plex Sans Thai. Hairline rules only: no rounded corners, glow or glyph ornaments.
   var card = null, SERIF = '"Cormorant Garamond", Georgia, serif', SANS = 'Inter, sans-serif', THAI = '"IBM Plex Sans Thai", Inter, sans-serif';
   // Tracked capitals, spaced by hand because canvas letterSpacing is missing on some phones. Latin only: Thai marks must never be split.
   function tracked(g, t, x, y, ls) {
@@ -94,7 +95,7 @@
     var f = document.fonts; if (!f || !f.load) return Promise.resolve();
     try {
       return Promise.all([f.load('400 92px "Cormorant Garamond"', 'Small adjustments.'), f.load('italic 400 92px "Cormorant Garamond"', 'Then coffee.'),
-        f.load('300 28px Inter', 'SMALL ADJUSTMENTS'), f.load('300 42px "IBM Plex Sans Thai"', 'ค่อย ๆ ปรับ แล้วไปกินกาแฟกัน เกียวๆ')])
+        f.load('300 28px Inter', 'SMALL ADJUSTMENTS'), f.load('300 42px "IBM Plex Sans Thai"', 'ค่อย ๆ ปรับ แล้วไปกินกาแฟกัน'), f.load('300 84px "IBM Plex Sans Thai"', 'เกียวๆ')])
         .then(function () { return f.ready; }, function () { return f.ready; });
     } catch (e) { return Promise.resolve(); }
   }
@@ -103,6 +104,8 @@
     var g = c.getContext('2d'), st = window.KK || {}, seed = (st.swirl || 0) * 7 + (st.ring || 0) * 3 + 1;
     var rnd = (function (s) { return function () { s = (s * 16807 + 11) % 2147483647; return (s % 10000) / 10000; }; })(Math.floor(Math.abs(seed) * 1000) + 7);
     g.fillStyle = '#0b1324'; g.fillRect(0, 0, W, H);
+    // the frame: one muted gold hairline, square corners
+    g.strokeStyle = 'rgba(184,149,106,.55)'; g.lineWidth = 2; g.strokeRect(57, 57, W - 114, H - 114);
     var cx = W / 2, cy = 860, R = 330, tw = (st.swirl || 0) * 0.6 + 2.2;
     // fine grains from ivory to gold, no glow
     for (var a = 0; a < 2; a++) for (var k = 0; k < 900; k++) {
@@ -115,11 +118,13 @@
     g.strokeStyle = '#b8956a'; g.lineWidth = 2.5; g.beginPath(); g.arc(cx, cy, R, 0, 7); g.stroke();
     g.textAlign = 'center'; g.textBaseline = 'alphabetic';
     g.fillStyle = '#b8956a'; g.font = '300 28px ' + SANS; tracked(g, 'SMALL ADJUSTMENTS', cx, 300, 6);
+    g.fillStyle = 'rgba(184,149,106,.7)'; g.fillRect(cx - 40, 340, 80, 2); // short hairline rule under the label
     var y = 1395;
     if (withName) { g.fillStyle = '#f4ecdc'; g.font = '300 84px ' + THAI; g.fillText('เกียวๆ', cx, y); y += 128; } else y += 40;
     g.fillStyle = '#f4ecdc'; g.font = '400 92px ' + SERIF; g.fillText('Small adjustments.', cx, y);
     g.font = 'italic 400 92px ' + SERIF; g.fillText('Then coffee.', cx, y + 100);
-    g.fillStyle = 'rgba(244,236,220,.72)'; g.font = '300 42px ' + THAI; g.fillText('ค่อย ๆ ปรับ แล้วไปกินกาแฟกัน', cx, y + 212);
+    g.fillStyle = 'rgba(244,236,220,.3)'; g.fillRect(cx - 40, y + 150, 80, 2); // hairline rule between English and Thai
+    g.fillStyle = 'rgba(244,236,220,.72)'; g.font = '300 42px ' + THAI; g.fillText('ค่อย ๆ ปรับ แล้วไปกินกาแฟกัน', cx, y + 222);
     return c;
   }
   function show() {
@@ -127,7 +132,7 @@
     var go = function () { var c = draw(cb && cb.checked); if (p && !p.contains(c)) { p.innerHTML = ''; p.appendChild(c); } prep(); };
     fonts().then(go, go);
   }
-  function blob(cb) { draw(document.getElementById('withName') && document.getElementById('withName').checked).toBlob(cb, 'image/png'); }
+  function blob(cb) { var go = function () { draw(document.getElementById('withName') && document.getElementById('withName').checked).toBlob(cb, 'image/png'); }; fonts().then(go, go); }
   function download() { blob(function (b) { var a = document.createElement('a'); a.href = URL.createObjectURL(b); a.download = 'keawkeaw_story.png'; document.body.appendChild(a); a.click(); setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 1500); }); }
   var ready = null;
   function msg(t) { var p = document.getElementById('shareMsg'); if (p) p.textContent = t; }

@@ -19,7 +19,7 @@
 /* Editorial system: deep ink, warm ivory, one muted gold. 1px hairlines, no fills, square corners.
    Cormorant Garamond for the few headline moments, Inter 300 for text and tracked labels, IBM Plex Sans Thai for Thai. */
 :root{
-  --ink:#0b1324; --ink2:#0f1a2f; --ivory:#f4ecdc; --ivory2:rgba(244,236,220,.66); --ivory3:rgba(244,236,220,.42);
+  --ink:#0b1324; --ink2:#0f1a2f; --ivory:#f4ecdc; --ivory2:rgba(244,236,220,.66); --ivory3:rgba(244,236,220,.58);
   --gold:#b8956a; --line:rgba(244,236,220,.16); --line2:rgba(244,236,220,.34);
   --serif:"Cormorant Garamond","IBM Plex Sans Thai",Georgia,serif;
   --sans:"Inter","IBM Plex Sans Thai",system-ui,sans-serif;
@@ -49,11 +49,11 @@ html[data-lang="th"] #gate .q .th{margin:0;font-size:clamp(25px,6.8vw,32px);colo
 #gate .q .en{display:block}
 #gate .pulse{display:block;width:1px;height:44px;background:var(--gold);transform-origin:50% 0;animation:hair 3.6s cubic-bezier(.65,0,.35,1) infinite}
 @keyframes hair{0%{transform:scaleY(0);transform-origin:50% 0}46%{transform:scaleY(1);transform-origin:50% 0}54%{transform:scaleY(1);transform-origin:50% 100%}100%{transform:scaleY(0);transform-origin:50% 100%}}
-#gate .tap{font:300 11px/1.6 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--ivory2)}
+#gate .tap{font:300 11px/1.6 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--ivory2)}
 #gate .tap .th{font:300 14px/1.6 var(--thai)}
 body:not([data-scene="0"]) #gate{opacity:0;visibility:hidden;pointer-events:none}
 #resume{display:none;margin-top:-10px;padding:12px 6px;border:0;background:none;color:var(--ivory);cursor:pointer;
-  font:300 11px/1.6 var(--sans);letter-spacing:.18em;text-transform:uppercase}
+  font:300 11px/1.6 var(--sans);letter-spacing:.12em;text-transform:uppercase}
 #resume>span{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:7px;text-decoration-color:var(--line2)}
 #resume .th{font:300 14px/1.6 var(--thai)}
 body.returning #resume{display:inline-block}
@@ -66,7 +66,7 @@ html[data-lang="both"] #gate .tap>span,html[data-lang="both"] #resume>span{displ
   background:linear-gradient(to top,rgba(11,19,36,.8),rgba(11,19,36,.36) 62%,rgba(11,19,36,0));
   opacity:0;visibility:hidden;transform:translateY(10px);transition:opacity .9s var(--ease),transform .9s var(--ease),visibility .9s}
 .cap.on{opacity:1;visibility:visible;transform:none}
-.cap .tag{display:block;margin-bottom:16px;font:300 11px/1.6 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
+.cap .tag{display:block;margin-bottom:16px;font:300 11px/1.6 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
 .cap .tag [lang="th"]{font:300 13px/1.6 var(--thai)}
 .cap>.th{max-width:26em;font:300 clamp(20px,5.4vw,26px)/1.55 var(--thai)}
 .cap .en.l{display:block;max-width:24em;margin-top:8px;font:300 clamp(17px,4.6vw,21px)/1.45 var(--sans);letter-spacing:-.005em;color:var(--ivory2)}
@@ -77,7 +77,7 @@ html[data-lang="en"] .cap .th, html[data-lang="en"] .note .th{display:none}
 html[data-lang="en"] .cap .en.l{margin-top:0;font-size:clamp(21px,5.7vw,27px);line-height:1.38;color:var(--ivory)}
 @media (min-width:820px){.cap{padding:0 0 calc(124px + var(--sab)) calc(72px + var(--sal));background:linear-gradient(to top,rgba(11,19,36,.72),rgba(11,19,36,0) 42%)}}
 
-.cue{display:block;margin-top:14px;font:300 11px/1.7 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
+.cue{display:block;margin-top:14px;font:300 11px/1.7 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
 .cue .th{font:300 14px/1.6 var(--thai)}
 html[data-lang="th"] .cue .en, html[data-lang="th"] .note .en, html[data-lang="th"] .ui .en{display:none}
 html[data-lang="en"] .ui .th, html[data-lang="en"] #gate .th, html[data-lang="en"] #letter .th{display:none}
@@ -91,8 +91,8 @@ html[data-lang="both"] .ui>.en{margin-top:2px;font-size:9.5px}
 #fade.on{opacity:1;transition:opacity .28s linear}
 /* elevator buttons (scene 3) */
 #lift{display:flex;gap:10px;margin-top:20px;pointer-events:auto}
-#lift button{min-height:44px;padding:0 18px;border:1px solid var(--line2);border-radius:2px;background:none;color:var(--ivory2);cursor:pointer;
-  font:300 11px/1 var(--sans);letter-spacing:.18em;transition:color .8s var(--ease),border-color .8s var(--ease)}
+#lift button{min-height:44px;padding:0 18px;border:1px solid var(--line2);border-radius:0;background:none;color:var(--ivory2);cursor:pointer;
+  font:300 11px/1 var(--sans);letter-spacing:.12em;transition:color .8s var(--ease),border-color .8s var(--ease)}
 #lift button.lit{color:var(--gold);border-color:var(--gold)}
 
 /* ending (scene 9) */
@@ -109,7 +109,7 @@ html[data-lang="both"] #panel9 .lead .en{margin-top:12px;font-size:clamp(25px,6.
 html[data-lang="th"] #panel9 .lead .en{display:none} html[data-lang="en"] #panel9 .lead .th{display:none}
 .tabs{display:flex;gap:28px;margin:30px 0 22px;border-bottom:1px solid var(--line)}
 .tabs button{flex:none;margin-bottom:-1px;padding:14px 0 12px;border:0;border-bottom:1px solid transparent;background:none;color:var(--ivory3);cursor:pointer;
-  font:300 11px/1.4 var(--sans);letter-spacing:.18em;text-transform:uppercase;text-align:left;transition:color .8s var(--ease),border-color .8s var(--ease)}
+  font:300 11px/1.4 var(--sans);letter-spacing:.12em;text-transform:uppercase;text-align:left;transition:color .8s var(--ease),border-color .8s var(--ease)}
 .tabs button .th{font:300 14px/1.4 var(--thai)}
 .tabs button[aria-selected="true"]{color:var(--ivory);border-bottom-color:var(--gold)}
 .tabpane{display:none}.tabpane.on{display:block;animation:paneIn .8s var(--ease) both}
@@ -118,15 +118,15 @@ html[data-lang="th"] #panel9 .lead .en{display:none} html[data-lang="en"] #panel
 #letter .th{font-family:var(--thai)}
 #letter .en{color:var(--ivory2)}
 html[data-lang="en"] #letter .en{color:var(--ivory)}
-#letter .since{margin-top:16px;font:300 10.5px/1.6 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--ivory3)}
+#letter .since{margin-top:16px;font:300 10.5px/1.6 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--ivory3)}
 #letter .since .th{font:300 13px/1.6 var(--thai)}
 #letter p.since .en{color:inherit}
 html[data-lang="both"] #letter .since .en::before{content:" · "}
 #letter #jayline{margin-top:22px;min-height:1.4em;outline:none;font:300 17px/1.6 var(--thai);color:var(--gold)}
 html.edit #jayline{border-bottom:1px solid var(--line2)}
 #letter .sig{margin-top:4px;font:italic 400 24px/1.2 var(--serif);color:var(--gold)}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 24px;border:1px solid var(--line2);border-radius:2px;background:none;color:var(--ivory);cursor:pointer;
-  font:300 11px/1.4 var(--sans);letter-spacing:.18em;text-transform:uppercase;transition:border-color .8s var(--ease),color .8s var(--ease)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 24px;border:1px solid var(--line2);border-radius:0;background:none;color:var(--ivory);cursor:pointer;
+  font:300 11px/1.4 var(--sans);letter-spacing:.12em;text-transform:uppercase;transition:border-color .8s var(--ease),color .8s var(--ease)}
 .btn .th{font:300 14px/1.4 var(--thai)}
 .btn.ghost{border-color:transparent}
 .btn.ghost>.th,.btn.ghost>.en,#placesBtn .pl>span{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:7px;text-decoration-color:var(--line2);transition:text-decoration-color .8s var(--ease)}
@@ -136,7 +136,7 @@ html[data-lang="both"] .btn.ui{flex-direction:column;gap:3px}
 #storyBtn{margin-top:28px;width:100%}
 #placesBtn{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;width:100%;min-height:56px;margin-top:8px}
 #placesBtn .pl{display:inline-flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:0 .7em}
-#placesNext{font:300 10px/1.3 var(--sans);letter-spacing:.18em;color:var(--gold)}
+#placesNext{font:300 10px/1.3 var(--sans);letter-spacing:.12em;color:var(--gold)}
 #placesNext .th{font:300 12.5px/1.3 var(--thai)}
 #placesNext:empty{display:none}
 html[data-lang="both"] #placesBtn .en::before{content:"·";display:inline-block;margin-right:.7em}
@@ -146,7 +146,7 @@ html[data-lang="both"] #placesBtn .en::before{content:"·";display:inline-block;
 #nav{position:fixed;z-index:20;left:0;right:0;bottom:calc(14px + var(--sab));display:flex;align-items:center;justify-content:space-between;
   padding:0 calc(12px + var(--sar)) 0 calc(12px + var(--sal));pointer-events:none;transition:opacity .9s var(--ease),visibility .9s}
 #nav button{pointer-events:auto;min-width:64px;min-height:48px;padding:0 12px;border:0;background:none;color:var(--ivory);cursor:pointer;
-  font:300 11px/1.4 var(--sans);letter-spacing:.18em;text-transform:uppercase;transition:color .8s var(--ease)}
+  font:300 11px/1.4 var(--sans);letter-spacing:.12em;text-transform:uppercase;transition:color .8s var(--ease)}
 #nav button .th{font:300 14px/1.4 var(--thai)}
 #nav button>span{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:7px;text-decoration-color:var(--line2)}
 #nav #prev{color:var(--ivory2)}
@@ -157,23 +157,25 @@ html[data-lang="both"] #placesBtn .en::before{content:"·";display:inline-block;
 body[data-scene="0"] #nav{opacity:0;visibility:hidden}
 body[data-scene="9"] #next{visibility:hidden}
 .topbtn{position:fixed;z-index:25;top:calc(14px + var(--sat));min-width:44px;height:44px;padding:0 4px;border:0;background:none;color:var(--ivory);cursor:pointer;
-  display:grid;place-items:center;font:300 10.5px/1 var(--sans);letter-spacing:.18em}
+  display:grid;place-items:center;font:300 10.5px/1 var(--sans);letter-spacing:.12em}
 #mute{right:calc(12px + var(--sar))}#lang{right:calc(60px + var(--sar));padding-left:calc(4px + .18em);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:7px;text-decoration-color:var(--line2)}
 #mute svg{width:18px;height:18px;stroke-width:1.2}#mute .i-off,#mute.off .i-on{display:none}#mute.off .i-off{display:block}
 
-/* story overlay */
+/* story overlay: same ink, ivory and gold as the card it previews; square corners, hairlines, no shadows */
 #story{position:fixed;inset:0;z-index:40;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;
-  padding:calc(24px + var(--sat)) 24px calc(24px + var(--sab));background:rgba(9,15,29,.97);opacity:0;visibility:hidden;transition:opacity .8s var(--ease),visibility .8s}
+  padding:calc(24px + var(--sat)) 24px calc(24px + var(--sab));background:rgba(11,19,36,.97);opacity:0;visibility:hidden;transition:opacity .8s var(--ease),visibility .8s}
 #story.open{opacity:1;visibility:visible}
 #storyPreview{display:flex;justify-content:center}
-#storyPreview canvas,#storyPreview img{display:block;max-width:min(70vw,340px);max-height:60vh;height:auto;border:1px solid var(--line)}
+#storyPreview canvas,#storyPreview img{display:block;max-width:min(70vw,340px);max-height:60vh;height:auto;border:1px solid var(--line);border-radius:0}
 #story .row{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
-#story label{display:flex;align-items:center;gap:12px;min-height:44px;cursor:pointer;color:var(--ivory2);font:300 11px/1.4 var(--sans);letter-spacing:.18em;text-transform:uppercase}
+#story label{display:flex;align-items:center;gap:12px;min-height:44px;cursor:pointer;color:var(--ivory2);font:300 11px/1.4 var(--sans);letter-spacing:.12em;text-transform:uppercase}
 #story label .th{font:300 14px/1.4 var(--thai)}
-#withName{-webkit-appearance:none;appearance:none;flex:none;width:14px;height:14px;margin:0;border:1px solid var(--line2);border-radius:2px;background:transparent;cursor:pointer;
-  transition:border-color .7s var(--ease),background-color .7s var(--ease),box-shadow .7s var(--ease)}
-#withName:checked{border-color:var(--gold);background:var(--gold);box-shadow:inset 0 0 0 3px #0b1324}
+/* checkbox: a hairline square; checked fills a small gold square inside it */
+#withName{-webkit-appearance:none;appearance:none;flex:none;width:14px;height:14px;margin:0;border:1px solid var(--line2);border-radius:0;cursor:pointer;
+  background:linear-gradient(var(--gold),var(--gold)) center/0 0 no-repeat;transition:border-color .7s var(--ease),background-size .7s var(--ease)}
+#withName:checked{border-color:var(--gold);background-size:6px 6px}
 #withName:focus-visible{outline:1px solid var(--gold);outline-offset:4px}
+#shareMsg{min-height:1.4em;font:300 14px/1.5 var(--sans);color:var(--ivory2)}
 
 html.fast *,html.fast *::before,html.fast *::after{transition-duration:0s!important;animation-duration:0s!important}
 @media (prefers-reduced-motion:reduce){.cap{transform:none;transition:opacity .6s}#gate .pulse{animation:none}.tabpane.on{animation:none}}
@@ -219,7 +221,6 @@ html.fast *,html.fast *::before,html.fast *::after{transition-duration:0s!import
   <section class="cap" data-scene="5">
     <span class="tag"><span lang="th">คืนวันธรรมดา</span> · <span class="en">a weeknight</span></span>
     <p class="th">Silo · Severance · Hit Man<wbr> · Barbie · The Gentlemen</p>
-    <span class="en l">And our film, Interstellar, which this trip borrows a little from.</span>
   </section>
   <section class="cap" data-scene="6">
     <span class="tag"><span lang="th">เกียวๆ</span> want coffee milk</span>
@@ -228,10 +229,10 @@ html.fast *,html.fast *::before,html.fast *::after{transition-duration:0s!import
     <span class="en l">An unnecessarily advanced way to make coffee milk.</span>
   </section>
   <section class="cap" data-scene="7">
-    <span class="tag"><span lang="th">สองวง</span> · <span class="en">two rings</span></span>
-    <p class="th"><span class="nw">คนละจังหวะ</span><wbr> <span class="nw">ก็หาจังหวะร่วมกันได้</span></p>
-    <span class="en l">Different rhythms. Room for both.</span>
-    <span class="cue"><span class="th">ลองลากวงหนึ่ง แล้วดูอีกวงขยับตาม</span><span class="en">Drag one ring, watch the other move.</span></span>
+    <span class="tag"><span lang="th">สองวงโคจร</span> · <span class="en">two orbits</span></span>
+    <p class="th"><span class="nw">คนละตาราง</span><wbr> <span class="nw">แต่เว้นเย็นไว้ให้กัน</span></p>
+    <span class="en l">Two schedules. One evening kept free.</span>
+    <span class="cue"><span class="th">ลากวงหนึ่ง อีกวงจะขยับตาม</span><span class="en">Drag one, the other follows.</span></span>
   </section>
   <section class="cap" data-scene="8">
     <span class="tag"><span lang="th">ชั้นวางของวันธรรมดา</span></span>
@@ -240,7 +241,7 @@ html.fast *,html.fast *::before,html.fast *::after{transition-duration:0s!import
   </section>
   <section class="cap" data-scene="9">
     <div id="panel9">
-      <p class="lead"><span class="th"><span class="nw">เกียวๆ ขอบคุณ</span><wbr><span class="nw">ที่ค่อย ๆ หาจังหวะ</span><wbr><span class="nw">ไปด้วยกันนะ</span></span><span class="en">Thank you for finding the rhythm with me.</span></p>
+      <p class="lead"><span class="th"><span class="nw">เกียวๆ ขอบคุณ</span><wbr><span class="nw">สำหรับทุกเย็น</span><wbr><span class="nw">ที่อยู่ด้วยกันนะ</span></span><span class="en">Thank you for the evenings.</span></p>
       <div class="tabs" role="tablist">
         <button role="tab" class="ui" aria-selected="true" data-tab="mission"><span class="th">เรื่องเล็ก ๆ วันนี้</span><span class="en">Today</span></button>
         <button role="tab" class="ui" aria-selected="false" data-tab="letter"><span class="th">อ่านข้อความจากเจ</span><span class="en">Note from Jay</span></button>
@@ -276,7 +277,7 @@ html.fast *,html.fast *::before,html.fast *::after{transition-duration:0s!import
     <button id="dlBtn" class="btn ui" type="button"><span class="th">บันทึกภาพ</span><span class="en">Save image</span></button>
     <button id="storyClose" class="btn ghost ui" type="button"><span class="th">ปิด</span><span class="en">Close</span></button>
   </div>
-  <p id="shareMsg" style="font-size:14px;color:var(--ivory2);min-height:1.4em" aria-live="polite"></p>
+  <p id="shareMsg" aria-live="polite"></p>
 </div>
 
 <script>
