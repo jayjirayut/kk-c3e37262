@@ -150,7 +150,7 @@ A[4] = [new THREE.Vector3(6000, 20, -1800), new THREE.Vector3(6000, 10, -2000)];
   for (const x of [-20.5, 20.5]) mesh(rbox(40, 6, 28, 2.5), cush, x, -25, 20, g);
   for (const x of [-20, 20]) mesh(rbox(36, 18, 6, 3), cush, x, -12, 31, g);
   const menu = textTex([{ t: 'Tonight', f: '400 34px "Cormorant Garamond", serif', y: 50, x: 48, a: 'left', c: '#f1ebdd' }]
-    .concat(['Silo', 'Severance', 'Hit Man', 'Barbie', 'The Gentlemen'].map((t, i) => ({ t, f: '400 22px Inter, sans-serif', y: 104 + i * 34, x: 64, a: 'left', c: i === 1 ? '#0b1323' : '#b7b1a8' }))), 512, 288, { bg: '#121a2e' });
+    .concat(['Silo', 'Severance', 'The Gentlemen'].map((t, i) => ({ t, f: '400 22px Inter, sans-serif', y: 104 + i * 34, x: 64, a: 'left', c: i === 1 ? '#0b1323' : '#b7b1a8' }))), 512, 288, { bg: '#121a2e' });
   { const c = menu.image.getContext('2d'); c.globalCompositeOperation = 'destination-over'; }
   const mc = document.createElement('canvas'); mc.width = 512; mc.height = 288; { const q = mc.getContext('2d'); q.drawImage(menu.image, 0, 0); q.fillStyle = '#f1ebdd'; q.fillRect(48, 104 + 34 - 15, 220, 30); q.fillStyle = '#0b1323'; q.font = '500 22px Inter, sans-serif'; q.textBaseline = 'middle'; q.fillText('Severance', 64, 138); }
   const mt = new THREE.CanvasTexture(mc); mt.colorSpace = THREE.SRGBColorSpace;
