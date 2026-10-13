@@ -90,7 +90,7 @@
   // UI copy as [en, th].
   var TX = {
     title: ['Places we go together', 'ที่ที่อยากไปด้วยกัน'],
-    hint: ['Drag to spin. No spin class required.', 'ลากเพื่อหมุน ไม่ต้องเข้าคลาสสปิน'],
+    hint: ['Drag to turn the globe.', 'ลากเพื่อหมุนลูกโลก'],
     close: ['Close', 'ปิด'],
     intro: ['Eight ideas for a trip together.', 'แปดไอเดียสำหรับทริปด้วยกัน'],
     pick: ['Choose a city to begin.', 'เลือกเมืองเพื่อเริ่มดู'],

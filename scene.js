@@ -1,5 +1,5 @@
 // Scenes for Small Adjustments: solid, softly lit, matte objects on navy; hairlines only as accents.
-// 0 gate (her name), 1 river, 2 spin, 3 lift, 4 travel, 5 weeknight, 6 coffee milk, 7 two orbits, 8 shelf, 9 river again.
+// 0 gate (her name), 1 river, 2 spin studio, 3 lift, 4 travel, 5 weeknight, 6 coffee milk, 7 two orbits, 8 shelf, 9 river again.
 import * as THREE from 'three';
 import { RoundedBoxGeometry } from 'three/addons/geometries/RoundedBoxGeometry.js';
 
@@ -103,16 +103,38 @@ let nameStars, nameType;
   Promise.race([document.fonts ? document.fonts.load('400 220px "IBM Plex Sans Thai"', 'เกียว') : 0, new Promise(r => setTimeout(r, 2000))]).then(sample, sample); }
 A[0] = [new THREE.Vector3(0, 1400, -2620), new THREE.Vector3(0, 1430, -3000)];
 
-// ---------- 2 flywheel: matte stone, a gold progress ring ----------
+// ---------- 2 spin studio: one stationary bike in profile, a dark room, cool LED strips ----------
 let flyV = REDUCE ? 0 : 0.6;
-{ const g = group('fly', 2000, 0, -2000), stone = mat(STONE, .55, .05), wheel = new THREE.Group(); g.add(wheel);
-  wheel.add(new THREE.Mesh(new THREE.TorusGeometry(58, 5.5, 32, 160), stone));
-  for (let i = 0; i < 10; i++) { const s = new THREE.Mesh(new THREE.CylinderGeometry(1.1, 1.1, 104, 12), mat(TAUPE, .6)); s.rotation.z = i * Math.PI / 10; wheel.add(s); }
-  { const hub = new THREE.Mesh(new THREE.CylinderGeometry(10, 10, 12, 48), stone); hub.rotation.x = Math.PI / 2; wheel.add(hub); const cap = new THREE.Mesh(new THREE.CylinderGeometry(4, 4, 13, 32), mat(GOLD, .4, .3)); cap.rotation.x = Math.PI / 2; wheel.add(cap); }
-  const gauge = new THREE.Mesh(new THREE.RingGeometry(73, 75, 128, 1, Math.PI / 2, Math.PI * 2), new THREE.MeshBasicMaterial({ color: GOLD })); gauge.scale.x = -1; g.add(gauge);
-  g.add(new THREE.Mesh(new THREE.RingGeometry(73.5, 74.5, 128), new THREE.MeshBasicMaterial({ color: IVORY, transparent: true, opacity: .08 })));
-  floor(g, -80, 260); addLights(g); g.userData = { wheel, gauge }; }
-A[2] = [new THREE.Vector3(2000, 10, -1810), new THREE.Vector3(2000, -6, -2000)];
+{ const g = group('fly', 2000, 0, -2000), wheel = new THREE.Group(), leds = [];
+  const ink = mat(0x14161c, .45, .6), ink2 = mat(0x1c1f27, .5, .5), chrome = mat(0x9aa0ad, .25, .9), seat = mat(0x0e0f13, .8, .1);
+  const bar = (x1, y1, x2, y2, t, m = ink) => { const L = Math.hypot(x2 - x1, y2 - y1), o = mesh(rbox(L, t, t, t / 2.2), m, (x1 + x2) / 2, (y1 + y2) / 2, 0, g); o.rotation.z = Math.atan2(y2 - y1, x2 - x1); return o; };
+  // room: a near-black wall and floor so the bike reads as a silhouette
+  mesh(new THREE.PlaneGeometry(1400, 900), mat(0x07080c, .95), 0, 300, -70, g);
+  { const fl = mesh(new THREE.PlaneGeometry(1400, 1200), mat(0x08090d, .6, .2), 0, -72, 520, g); fl.rotation.x = -Math.PI / 2; }
+  // LED strips: low on the wall and along the floor line, blue to violet
+  const ledM = (c) => new THREE.MeshBasicMaterial({ color: c, transparent: true, opacity: .9, blending: THREE.AdditiveBlending, depthWrite: false });
+  [[0, -64, -68, 520, 1.6, 0x5b6cff], [0, -71, -40, 520, 1.1, 0x7a5cff], [-150, 40, -68, 1.4, 150, 0x6a62ff], [150, 40, -68, 1.4, 150, 0x6a62ff]].forEach(([x, y, z, w, h, c]) => { const l = mesh(new THREE.PlaneGeometry(w, h), ledM(c), x, y, z, g); if (z === -40) l.rotation.x = -Math.PI / 2; leds.push(l); });
+  // haze: a soft violet bloom rising from the floor strip
+  const hz = canvasTex(256, 256, (x) => { const r = x.createRadialGradient(128, 200, 8, 128, 200, 150); r.addColorStop(0, 'rgba(110,100,255,.55)'); r.addColorStop(1, 'rgba(60,40,160,0)'); x.fillStyle = r; x.fillRect(0, 0, 256, 256); });
+  const haze = mesh(new THREE.PlaneGeometry(520, 320), new THREE.MeshBasicMaterial({ map: hz, transparent: true, opacity: .5, blending: THREE.AdditiveBlending, depthWrite: false }), 0, 30, -60, g);
+  // bike, side profile, facing right
+  mesh(rbox(10, 5, 46, 2), ink2, -46, -68, 0, g); mesh(rbox(10, 5, 46, 2), ink2, 52, -68, 0, g); bar(-46, -66, 52, -66, 5, ink2);
+  bar(-40, -64, 8, -30, 7); bar(8, -30, 44, 16, 7); bar(52, -64, 40, -40, 6);
+  bar(-14, -46, -24, 22, 5); bar(-24, 22, -26, 30, 3, chrome);
+  mesh(rbox(34, 5, 13, 2.4), seat, -28, 33, 0, g);
+  bar(40, 8, 46, 34, 5); bar(46, 34, 48, 40, 3, chrome); bar(46, 42, 64, 45, 3.4, seat); bar(63, 45, 68, 51, 3, seat);
+  // heavy front flywheel: a solid disc with a thin chrome rim, under a half guard
+  wheel.position.set(40, -40, 0); g.add(wheel);
+  { const d = new THREE.Mesh(new THREE.CylinderGeometry(25, 25, 6, 64), ink2); d.rotation.x = Math.PI / 2; wheel.add(d);
+    const rim = new THREE.Mesh(new THREE.TorusGeometry(25, .9, 12, 96), chrome); wheel.add(rim);
+    const hub = new THREE.Mesh(new THREE.CylinderGeometry(3.5, 3.5, 8, 24), chrome); hub.rotation.x = Math.PI / 2; wheel.add(hub); }
+  // crank and pedals
+  const crank = new THREE.Group(); crank.position.set(8, -34, 5); g.add(crank);
+  { const arm = mesh(rbox(3, 26, 2, 1), chrome, 0, 0, 0, crank); mesh(rbox(10, 2.5, 5, 1), seat, 0, 13, 2, crank); mesh(rbox(10, 2.5, 5, 1), seat, 0, -13, -2, crank); mesh(new THREE.CylinderGeometry(5, 5, 3, 32), chrome, 0, 0, 0, crank).rotation.x = Math.PI / 2; }
+  const rim = new THREE.PointLight(0x6d63ff, 5000, 520, 2); rim.position.set(0, -40, -50); g.add(rim);
+  const top = new THREE.PointLight(0x9fb0ff, 2200, 500, 2); top.position.set(30, 150, 120); g.add(top);
+  g.userData = { wheel, crank, leds, haze, rim }; }
+A[2] = [new THREE.Vector3(2012, -38, -1760), new THREE.Vector3(2012, -46, -2000)];
 
 // ---------- 3 lift: stone doors, a readable indicator, warm light inside ----------
 let liftOpen = 0, liftTarget = 0;
@@ -238,8 +260,9 @@ function frame() {
   if (G.name.visible || cur === 0) { const u = nameStars.userData; u.t = REDUCE ? 1 : Math.min(1, u.t + dt / .7); const q = 1 - Math.pow(1 - u.t, 3), p = nameStars.geometry.attributes.position.array;
     for (let i = 0; i < p.length; i++) p[i] = u.start[i] + (u.tgt[i] - u.start[i]) * q; nameStars.geometry.attributes.position.needsUpdate = true;
     const s = Math.max(0, Math.min(1, (u.t - .8) / .2)); nameType.material.opacity = nameType.material.map ? s : 0; nameStars.material.opacity = .95 * (1 - s * .96); }
-  if (G.fly.visible) { flyV = Math.max(REDUCE ? 0 : .3, flyV - dt * 1.2); G.fly.userData.wheel.rotation.z -= flyV * dt;
-    const f = Math.min(1, flyV / 14); G.fly.userData.gauge.geometry.setDrawRange(0, 6 * Math.max(2, Math.round(128 * f))); }
+  if (G.fly.visible) { flyV = Math.max(REDUCE ? 0 : .3, flyV - dt * 1.2); const u = G.fly.userData; u.wheel.rotation.z -= flyV * dt * 1.6; u.crank.rotation.z -= flyV * dt * .6;
+    const f = Math.min(1, flyV / 14), beat = REDUCE ? 0 : Math.pow(.5 + .5 * Math.sin(T * (2.2 + f * 2.6) * Math.PI), 4) * (.15 + .25 * f);
+    for (const l of u.leds) l.material.opacity = .55 + .3 * f + beat; u.haze.material.opacity = .35 + .25 * f + beat * .6; u.rim.intensity = 4000 + 3000 * f + beat * 4000; }
   if (G.lift.visible) { liftOpen += (liftTarget - liftOpen) * Math.min(1, dt * 2.5); const u = G.lift.userData;
     u.L.position.x = -14 - liftOpen * 26; u.Rr.position.x = 14 + liftOpen * 26; u.inside.material.emissiveIntensity = liftOpen * .9; u.glow.intensity = liftOpen * 4000;
     const want = liftTarget ? 'Off duty' : 'Work'; if (want !== u.last) { u.last = want; u.ind.material.map = u.draw(want); u.ind.material.needsUpdate = true; } }

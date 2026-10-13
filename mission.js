@@ -5,7 +5,7 @@
              set: function (k, v) { try { localStorage.setItem(k, v); } catch (e) {} } };
   function ymd(d) { d = d || new Date(); return d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2); }
   var RIT = [
-    { id: 'spin', th: 'ปั่นสปิน', en: 'Spin class', who: 'เกียวๆ', whoEn: 'Keaw Keaw' },
+    { id: 'spin', th: 'คลาสปั่นจักรยาน', en: 'Spin class', who: 'เกียวๆ', whoEn: 'Keaw Keaw' },
     { id: 'his', th: null, en: "Jay's thing", who: 'เจ', whoEn: 'Jay' },
     { id: 'coffee', th: 'กาแฟที่ระเบียง', en: 'Coffee on the balcony', who: 'สองคน', whoEn: 'Both' },
     { id: 'kind', th: 'เลือกตอนที่จะดูด้วยกัน', en: 'Pick an episode together', who: 'สองคน', whoEn: 'Both' }
