@@ -28,7 +28,7 @@
       src: ['flightq.app', 'kayak', 'getyourguide.com'],
       doEn: 'Gangnam in the afternoon, Seongsu cafés and pop-up stores the next day.',
       doTh: 'บ่ายเดินกังนัม วันต่อมาไปคาเฟ่และป๊อปอัปสโตร์ที่ซองซู' },
-    { id: 'sin', lat: 1.29, lon: 103.85, en: 'Singapore, Southeast Asia', th: 'สิงคโปร์ เอเชียตะวันออกเฉียงใต้', s: 'Singapore', sTh: 'สิงคโปร์',
+    { id: 'sin', lat: 1.29, lon: 103.85, en: 'Singapore', th: 'สิงคโปร์', s: 'Singapore', sTh: 'สิงคโปร์',
       img: 'img/sin.webp', pos: '50% 50%', alt: 'Marina Bay at sunset from above, the city lights coming on across the water', altTh: 'มารีนาเบย์มุมสูงยามพระอาทิตย์ตก ไฟเมืองเริ่มสว่างริมน้ำ', credit: ['Dennis Schmidt', 'https://unsplash.com/photos/an-aerial-view-of-a-city-at-night-1It2Nt6dRpk'],
       whyEn: 'The closest city on the list, about two and a half hours away.',
       whyTh: 'ใกล้ที่สุดในลิสต์ บินราวสองชั่วโมงครึ่ง',
@@ -46,7 +46,7 @@
       src: ['airportoverview.com', '2lnr.com', 'Google Flights'],
       doEn: 'A walk along the Bund after dark, Lujiazui lit across the river.',
       doTh: 'เดินริมเดอะบันด์ตอนค่ำ มองลู่เจียจุ่ยเปิดไฟอยู่อีกฝั่ง' },
-    { id: 'dxb', lat: 25.20, lon: 55.27, en: 'Dubai, United Arab Emirates', th: 'ดูไบ สหรัฐอาหรับเอมิเรตส์', s: 'Dubai', sTh: 'ดูไบ',
+    { id: 'dxb', lat: 25.20, lon: 55.27, en: 'Dubai, UAE', th: 'ดูไบ ยูเออี', s: 'Dubai', sTh: 'ดูไบ',
       img: 'img/dxb.webp', pos: '50% 50%', alt: 'The Museum of the Future at dusk, its steel ring cut with Arabic calligraphy', altTh: 'พิพิธภัณฑ์แห่งอนาคตยามพลบค่ำ วงแหวนโลหะฉลุอักษรอาหรับ', credit: ['Malik Shibly', 'https://unsplash.com/photos/a-large-metal-sculpture-in-front-of-a-tall-building-f_S_d_piyfM'],
       whyEn: 'Dubai Mall and the Museum of the Future, six hours from home.',
       whyTh: 'ดูไบมอลล์กับพิพิธภัณฑ์แห่งอนาคต บินจากบ้านราวหกชั่วโมง',
@@ -55,7 +55,7 @@
       src: ['emirates.com', '2lnr.com', 'agoda'],
       doEn: 'The Museum of the Future in the morning, Dubai Mall in the afternoon.',
       doTh: 'เช้าไปพิพิธภัณฑ์แห่งอนาคต บ่ายเดินดูไบมอลล์' },
-    { id: 'nyc', lat: 40.71, lon: -74.01, en: 'New York, United States', th: 'นิวยอร์ก สหรัฐอเมริกา', s: 'New York', sTh: 'นิวยอร์ก',
+    { id: 'nyc', lat: 40.71, lon: -74.01, en: 'New York, USA', th: 'นิวยอร์ก สหรัฐอเมริกา', s: 'New York', sTh: 'นิวยอร์ก',
       img: 'img/nyc.webp', pos: '50% 50%', alt: 'A SoHo cast-iron facade seen from below against a pale sky', altTh: 'ด้านหน้าตึกเหล็กหล่อย่านโซโหมองจากด้านล่างตัดกับฟ้าสีอ่อน', credit: ['Ilse', 'https://unsplash.com/photos/low-angle-photo-of-high-rise-building-1IqnWACggZs'],
       whyEn: 'An autumn walk through SoHo, with time to stop for coffee.',
       whyTh: 'เดินเล่นโซโหในฤดูใบไม้ร่วง แวะพักกินกาแฟกันระหว่างทาง',
@@ -76,7 +76,7 @@
       src: ['visiticeland.com', 'flightroutes.com', 'flightsfrom.com', 'flightmapper.net'],
       doEn: 'Drive past the city lights on a clear night with a thermos of coffee milk, and wait for the sky to move.',
       doTh: 'ขับรถออกนอกเมืองคืนฟ้าใส พกกระติกกาแฟนมไปด้วย แล้วนั่งรอให้ฟ้าเริ่มขยับ' },
-    { id: 'tek', lat: -44.0, lon: 170.48, en: 'Lake Tekapo, New Zealand', th: 'ทะเลสาบเทคาโป นิวซีแลนด์', s: 'Tekapo', sTh: 'เทคาโป',
+    { id: 'tek', lat: -44.0, lon: 170.48, en: 'Lake Tekapo, New Zealand', th: 'ทะเลสาบเทคาโป นิวซีแลนด์', s: 'Lake Tekapo', sTh: 'ทะเลสาบเทคาโป',
       img: 'img/tek.webp', pos: '50% 50%', alt: 'The Church of the Good Shepherd under a starry sky with the southern lights glowing pink and green',
       altTh: 'โบสถ์ Church of the Good Shepherd ใต้ฟ้าเต็มดาว มีแสงออโรราสีชมพูและเขียว', credit: ['Sebastian Knoll', 'https://unsplash.com/photos/a-house-with-a-pink-and-green-aurora-light-in-the-background-zVzu0F9z44I'],
       whyEn: 'For our Interstellar habit, with hot pools afterwards.',
@@ -217,7 +217,7 @@
       // names wrap onto rows, no sideways scrolling; the chosen one is underlined in gold
       '#plList{flex:none;display:flex;flex-wrap:wrap;padding:3px 12px;border-top:1px solid var(--line)}' +
       '#plList button{flex:none;display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 10px;border:0;border-radius:0;background:none;color:var(--ivory2);white-space:nowrap;cursor:pointer;' + LB + 'transition:color .8s var(--ease)}' +
-      '#plList button .th{font:400 14px/1.4 var(--thai)}' +
+      '#plList button .th{font:400 14px/1.4 var(--thai)}#plList .co{display:none}#places.idx #plList .co{display:block;margin-top:-4px;font:500 10.5px/14px var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}#places.idx #plList .co .th{font:400 12.5px/1.5 var(--thai);letter-spacing:0;text-transform:none}' +
       '#plList button>.th,#plList button>.en{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:8px;text-decoration-color:transparent;transition:text-decoration-color .8s var(--ease)}' +
       '#plList button.on{color:var(--ivory)}#plList button.on>.th,#plList button.on>.en{text-decoration-color:var(--gold)}' +
       '#plList .tg{display:inline-flex}#plList .tg:empty{display:none}' +
@@ -389,7 +389,7 @@
       '<div id="plKey"><p class="kc">' + L(TX.links[0], TX.links[1]) + '</p><ul id="plKeyL">' +
         [['on', 'selected'], ['want', 'planned'], ['been', 'been'], ['nx', 'nextBtn']].map(function (k) {
           return '<li><canvas data-k="' + k[0] + '" aria-hidden="true"></canvas>' + L(TX[k[1]][0], TX[k[1]][1]) + '</li>'; }).join('') + '</ul></div></div>' +
-      '<p id="plIntro">' + T(TX.intro[0], TX.intro[1]) + '</p><div id="plList" role="group">' + P.map(function (p) { return '<button type="button" data-id="' + p.id + '" aria-pressed="false"><span class="thm" aria-hidden="true"' + (p.img ? ' style="background-image:url(' + p.img + ');background-position:' + (p.pos || '50% 50%') + '"' : '') + '>' + (p.img ? '' : '<b>' + p.s + '</b>') + '</span>' + L(p.s, p.sTh) + '<span class="tg"></span></button>'; }).join('') + '</div>' +
+      '<p id="plIntro">' + T(TX.intro[0], TX.intro[1]) + '</p><div id="plList" role="group">' + P.map(function (p) { return '<button type="button" data-id="' + p.id + '" aria-pressed="false"><span class="thm" aria-hidden="true"' + (p.img ? ' style="background-image:url(' + p.img + ');background-position:' + (p.pos || '50% 50%') + '"' : '') + '>' + (p.img ? '' : '<b>' + p.s + '</b>') + '</span>' + L(p.s, p.sTh) + (p.en.indexOf(', ') > 0 ? '<span class="co">' + L(p.en.split(', ')[1], p.th.slice(p.th.lastIndexOf(' ') + 1)) + '</span>' : '') + '<span class="tg"></span></button>'; }).join('') + '</div>' +
       '<div id="plSurW"><button type="button" id="plSur" class="tl"><span>' + L(TX.spin[0], TX.spin[1]) + '</span></button></div><div id="plTrip" role="group" aria-labelledby="plTripL" hidden><span class="tb" id="plTripB">' +
         '<span class="lbl" id="plTripL">' + L(TX.nextBtn[0], TX.nextBtn[1]) + '</span><span class="tn" id="plTripN"></span>' +
         '<label class="fl"><span class="lbl">' + L(TX.month[0], TX.month[1]) + '</span><select id="plMonth"><option value=""></option>' +
@@ -579,7 +579,7 @@
   function actBtn(a, k) { return '<button type="button" data-a="' + a + '" aria-pressed="false"><span class="tx">' + L(TX[k][0], TX[k][1]) + '</span></button>'; }
   function alt(p) { return (lang() === 'en' ? p.alt : p.altTh) || ''; }
   // Card art: the photograph when the place has img, lazy and faded in; otherwise (or if the file is missing) the name in a 1px frame.
-  function plate(p) { var c = p.en.split(', '); return '<div class="art type" aria-hidden="true"><div class="plate"><b>' + c[0] + '</b><small>' + c[1] + '</small></div></div>'; }
+  function plate(p) { var c = p.en.split(', '); return '<div class="art type" aria-hidden="true"><div class="plate"><b>' + c[0] + '</b><small>' + (c[1] || '') + '</small></div></div>'; }
   function art(p) { return p.img ? '<figure class="art"><img src="' + p.img + '" alt="' + alt(p).replace(/"/g, '&quot;') + '" loading="lazy" decoding="async" style="object-position:' + (p.pos || '50% 60%') + '"></figure>' : plate(p); }
   // Rebuilt only when the place changes; marking a place goes through sync().
   function render() {
@@ -587,9 +587,9 @@
     if (!p) h = '<div class="plMain"><div class="plBody intro"><p class="lead">' + T(TX.intro[0], TX.intro[1]) + '</p>' +
       '<p class="pick">' + T(TX.pick[0], TX.pick[1]) + '</p><button type="button" id="plSpin" class="btn">' + L(TX.spin[0], TX.spin[1]) + '</button>' +
       '</div></div>';
-    else { c = p.en.split(', '); i = p.th.lastIndexOf(' ');
+    else { c = p.en.split(', '); i = p.th.lastIndexOf(' '); if (i < 0) i = p.th.length;
       h = '<div class="plMain">' + art(p) + '<div class="plBody"><h3 id="plName"><span class="nm">' + T(c[0], p.th.slice(0, i)) + '</span>' +
-        '<span class="ctry">' + L(c[1], p.th.slice(i + 1)) + '</span></h3>' +
+        (c[1] ? '<span class="ctry">' + L(c[1], p.th.slice(i + 1)) + '</span>' : '') + '</h3>' +
         '<p class="why">' + T(p.whyEn, p.whyTh) + '</p>' +
         '<dl class="facts">' + fact('best', p.monEn, p.monTh, p.monNote, p.monNoteTh) + fact('from', p.fly, p.flyTh, p.flyNote, p.flyNoteTh) + '</dl>' +
         (p.nyeEn ? '<div class="nye"><span class="ntag">' + L(TX.nye[0], TX.nye[1]) + '</span><p>' + T(p.nyeEn, p.nyeTh) + '</p></div>' : '') +
