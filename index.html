@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="th">
+<head><meta name="robots" content="noindex,nofollow">
+<link rel="icon" href="data:,">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b1324">
+<title>Small adjustments · เกียวๆ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,400;1,500&family=Sarabun:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script type="importmap">
+{ "imports": {
+  "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+  "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+} }
+</script>
+<style>
+:root{
+  --ink:#0b1324; --ink2:#14203a; --ivory:#f4ecdc; --ivory2:rgba(244,236,220,.72);
+  --amber:#e6b26a; --rose:#e3a9a6; --line:rgba(244,236,220,.16);
+  --sat:env(safe-area-inset-top,0px); --sab:env(safe-area-inset-bottom,0px);
+  --sal:env(safe-area-inset-left,0px); --sar:env(safe-area-inset-right,0px);
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:var(--ink);color:var(--ivory);overflow:hidden}
+body{font-family:"Sarabun",system-ui,sans-serif;font-weight:300;font-size:17px;line-height:1.6;
+  -webkit-font-smoothing:antialiased;touch-action:manipulation;-webkit-tap-highlight-color:transparent;
+  user-select:none;-webkit-user-select:none;word-break:keep-all;line-break:strict;overflow-wrap:anywhere}
+.nw{white-space:nowrap}
+.en{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-weight:400;letter-spacing:.01em}
+#gl{position:fixed;inset:0;width:100%;height:100%;display:block;z-index:0}
+
+
+/* gate: name constellation shows through */
+#gate{position:fixed;inset:0;z-index:30;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;
+  gap:14px;text-align:center;cursor:pointer;padding-bottom:calc(16vh + var(--sab));
+  background:linear-gradient(to top,rgba(11,19,36,.85),transparent 45%);transition:opacity 1.2s var(--ease),visibility 1.2s}
+#gate .q{font-size:clamp(20px,5.4vw,28px);font-weight:400}
+#gate .q .en{display:block;font-size:clamp(18px,4.6vw,24px);color:var(--ivory2)}
+#gate .tap{display:flex;align-items:center;gap:12px;font-size:16px;color:var(--ivory2);margin-top:8px}
+#gate .pulse{width:10px;height:10px;border-radius:50%;background:var(--amber);box-shadow:0 0 0 0 rgba(230,178,106,.5);animation:pulse 2.4s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 18px rgba(230,178,106,0)}100%{box-shadow:0 0 0 0 rgba(230,178,106,0)}}
+body:not([data-scene="0"]) #gate{opacity:0;visibility:hidden;pointer-events:none}
+#resume{font:inherit;font-size:14px;color:var(--ivory2);background:none;border:1px solid var(--line);border-radius:999px;padding:8px 16px;margin-top:6px;display:none}
+body.returning #resume{display:inline-block}
+
+/* captions */
+#cap{position:fixed;inset:0;z-index:10;pointer-events:none}
+.cap{position:absolute;left:0;right:0;bottom:0;
+  padding:64px calc(24px + var(--sar)) calc(96px + var(--sab)) calc(24px + var(--sal));
+  background:linear-gradient(to top,rgba(11,19,36,.82),rgba(11,19,36,.4) 60%,transparent);
+  opacity:0;visibility:hidden;transform:translateY(12px);transition:opacity .8s var(--ease),transform .8s var(--ease),visibility .8s}
+.cap.on{opacity:1;visibility:visible;transform:none}
+.cap .tag{display:block;font-size:13px;color:var(--amber);margin-bottom:8px;font-weight:500}
+.cap .tag .en{font-size:15px;letter-spacing:.04em}
+.cap .th{font-size:clamp(20px,5.4vw,27px);font-weight:400;line-height:1.5;max-width:26em}
+.cap .en.l{display:block;font-size:clamp(19px,5vw,25px);color:var(--ivory2);margin-top:4px;line-height:1.35}
+.cap .note{display:block;margin-top:10px;font-size:16px;color:var(--rose)}
+.cap .hint{display:inline-block;margin-top:12px;font-size:13px;color:var(--ivory2);border:1px solid var(--line);border-radius:999px;padding:4px 12px}
+html[data-lang="th"] .en.l, html[data-lang="th"] .note .en{display:none}
+html[data-lang="en"] .cap .th, html[data-lang="en"] .note .th{display:none}
+html[data-lang="en"] .cap .en.l{font-size:clamp(22px,5.6vw,28px);color:var(--ivory)}
+@media (min-width:820px){.cap{padding:0 0 calc(110px + var(--sab)) calc(64px + var(--sal));background:linear-gradient(to top,rgba(11,19,36,.7),transparent 40%)}}
+
+/* elevator buttons (scene 3) */
+#lift{display:flex;gap:12px;margin-top:14px;pointer-events:auto}
+#lift button{font:500 14px "Sarabun";letter-spacing:.08em;padding:10px 16px;border-radius:6px;border:1px solid var(--line);background:rgba(244,236,220,.06);color:var(--ivory2)}
+#lift button.lit{background:var(--amber);color:var(--ink);border-color:var(--amber)}
+
+/* ending (scene 9) */
+.cap[data-scene="9"]{top:0;display:flex;align-items:flex-end;justify-content:center;background:linear-gradient(to top,rgba(11,19,36,.9),transparent 70%);
+  padding:calc(60px + var(--sat)) calc(16px + var(--sar)) calc(70px + var(--sab)) calc(16px + var(--sal));overflow-y:auto}
+.cap[data-scene="9"].on{pointer-events:auto}
+#panel9{width:100%;max-width:480px;user-select:text;-webkit-user-select:text}
+#panel9 .lead{font-size:clamp(21px,5.6vw,26px);font-weight:400;line-height:1.5}
+#panel9 .lead .en{display:block;font-size:20px;color:var(--ivory2)}
+html[data-lang="th"] #panel9 .lead .en{display:none} html[data-lang="en"] #panel9 .lead .th{display:none}
+.tabs{display:flex;gap:6px;margin:16px 0 10px}
+.tabs button{flex:1;font:400 15px "Sarabun";padding:9px 6px;border-radius:999px;border:1px solid var(--line);background:none;color:var(--ivory2)}
+.tabs button[aria-selected="true"]{background:rgba(244,236,220,.12);color:var(--ivory);border-color:rgba(244,236,220,.35)}
+.tabpane{display:none}.tabpane.on{display:block}
+#letter p{font-size:17px;line-height:1.7;margin-top:8px}#letter .en{font-size:19px;color:var(--ivory2)}
+#jayline{margin-top:12px;font-size:17px;color:var(--amber);min-height:1.4em;outline:none}
+html.edit #jayline{border-bottom:1px dashed rgba(230,178,106,.5)}
+.btn{font:inherit;font-size:16px;color:var(--ink);background:var(--ivory);border:0;border-radius:999px;padding:12px 22px;cursor:pointer}
+.btn.ghost{background:transparent;color:var(--ivory);border:1px solid var(--line)}
+#storyBtn{margin-top:12px;width:100%}
+
+/* chrome: nav controls, dots, mute, lang */
+#nav{position:fixed;z-index:20;left:0;right:0;bottom:calc(14px + var(--sab));display:flex;align-items:center;justify-content:space-between;padding:0 calc(10px + var(--sal)) 0 calc(10px + var(--sar));pointer-events:none}
+#nav button{pointer-events:auto;min-width:88px;min-height:48px;font:400 15px "Sarabun";color:var(--ivory);background:rgba(11,19,36,.35);border:1px solid var(--line);border-radius:999px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+#nav #next{background:rgba(244,236,220,.14)}
+#dots{display:flex;gap:7px}
+#dots i{width:6px;height:6px;border-radius:50%;background:var(--ivory);opacity:.25;transition:all .6s var(--ease)}
+#dots i.on{opacity:1;background:var(--amber);width:16px;border-radius:3px}
+body[data-scene="0"] #nav{opacity:0;visibility:hidden}
+body[data-scene="9"] #next{visibility:hidden}
+.topbtn{position:fixed;z-index:25;top:calc(12px + var(--sat));width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:rgba(11,19,36,.4);color:var(--ivory);display:grid;place-items:center;font:500 13px "Sarabun";backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+#mute{right:calc(12px + var(--sar))}#lang{right:calc(64px + var(--sar))}
+#mute svg{width:18px;height:18px}#mute .i-off,#mute.off .i-on{display:none}#mute.off .i-off{display:block}
+
+/* story overlay */
+#story{position:fixed;inset:0;z-index:40;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;
+  padding:calc(20px + var(--sat)) 20px calc(20px + var(--sab));background:rgba(6,11,22,.94);opacity:0;visibility:hidden;transition:opacity .5s,visibility .5s}
+#story.open{opacity:1;visibility:visible}
+#storyPreview{display:flex;justify-content:center}
+#storyPreview canvas,#storyPreview img{max-width:min(78vw,380px);max-height:66vh;height:auto;border-radius:8px;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+#story .row{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+#story label{font-size:14px;color:var(--ivory2);display:flex;gap:8px;align-items:center}
+
+html.fast *,html.fast *::before,html.fast *::after{transition-duration:0s!important;animation-duration:0s!important}
+@media (prefers-reduced-motion:reduce){.cap{transform:none;transition:opacity .3s}}
+</style>
+</head>
+<body data-scene="0">
+<canvas id="gl"></canvas>
+
+<div id="gate" role="button" tabindex="0" aria-label="เริ่ม · begin">
+  <p class="q"><span class="th"><span class="nw">เกียวๆ</span> <span class="nw">พร้อมออกเดินทางหรือยัง?</span></span><span class="en">Keaw Keaw, ready?</span></p>
+  <span class="pulse"></span>
+  <span class="tap">แตะเพื่อเริ่ม <span class="en">· tap to begin</span></span>
+  <button id="resume" type="button">ไปที่เรื่องเล็ก ๆ วันนี้ <span class="en">· skip to today</span></button>
+</div>
+
+<div id="cap">
+  <section class="cap" data-scene="1">
+    <span class="tag">ชั้น<span class="nw">&nbsp;31</span> · <span class="en">the river</span></span>
+    <p class="th"><span class="nw">เจ้าพระยาตอนกลางคืน</span><wbr> <span class="nw">ไฟสองฝั่ง</span><wbr><span class="nw">กำลังจะกลายเป็นดาว</span></p>
+    <span class="en l">The Chao Phraya at night. The lights are about to become stars.</span>
+  </section>
+  <section class="cap" data-scene="2">
+    <span class="tag">ห้องเครื่อง · <span class="en">engine room</span></span>
+    <p class="th"><span class="nw">ยานลำนี้ใช้พลัง</span><wbr><span class="nw">จากคลาสสปิน</span><wbr> <span class="nw">ปัดเพื่อปั่น</span></p>
+    <span class="en l">Ship powered by spin class. Swipe to spin.</span>
+    <span class="note"><span class="th">นักบิน: ดอกไม้ปะทะ</span> <span class="en">· Jay's cardio: under review.</span></span>
+  </section>
+  <section class="cap" data-scene="3">
+    <span class="tag">ลิฟต์ · <span class="en">the lift</span></span>
+    <p class="th"><span class="nw">วันนี้เลิกงานแล้ว</span><wbr> <span class="nw">ไปพักกัน</span></p>
+    <span class="en l">Off duty. Your outie has declined another meeting.</span>
+    <div id="lift"><button type="button" data-f="work">WORK</button><button type="button" data-f="off">OFF DUTY</button></div>
+  </section>
+  <section class="cap" data-scene="4">
+    <span class="tag">กว่างโจว · เซินเจิ้น</span>
+    <p class="th">ธันวาคม 2025<wbr> ถึงปีใหม่ 2026</p>
+    <span class="en l">Guangzhou and Shenzhen, Dec 2025 to New Year 2026.</span>
+  </section>
+  <section class="cap" data-scene="5">
+    <span class="tag">คืนวันธรรมดา · <span class="en">a weeknight</span></span>
+    <p class="th">Silo · Severance · Hit Man<wbr> · Barbie · The Gentlemen</p>
+    <span class="en l">And our film, Interstellar, which this trip borrows a little from.</span>
+  </section>
+  <section class="cap" data-scene="6">
+    <span class="tag">เกียวๆ want coffee milk</span>
+    <p class="th"><span class="nw">วิธีชงกาแฟนม</span><wbr><span class="nw">ที่ล้ำเกินจำเป็น</span><wbr> <span class="nw">ลากเพื่อคน</span></p>
+    <span class="en l">An unnecessarily advanced way to make coffee milk. Drag to stir.</span>
+  </section>
+  <section class="cap" data-scene="7">
+    <span class="tag">สองวง · <span class="en">two rings</span></span>
+    <p class="th"><span class="nw">คนละจังหวะ</span><wbr> <span class="nw">ก็หาจังหวะร่วมกันได้</span></p>
+    <span class="en l">Different rhythms. Room for both. Drag one, watch the other.</span>
+  </section>
+  <section class="cap" data-scene="8">
+    <span class="tag">ชั้นวางของวันธรรมดา</span>
+    <p class="th">วันนี้มีเวลาให้กันสักนิดก็พอ</p>
+    <span class="en l">A little time together today.</span>
+  </section>
+  <section class="cap" data-scene="9">
+    <div id="panel9">
+      <p class="lead"><span class="th"><span class="nw">เกียวๆ ขอบคุณ</span><wbr><span class="nw">ที่ค่อย ๆ หาจังหวะ</span><wbr><span class="nw">ไปด้วยกันนะ</span></span><span class="en">Thank you for finding the rhythm with me.</span></p>
+      <div class="tabs" role="tablist">
+        <button role="tab" aria-selected="true" data-tab="mission">เรื่องเล็ก ๆ วันนี้</button>
+        <button role="tab" aria-selected="false" data-tab="letter">อ่านข้อความจากเจ</button>
+      </div>
+      <div id="mission" class="tabpane on"></div>
+      <div id="letter" class="tabpane">
+        <p><span class="nw">ตั้งแต่ธันวาคม 2023</span><wbr> <span class="nw">เรื่องที่ชอบที่สุด</span><wbr><span class="nw">ไม่ใช่เรื่องใหญ่</span><wbr> <span class="nw">แต่เป็นกาแฟนม</span> <span class="nw">คลาสสปิน</span><wbr> <span class="nw">กับซีรีส์คืนวันธรรมดา</span></p>
+        <p class="en">Since December 2023, my favourite things have been the small ones: coffee milk, spin class, a weeknight show.</p>
+        <!-- JAY: EDIT THIS LINE (read-only for her; open the page with ?edit=1 to change it) -->
+        <p id="jayline" spellcheck="false"></p>
+        <p class="en" style="color:var(--amber)">Jay</p>
+      </div>
+      <button id="storyBtn" class="btn" type="button">เก็บเป็นการ์ด <span class="en">· make a card</span></button>
+    </div>
+  </section>
+</div>
+
+<div id="nav"><button id="prev" type="button">ย้อนกลับ</button><div id="dots" aria-hidden="true"></div><button id="next" type="button">ต่อไป</button></div>
+
+<button id="lang" class="topbtn" type="button" aria-label="language">TH</button>
+<button id="mute" class="topbtn" type="button" aria-label="sound on/off" aria-pressed="false">
+  <svg class="i-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9z"/><path d="M16.5 8.5a5 5 0 0 1 0 7"/><path d="M19 6a8.5 8.5 0 0 1 0 12"/></svg>
+  <svg class="i-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9z"/><path d="M17 9l5 6M22 9l-5 6"/></svg>
+</button>
+
+<div id="story" role="dialog" aria-modal="true" aria-hidden="true" aria-label="การ์ด">
+  <div id="storyPreview"></div>
+  <label><input type="checkbox" id="withName"> ใส่ชื่อ เกียวๆ</label>
+  <div class="row">
+    <button id="shareBtn" class="btn" type="button">แชร์ภาพ</button>
+    <button id="dlBtn" class="btn ghost" type="button">บันทึกภาพ</button>
+    <button id="storyClose" class="btn ghost" type="button">ปิด</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  var N = 10, body = document.body, H = document.documentElement;
+  var q = location.search, fast = /[?&]fast=1\b/.test(q), edit = /[?&]edit=1\b/.test(q);
+  if (fast) H.classList.add('fast'); if (edit) H.classList.add('edit');
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var caps = [].slice.call(document.querySelectorAll('.cap'));
+  var dotsEl = document.getElementById('dots');
+  for (var i = 1; i < N; i++) dotsEl.appendChild(document.createElement('i'));
+  var dots = [].slice.call(dotsEl.children);
+  var INTERACTIVE = { 2: 1, 6: 1, 7: 1 };
+  var App = window.App = {
+    scene: 0, fast: fast, reduce: reduce, muted: false, begun: false, interactive: INTERACTIVE,
+    go: function(n){
+      n = Math.max(0, Math.min(N - 1, n | 0)); App.scene = n; body.setAttribute('data-scene', n);
+      caps.forEach(function(c){ c.classList.toggle('on', +c.dataset.scene === n); });
+      dots.forEach(function(d, k){ d.classList.toggle('on', k + 1 === n); });
+      if (n === 9) { try { localStorage.setItem('kk_seen', '1'); } catch (e) {} }
+      window.dispatchEvent(new CustomEvent('scene', { detail: n }));
+    }
+  };
+  window.__go = function(n){ if (!App.begun) App.begun = true; App.go(n); };
+  window.__sceneCount = N;
+  try { if (localStorage.getItem('kk_seen') === '1') body.classList.add('returning'); } catch (e) {}
+
+  // language toggle (both by default on desktop, TH on small phones)
+  var lang = 'both'; try { lang = localStorage.getItem('kk_lang') || (innerWidth < 500 ? 'th' : 'both'); } catch (e) {}
+  var lb = document.getElementById('lang');
+  function setLang(l){ lang = l; H.setAttribute('data-lang', l); lb.textContent = l === 'th' ? 'TH' : l === 'en' ? 'EN' : 'TH/EN'; lb.style.fontSize = l === 'both' ? '10px' : '13px'; try { localStorage.setItem('kk_lang', l); } catch (e) {} }
+  setLang(lang);
+  lb.addEventListener('click', function(){ setLang(lang === 'th' ? 'en' : lang === 'en' ? 'both' : 'th'); });
+
+  // gate: the first tap starts music (audio.js listens to 'begin') and the journey
+  var gate = document.getElementById('gate'), lastBegin = 0;
+  function begin(e, to){
+    if (App.begun || App.scene !== 0) return;
+    if (e) e.preventDefault();
+    App.begun = true; lastBegin = Date.now();
+    window.dispatchEvent(new CustomEvent('begin'));
+    App.go(to || 1);
+  }
+  document.getElementById('resume').addEventListener('pointerdown', function(e){ e.stopPropagation(); begin(e, 9); });
+  gate.addEventListener('pointerdown', function(e){ begin(e); });
+  gate.addEventListener('keydown', function(e){ if (e.key === 'Enter' || e.key === ' ') begin(e); });
+
+  // nav: explicit buttons; swipe on the scene only where the scene has no gesture of its own
+  document.getElementById('prev').addEventListener('click', function(){ App.go(App.scene - 1); });
+  document.getElementById('next').addEventListener('click', function(){ App.go(App.scene + 1); });
+  var cv = document.getElementById('gl'), sx = 0, sy = 0, lx = 0, ly = 0, down = false;
+  cv.addEventListener('pointerdown', function(e){ down = true; sx = lx = e.clientX; sy = ly = e.clientY; try { cv.setPointerCapture(e.pointerId); } catch (x) {} });
+  cv.addEventListener('pointermove', function(e){
+    if (!down) return;
+    if (INTERACTIVE[App.scene]) window.dispatchEvent(new CustomEvent('objdrag', { detail: { dx: e.clientX - lx, dy: e.clientY - ly, x: e.clientX, y: e.clientY } }));
+    lx = e.clientX; ly = e.clientY;
+  });
+  function up(e){ if (!down) return; down = false;
+    if (INTERACTIVE[App.scene] || Date.now() - lastBegin < 400) return;
+    var dx = e.clientX - sx, dy = e.clientY - sy;
+    if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy) * 1.2) App.go(App.scene + (dx < 0 ? 1 : -1)); }
+  cv.addEventListener('pointerup', up); cv.addEventListener('pointercancel', function(){ down = false; });
+  cv.style.touchAction = 'none';
+  window.addEventListener('keydown', function(e){
+    if (App.scene === 0) return;
+    var t = e.target; if (t && t.closest && t.closest('button,input,textarea,[contenteditable="true"],#story')) return;
+    if (document.getElementById('story').classList.contains('open')) return;
+    if (e.key === 'ArrowRight' || e.key === 'PageDown') { e.preventDefault(); App.go(App.scene + 1); }
+    else if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); App.go(App.scene - 1); }
+  });
+
+  // lift buttons (scene 3)
+  [].forEach.call(document.querySelectorAll('#lift button'), function(b){
+    b.addEventListener('click', function(){ [].forEach.call(document.querySelectorAll('#lift button'), function(x){ x.classList.toggle('lit', x === b); });
+      window.dispatchEvent(new CustomEvent('lift', { detail: b.dataset.f })); });
+  });
+
+  // tabs (scene 9)
+  [].forEach.call(document.querySelectorAll('.tabs button'), function(b){
+    b.addEventListener('click', function(){ [].forEach.call(document.querySelectorAll('.tabs button'), function(x){ x.setAttribute('aria-selected', x === b); });
+      [].forEach.call(document.querySelectorAll('.tabpane'), function(p){ p.classList.toggle('on', p.id === b.dataset.tab); }); });
+  });
+
+  // story dialog with focus trap; mission.js draws the card and handles share/save
+  var story = document.getElementById('story'), opener = null;
+  function closeStory(){ story.classList.remove('open'); story.setAttribute('aria-hidden', 'true'); window.dispatchEvent(new CustomEvent('storyclose')); if (opener) opener.focus(); }
+  document.getElementById('storyBtn').addEventListener('click', function(){
+    opener = this; story.classList.add('open'); story.setAttribute('aria-hidden', 'false');
+    window.dispatchEvent(new CustomEvent('storyopen')); setTimeout(function(){ document.getElementById('shareBtn').focus(); }, 50);
+  });
+  document.getElementById('storyClose').addEventListener('click', closeStory);
+  story.addEventListener('keydown', function(e){
+    if (e.key === 'Escape') { closeStory(); return; }
+    if (e.key !== 'Tab') return;
+    var f = [].slice.call(story.querySelectorAll('button,input')), a = document.activeElement;
+    if (e.shiftKey && a === f[0]) { e.preventDefault(); f[f.length - 1].focus(); }
+    else if (!e.shiftKey && a === f[f.length - 1]) { e.preventDefault(); f[0].focus(); }
+  });
+
+  // JAY: EDIT THIS LINE. Change DEF to the line you want her to see. It is read-only for her;
+  // open the page with ?edit=1 on your own phone to type a new one (saved in that browser only).
+  var KEY = 'kk_jayline', DEF = 'วันนี้เป็นไงบ้าง เล่าให้ฟังหน่อย';
+  var jl = document.getElementById('jayline'), saved = null;
+  try { saved = edit ? localStorage.getItem(KEY) : null; } catch (e) {}
+  jl.textContent = saved && saved.trim() ? saved : DEF;
+  if (edit) {
+    jl.setAttribute('contenteditable', 'true');
+    jl.addEventListener('input', function(){ try { localStorage.setItem(KEY, jl.textContent.trim()); } catch (e) {} });
+    jl.addEventListener('keydown', function(e){ if (e.key === 'Enter') { e.preventDefault(); jl.blur(); } });
+  }
+
+  App.go(0);
+  if (fast) document.addEventListener('DOMContentLoaded', function(){ App.begun = true; App.go(1); });
+})();
+</script>
+<script type="module" src="scene.js"></script>
+<script src="audio.js"></script>
+<script src="mission.js"></script>
+</body>
+</html>
