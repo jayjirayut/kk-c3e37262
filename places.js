@@ -7,7 +7,7 @@
   // img: card art, 800x1000. A place without img gets its name set in a 1px frame; adding img: 'img/sel.webp' later is all it takes.
   // pos: focal point for the crop (x for the tall phone crop, y for the wide one); alt/altTh describe the photograph.
   var P = [
-    { id: 'tyo', lat: 35.68, lon: 139.69, en: 'Tokyo, Japan', th: 'โตเกียว ญี่ปุ่น', s: 'Tokyo', sTh: 'โตเกียว',
+    { id: 'tyo', lat: 35.68, lon: 139.69, en: 'Tokyo', th: 'โตเกียว', s: 'Tokyo', sTh: 'โตเกียว',
       img: 'img/tyo.webp', pos: '50% 50%', alt: 'Shibuya Crossing from high above at night, neon screens and lit streets',
       altTh: 'สี่แยกชิบุยะมุมสูงยามค่ำคืน จอนีออนและถนนที่สว่างไสว', credit: ['Sarmat Batagov', 'https://unsplash.com/photos/busy-shibuya-crossing-at-night-with-neon-lights-keRAW9X0OlM'],
       nyeEn: '~6h direct. Around midnight, temple bells are rung 108 times: joya no kane.',
@@ -19,7 +19,7 @@
       src: ['flightroutes.com', 'flightsfrom.com', 'flightmapper.net'],
       doEn: 'Ginza flagships by day, the Shibuya crossing at night, teamLab the next morning.',
       doTh: 'กลางวันเดินร้านแฟล็กชิปย่านกินซ่า กลางคืนข้ามแยกชิบุยะ เช้าวันต่อมาไป teamLab' },
-    { id: 'sel', lat: 37.57, lon: 126.98, en: 'Seoul, South Korea', th: 'โซล เกาหลีใต้', s: 'Seoul', sTh: 'โซล',
+    { id: 'sel', lat: 37.57, lon: 126.98, en: 'Seoul', th: 'โซล', s: 'Seoul', sTh: 'โซล',
       img: 'img/sel.webp', pos: '50% 50%', alt: 'N Seoul Tower lit blue against the night sky', altTh: 'หอคอยเอ็นโซลเปิดไฟสีน้ำเงินตัดกับฟ้ายามค่ำ', credit: ['Fili Santillán', 'https://unsplash.com/photos/a-tall-tower-with-a-blue-light-on-top-of-it-z_-dKly3dic'],
       whyEn: 'Gangnam and Seongsu, for beauty and tech.',
       whyTh: 'กังนัมกับซองซู เมืองของบิวตี้และเทคโนโลยี',
@@ -37,7 +37,7 @@
       src: ['eoob.sg', 'kayak.sg', 'bangkokknowledge.com'],
       doEn: 'Orchard Road by day, Gardens by the Bay in the evening, Marina Bay to finish.',
       doTh: 'กลางวันเดินถนนออร์ชาร์ด เย็นไป Gardens by the Bay ปิดท้ายที่มารีน่าเบย์' },
-    { id: 'sha', lat: 31.24, lon: 121.50, en: 'Shanghai, China', th: 'เซี่ยงไฮ้ จีน', s: 'Shanghai', sTh: 'เซี่ยงไฮ้',
+    { id: 'sha', lat: 31.24, lon: 121.50, en: 'Shanghai', th: 'เซี่ยงไฮ้', s: 'Shanghai', sTh: 'เซี่ยงไฮ้',
       img: 'img/sha.webp', pos: '50% 50%', alt: 'The Lujiazui skyline from the Bund at dawn, mirrored in the Huangpu River', altTh: 'เส้นขอบฟ้าลู่เจียจุ่ยมองจากเดอะบันด์ยามรุ่งสาง สะท้อนบนแม่น้ำหวงผู่', credit: ['Freeman Zhou', 'https://unsplash.com/photos/lujiazui-skyline-at-the-bund-shanghai-oV9hp8wXkPE'],
       whyEn: 'Another river city: the Bund on one bank, Lujiazui on the other.',
       whyTh: 'อีกเมืองริมแม่น้ำ เดอะบันด์อยู่ฝั่งหนึ่ง ลู่เจียจุ่ยอยู่อีกฝั่ง',
@@ -55,7 +55,7 @@
       src: ['emirates.com', '2lnr.com', 'agoda'],
       doEn: 'The Museum of the Future in the morning, Dubai Mall in the afternoon.',
       doTh: 'เช้าไปพิพิธภัณฑ์แห่งอนาคต บ่ายเดินดูไบมอลล์' },
-    { id: 'nyc', lat: 40.71, lon: -74.01, en: 'New York, USA', th: 'นิวยอร์ก สหรัฐอเมริกา', s: 'New York', sTh: 'นิวยอร์ก',
+    { id: 'nyc', lat: 40.71, lon: -74.01, en: 'New York', th: 'นิวยอร์ก', s: 'New York', sTh: 'นิวยอร์ก',
       img: 'img/nyc.webp', pos: '50% 50%', alt: 'A SoHo cast-iron facade seen from below against a pale sky', altTh: 'ด้านหน้าตึกเหล็กหล่อย่านโซโหมองจากด้านล่างตัดกับฟ้าสีอ่อน', credit: ['Ilse', 'https://unsplash.com/photos/low-angle-photo-of-high-rise-building-1IqnWACggZs'],
       whyEn: 'An autumn walk through SoHo, with time to stop for coffee.',
       whyTh: 'เดินเล่นโซโหในฤดูใบไม้ร่วง แวะพักกินกาแฟกันระหว่างทาง',
