@@ -7,15 +7,14 @@
   var RIT = [
     { id: 'spin', th: 'ปั่นสปิน', en: 'Spin class', who: 'เกียวๆ', whoEn: 'Keaw Keaw' },
     { id: 'his', th: null, en: "Jay's thing", who: 'เจ', whoEn: 'Jay' },
-    { id: 'coffee', th: 'กาแฟนม<wbr>ที่ระเบียง', en: 'Coffee milk, balcony', who: 'สองคน', whoEn: 'Both' },
-    { id: 'kind', th: 'เรื่องดี ๆ<wbr>ให้กัน', en: 'One kind thing', who: 'สองคน', whoEn: 'Both' }
+    { id: 'coffee', th: 'กาแฟที่ระเบียง', en: 'Coffee on the balcony', who: 'สองคน', whoEn: 'Both' },
+    { id: 'kind', th: 'เลือกตอนที่จะดูด้วยกัน', en: 'Pick an episode together', who: 'สองคน', whoEn: 'Both' }
   ];
   // Questions, not slogans. One per day.
   var DAILY = [
     ['วันนี้อยากให้ช่วยอะไรไหม?', 'Anything I can help with today?'],
     ['วันนี้มีอะไรอยากเล่าให้ฟังไหม?', 'Anything you want to tell me about today?'],
     ['วันนี้เริ่มจากกาแฟก่อน', 'Coffee first today.'],
-    ['คืนนี้ดูตอนต่อไปกันไหม?', 'Next episode tonight?'],
     ['วันนี้พักบ้างนะ', 'Take a break today.'],
     ['ปั่นเสร็จแล้วกินอะไรดี?', 'After spin, what are we eating?']
   ];
@@ -30,13 +29,13 @@
     s.textContent = '#mission .q{margin-bottom:18px;font:400 16px/1.55 var(--sans);color:var(--ivory)}#mission .q .th{font-family:var(--thai)}' +
       'html[data-lang="both"] #mission .q .en{display:block;margin-top:2px;font-size:14px;color:var(--ivory2)}' +
       '#mission .grid{display:block;border-top:1px solid rgba(241,235,221,.16)}' +
-      '#mission .r{position:relative;display:flex;align-items:center;justify-content:space-between;gap:16px;width:100%;min-height:56px;padding:12px 0 12px 18px;text-align:left;word-break:keep-all;' +
+      '#mission .r{position:relative;display:flex;align-items:center;justify-content:space-between;gap:16px;width:100%;min-height:64px;padding:12px 0 12px 36px;text-align:left;word-break:keep-all;' +
         'border:0;border-bottom:1px solid rgba(241,235,221,.16);border-radius:0;background:none;color:var(--ivory);' +
         'font:400 17px/1.4 var(--sans);cursor:pointer;transition:color .24s cubic-bezier(.2,0,0,1)}' +
-      '#mission .r::before{content:"";position:absolute;left:0;top:50%;width:6px;height:6px;margin-top:-3px;border-radius:50%;border:1px solid rgba(241,235,221,.3);transition:background .24s cubic-bezier(.2,0,0,1),border-color .24s}' +
+      '#mission .r::before{content:"";position:absolute;left:0;top:50%;width:20px;height:20px;margin-top:-10px;border-radius:50%;border:1px solid rgba(241,235,221,.4);transition:background .24s cubic-bezier(.2,0,0,1),border-color .24s}' +
       '#mission .r.done::before{background:var(--gold);border-color:var(--gold)}#mission .lab{display:flex;flex-direction:column;gap:2px}' +
       '#mission .r .th{font:400 17px/1.6 var(--thai)}' +
-      '#mission .who{flex:none;font:400 13px/1.4 var(--sans);color:var(--ivory2);text-align:right}' +
+      '#mission .who{flex:0 0 88px;font:400 13px/1.4 var(--sans);color:var(--ivory2);text-align:right}#mission .lab{flex:1;min-width:0}#mission .r.done::after{content:"";position:absolute;left:7px;top:50%;width:5px;height:9px;margin-top:-6px;border-right:1.5px solid var(--ink);border-bottom:1.5px solid var(--ink);transform:rotate(45deg)}' +
       '#mission .who .th{font:400 13px/1.6 var(--thai)}' +
       '#mission .r.set{color:var(--ivory2)}' +
       '#mission .r.set>.th,#mission .r.set>.en{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:5px;text-decoration-color:var(--line2)}' +
@@ -44,7 +43,7 @@
       '#mission .r:focus-visible{outline:1px solid var(--ivory);outline-offset:-6px}' +
       '#mission .r [contenteditable]{outline:none;border-bottom:1px solid var(--line2)}' +
       '#mission .foot{margin-top:16px;font:400 13px/1.55 var(--sans);color:var(--ivory2)}#mission .foot .th{font-family:var(--thai)}' +
-      '#mission .foot.fine{margin-top:4px;font-size:13px;color:var(--ivory2)}' +
+      '#mission .foot.fine{margin-top:4px;font:400 12px/18px var(--sans);color:var(--ivory2)}' +
       'html[data-lang="th"] #mission .en{display:none}html[data-lang="en"] #mission .th{display:none}' +
       'html[data-lang="both"] #mission .who .en{display:none}html[data-lang="both"] #mission .r>.en{font-size:12px;color:var(--ivory2)}' +
       'html[data-lang="both"] #mission .r.done>.en{color:inherit}';
@@ -65,7 +64,7 @@
     var n = days(log), s = run(log);
     h += '</div><p class="foot">' + (n ? '<span class="th">บันทึกไว้แล้ว ' + n + ' วัน' + (s > 1 ? ' (ติดกัน ' + s + ' วัน)' : '') + '</span> <span class="en">' + n + ' days logged' + (s > 1 ? ', ' + s + ' in a row' : '') + '</span>'
       : '<span class="th">เลือกสักอย่างสำหรับวันนี้</span> <span class="en">Pick one for today.</span>') + '</p>' +
-      '<p class="foot fine"><span class="th">บันทึกไว้ในเครื่องนี้เท่านั้น ไม่ได้ซิงก์กับอีกเครื่อง</span> <span class="en">Saved on this device only. Not synced.</span></p>';
+      '<p class="foot fine"><span class="th" title="ไม่ได้ซิงก์กับเครื่องอื่น">บันทึกไว้ในเครื่องนี้</span> <span class="en" title="Not synced to other phones">Saved on this device</span></p>';
     el.innerHTML = h; el.dataset.day = today;
   }
   function bind() {

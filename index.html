@@ -216,6 +216,16 @@ html[data-lang="both"] .ui>.en{font-size:13px}
 .cap .en.l{font-weight:400}.cap>.th{font-weight:400}.cap .note{font:400 15px/22px var(--sans)}
 @media (min-width:820px){.cap{max-width:none}.cap>*{max-width:420px}.cap{padding-left:calc(8vw + var(--sal))}}
 @media (prefers-reduced-motion:reduce){*{transition-duration:0s!important}}
+/* pass 6 */
+#gate .pulse{display:none}
+.cap .tag{font:400 14px/20px var(--sans)}.cap .tag [lang="th"]{font:400 14px/1.6 var(--thai)}
+.cap>.th{font:400 24px/1.5 var(--thai)!important}
+.cap .en.l,html[data-lang="en"] .cap .en.l{font:400 24px/30px var(--sans)!important;color:var(--ivory)}
+.cue{font:400 16px/24px var(--sans)!important}.cue .th{font:400 16px/1.6 var(--thai)!important}
+#lift button.lit{background:var(--ivory)!important;color:var(--ink)!important;border-color:var(--ivory)!important}
+#placesBtn .pl>span.en::after,#placesBtn .pl>span.th::after{content:"";display:inline-block;width:6px;height:6px;margin-left:10px;border-top:1px solid currentColor;border-right:1px solid currentColor;transform:translateY(-2px) rotate(45deg)}
+#nav button.arrow{font-size:20px!important;min-width:44px;min-height:44px}
+#dots i{opacity:.16}
 </style>
 </head>
 <body data-scene="0">
@@ -232,8 +242,8 @@ html[data-lang="both"] .ui>.en{font-size:13px}
 <div id="cap">
   <section class="cap" data-scene="1">
     <span class="tag"><span lang="th">ชั้น<span class="nw">&nbsp;31</span></span><span class="en">Floor 31, the river</span></span>
-    <p class="th"><span class="nw">เจ้าพระยาตอนกลางคืน</span><wbr> <span class="nw">ไฟสองฝั่ง</span><wbr><span class="nw">กำลังจะกลายเป็นดาว</span></p>
-    <span class="en l">The Chao Phraya at night. The lights are about to become stars.</span>
+    <p class="th"><span class="nw">เจ้าพระยาตอนกลางคืน</span></p>
+    <span class="en l">The Chao Phraya at night.</span>
   </section>
   <section class="cap" data-scene="2">
     <span class="tag"><span lang="th">ห้องเครื่อง</span><span class="en">Engine room</span></span>
@@ -246,7 +256,7 @@ html[data-lang="both"] .ui>.en{font-size:13px}
     <span class="tag"><span lang="th">ลิฟต์</span><span class="en">The lift</span></span>
     <p class="th"><span class="nw">วันนี้เลิกงานแล้ว</span><wbr> <span class="nw">ไปพักกัน</span></p>
     <span class="en l">Off duty.</span>
-    <span class="cue"><span class="th">แตะชั้น</span><span class="en">Tap a floor.</span></span>
+    <span class="cue"><span class="th">เลือกโหมด</span><span class="en">Choose a mode.</span></span>
     <div id="lift"><button type="button" data-f="work">Work</button><button type="button" data-f="off">Off duty</button></div>
   </section>
   <section class="cap" data-scene="4">
@@ -268,7 +278,7 @@ html[data-lang="both"] .ui>.en{font-size:13px}
     <span class="tag"><span lang="th">สองวงโคจร</span><span class="en">Two orbits</span></span>
     <p class="th"><span class="nw">คนละตาราง</span><wbr> <span class="nw">แต่เว้นเย็นไว้ให้กัน</span></p>
     <span class="en l">Two schedules. One evening kept free.</span>
-    <span class="cue"><span class="th">ลากวงหนึ่ง</span><span class="en">Drag one.</span></span>
+    <span class="cue"><span class="th">พาสองจุดมาเจอกัน</span><span class="en">Bring the two points together.</span></span>
   </section>
   <section class="cap" data-scene="8">
     <span class="tag"><span lang="th">ชั้นวางของวันธรรมดา</span></span>
@@ -292,7 +302,7 @@ html[data-lang="both"] .ui>.en{font-size:13px}
         <p class="sig">Jay</p>
       </div>
       <button id="storyBtn" class="btn ui primary" type="button"><span class="th">เก็บเป็นการ์ด</span><span class="en">Make a card</span><span class="arr" aria-hidden="true">→</span></button>
-      <button id="placesBtn" class="btn ghost ui" type="button" aria-haspopup="dialog" aria-controls="places"><span class="pl"><span class="th">ที่ที่อยากไปด้วยกัน</span><span class="en">Places we go together</span><span aria-hidden="true">&nbsp;↗</span></span><span id="placesNext"></span></button>
+      <button id="placesBtn" class="btn ghost ui" type="button" aria-haspopup="dialog" aria-controls="places"><span class="pl"><span class="th">ที่ที่อยากไปด้วยกัน</span><span class="en">Places we go together</span></span><span id="placesNext"></span></button>
     </div>
   </section>
 </div>

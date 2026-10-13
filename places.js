@@ -15,7 +15,7 @@
       whyEn: 'Ginza, Shibuya and teamLab: shopping, design and digital art in one city.',
       whyTh: 'กินซ่า ชิบุยะ และ teamLab ช้อปปิ้ง ดีไซน์ และศิลปะดิจิทัลในเมืองเดียว',
       monEn: 'Mid Nov to early Dec', monTh: 'กลาง พ.ย. ถึงต้น ธ.ค.', monNote: 'for autumn colour; peak varies', monNoteTh: 'สำหรับใบไม้เปลี่ยนสี ช่วงพีคแต่ละปีไม่เท่ากัน',
-      fly: '~6h nonstop (HND or NRT)', flyTh: '~6 ชม. บินตรง (HND หรือ NRT)',
+      fly: 'About 6h · nonstop · HND or NRT', flyTh: 'ราว 6 ชม. · บินตรง · HND หรือ NRT',
       src: ['flightroutes.com', 'flightsfrom.com', 'flightmapper.net'],
       doEn: 'Ginza flagships by day, the Shibuya crossing at night, teamLab the next morning.',
       doTh: 'กลางวันเดินร้านแฟล็กชิปย่านกินซ่า กลางคืนข้ามแยกชิบุยะ เช้าวันต่อมาไป teamLab' },
@@ -24,16 +24,16 @@
       whyEn: 'Gangnam and Seongsu, for beauty and tech.',
       whyTh: 'กังนัมกับซองซู เมืองของบิวตี้และเทคโนโลยี',
       monEn: 'Late Mar to Apr, or Oct to Nov', monTh: 'ปลาย มี.ค. ถึง เม.ย. หรือ ต.ค. ถึง พ.ย.', monNote: 'cherry blossom or autumn leaves', monNoteTh: 'ช่วงซากุระบาน หรือช่วงใบไม้เปลี่ยนสี',
-      fly: '~5 to 5.5h nonstop (ICN)', flyTh: '~5 ถึง 5.5 ชม. บินตรง (ICN)',
+      fly: 'About 5 to 5.5h · nonstop · ICN', flyTh: 'ราว 5 ถึง 5.5 ชม. · บินตรง · ICN',
       src: ['flightq.app', 'kayak', 'getyourguide.com'],
       doEn: 'Gangnam in the afternoon, Seongsu cafés and pop-up stores the next day.',
       doTh: 'บ่ายเดินกังนัม วันต่อมาไปคาเฟ่และป๊อปอัปสโตร์ที่ซองซู' },
-    { id: 'sin', lat: 1.29, lon: 103.85, en: 'Singapore, City-state', th: 'สิงคโปร์ นครรัฐ', s: 'Singapore', sTh: 'สิงคโปร์',
+    { id: 'sin', lat: 1.29, lon: 103.85, en: 'Singapore, Southeast Asia', th: 'สิงคโปร์ เอเชียตะวันออกเฉียงใต้', s: 'Singapore', sTh: 'สิงคโปร์',
       img: 'img/sin.webp', pos: '50% 50%', alt: 'Marina Bay Sands and the bay at night', altTh: 'มารีน่าเบย์แซนด์สและอ่าวยามค่ำ',
       whyEn: 'The closest city on the list, about two and a half hours away.',
       whyTh: 'ใกล้ที่สุดในลิสต์ บินราวสองชั่วโมงครึ่ง',
       monEn: 'Feb to Apr', monTh: 'ก.พ. ถึง เม.ย.', monNote: 'driest months', monNoteTh: 'ช่วงที่ฝนน้อยที่สุด',
-      fly: '~2.5h nonstop (SIN)', flyTh: '~2.5 ชม. บินตรง (SIN)',
+      fly: 'About 2.5h · nonstop · SIN', flyTh: 'ราว 2.5 ชม. · บินตรง · SIN',
       src: ['eoob.sg', 'kayak.sg', 'bangkokknowledge.com'],
       doEn: 'Orchard Road by day, Gardens by the Bay in the evening, Marina Bay to finish.',
       doTh: 'กลางวันเดินถนนออร์ชาร์ด เย็นไป Gardens by the Bay ปิดท้ายที่มารีน่าเบย์' },
@@ -42,7 +42,7 @@
       whyEn: 'Another river city: the Bund on one bank, Lujiazui on the other.',
       whyTh: 'อีกเมืองริมแม่น้ำ เดอะบันด์อยู่ฝั่งหนึ่ง ลู่เจียจุ่ยอยู่อีกฝั่ง',
       monEn: 'Oct to Nov', monTh: 'ต.ค. ถึง พ.ย.', monNote: 'mild and settled; spring also mild but rainier', monNoteTh: 'อากาศกำลังสบาย ไม่ค่อยแปรปรวน หน้าใบไม้ผลิก็สบายเหมือนกันแต่ฝนเยอะกว่า',
-      fly: '~4.5h nonstop (PVG)', flyTh: '~4.5 ชม. บินตรง (PVG)',
+      fly: 'About 4.5h · nonstop · PVG', flyTh: 'ราว 4.5 ชม. · บินตรง · PVG',
       src: ['airportoverview.com', '2lnr.com', 'Google Flights'],
       doEn: 'A walk along the Bund after dark, Lujiazui lit across the river.',
       doTh: 'เดินริมเดอะบันด์ตอนค่ำ มองลู่เจียจุ่ยเปิดไฟอยู่อีกฝั่ง' },
@@ -51,19 +51,19 @@
       whyEn: 'Dubai Mall and the Museum of the Future, six hours from home.',
       whyTh: 'ดูไบมอลล์กับพิพิธภัณฑ์แห่งอนาคต บินจากบ้านราวหกชั่วโมง',
       monEn: 'Nov to Mar', monTh: 'พ.ย. ถึง มี.ค.', monNote: 'cooler months', monNoteTh: 'ช่วงที่อากาศเย็นกว่า',
-      fly: '~6h nonstop (DXB)', flyTh: '~6 ชม. บินตรง (DXB)',
+      fly: 'About 6h · nonstop · DXB', flyTh: 'ราว 6 ชม. · บินตรง · DXB',
       src: ['emirates.com', '2lnr.com', 'agoda'],
       doEn: 'The Museum of the Future in the morning, Dubai Mall in the afternoon.',
       doTh: 'เช้าไปพิพิธภัณฑ์แห่งอนาคต บ่ายเดินดูไบมอลล์' },
     { id: 'nyc', lat: 40.71, lon: -74.01, en: 'New York, United States', th: 'นิวยอร์ก สหรัฐอเมริกา', s: 'New York', sTh: 'นิวยอร์ก',
       img: 'img/nyc.webp', pos: '50% 50%', alt: 'Manhattan at night, a lit avenue of shopfronts between towers',
-      whyEn: 'Fifth Avenue and SoHo, in autumn.',
-      whyTh: 'ฟิฟท์อเวนิวกับโซโห ในฤดูใบไม้ร่วง',
+      whyEn: 'An autumn walk through SoHo, with time to stop for coffee.',
+      whyTh: 'เดินเล่นโซโหในฤดูใบไม้ร่วง แวะพักกินกาแฟกันระหว่างทาง',
       monEn: 'Sep to Nov', monTh: 'ก.ย. ถึง พ.ย.', monNote: 'autumn; October mildest', monNoteTh: 'ฤดูใบไม้ร่วง ตุลาคมอากาศสบายที่สุด',
-      fly: '~20 to 21h, 1 stop (JFK)', flyTh: '~20 ถึง 21 ชม. ต่อเครื่อง 1 ครั้ง (JFK)', flyNote: 'no nonstop', flyNoteTh: 'ไม่มีบินตรง',
+      fly: 'About 20 to 21h · 1 stop · JFK', flyTh: 'ราว 20 ถึง 21 ชม. · ต่อเครื่อง 1 ครั้ง · JFK',
       src: ['flightroutes.com', 'momondo.com', 'weather.gov normals'],
-      doEn: 'Fifth Avenue one day, SoHo the next.',
-      doTh: 'วันหนึ่งเดินฟิฟท์อเวนิว อีกวันไปโซโห' },
+      doEn: 'Window shopping along Fifth Avenue.',
+      doTh: 'เดินดูร้านไปตามฟิฟท์อเวนิว' },
     { id: 'kef', lat: 64.15, lon: -21.94, en: 'Reykjavik, Iceland', th: 'เรคยาวิก ไอซ์แลนด์', s: 'Reykjavik', sTh: 'เรคยาวิก',
       img: 'img/kef.webp', pos: '60% 55%', alt: 'Green aurora over a lagoon of floating ice',
       altTh: 'แสงเหนือสีเขียวเหนือทะเลสาบที่มีก้อนน้ำแข็งลอย',
@@ -72,7 +72,7 @@
       whyEn: 'We both love Interstellar. One evening, just looking up.',
       whyTh: 'ชอบ Interstellar เหมือนกัน ลองไปดูท้องฟ้าจริงกันสักคืน',
       monEn: 'For northern lights: Sep to Mar', monTh: 'ช่วงดูแสงเหนือ: ก.ย. ถึง มี.ค.', monNote: 'season runs into April; weather dependent', monNoteTh: 'ฤดูยาวไปถึงเมษายน ขึ้นกับสภาพอากาศ',
-      fly: '~18 to 21h, 1 stop to KEF; longer connections possible', flyTh: '~18 ถึง 21 ชม. ต่อเครื่อง 1 ครั้ง ถึง KEF บางเส้นทางต่อเครื่องนานกว่านี้', flyNote: 'no direct', flyNoteTh: 'ไม่มีบินตรง',
+      fly: 'About 18 to 21h · 1 stop · KEF', flyTh: 'ราว 18 ถึง 21 ชม. · ต่อเครื่อง 1 ครั้ง · KEF', flyNote: 'longer connections possible', flyNoteTh: 'บางเส้นทางต่อเครื่องนานกว่านี้',
       src: ['visiticeland.com', 'flightroutes.com', 'flightsfrom.com', 'flightmapper.net'],
       doEn: 'Drive past the city lights on a clear night with a thermos of coffee milk, and wait for the sky to move.',
       doTh: 'ขับรถออกนอกเมืองคืนฟ้าใส พกกระติกกาแฟนมไปด้วย แล้วนั่งรอให้ฟ้าเริ่มขยับ' },
@@ -82,7 +82,7 @@
       whyEn: 'For our Interstellar habit, with hot pools afterwards.',
       whyTh: 'ดูดาวให้เต็มตา แล้วไปแช่น้ำอุ่นกัน',
       monEn: 'Jun to Aug', monTh: 'มิ.ย. ถึง ส.ค.', monNote: 'for winter stargazing', monNoteTh: 'สำหรับดูดาวหน้าหนาว',
-      fly: '~14 to 16h to Christchurch (CHC), 1 stop, then ~3 to 4h drive', flyTh: '~14 ถึง 16 ชม. ถึงไครสต์เชิร์ช (CHC) ต่อเครื่อง 1 ครั้ง แล้วขับรถอีก ~3 ถึง 4 ชม.', flyNote: 'no direct', flyNoteTh: 'ไม่มีบินตรง',
+      fly: 'About 14 to 16h · 1 stop · CHC', flyTh: 'ราว 14 ถึง 16 ชม. · ต่อเครื่อง 1 ครั้ง · CHC', flyNote: 'then about 3 to 4h by road', flyNoteTh: 'แล้วขับรถอีกราว 3 ถึง 4 ชม.',
       src: ['newzealand.com', 'flightroutes.com', 'flightsfrom.com', 'flightmapper.net'],
       doEn: 'A stargazing tour, then hot pools under the same sky.',
       doTh: 'ทัวร์ดูดาว แล้วแช่บ่อน้ำอุ่นใต้ฟ้าเดียวกัน' }
@@ -94,11 +94,11 @@
     close: ['Close', 'ปิด'],
     intro: ['Eight ideas for a trip together.', 'แปดไอเดียสำหรับทริปด้วยกัน'],
     pick: ['Choose a city to begin.', 'เลือกเมืองเพื่อเริ่มดู'],
-    spin: ['Spin for it', 'หมุนวัดดวง'],
+    spin: ['Surprise me', 'สุ่มให้หน่อย'],
     next: ['Next trip: ', 'ทริปต่อไป: '],
     saved: ['Saved on this device', 'บันทึกไว้ในเครื่องนี้'],
     best: ['When', 'ช่วงเวลา'],
-    from: ['Journey from BKK', 'การเดินทางจาก กทม.'],
+    from: ['From Bangkok', 'จากกรุงเทพฯ'],
     tog: ['Together', 'ทำด้วยกัน'],
     places: ['Places', 'สถานที่'],
     mark: ['Mark this place', 'ทำเครื่องหมายที่นี่'],
@@ -306,7 +306,7 @@
       '#places .plHead{display:flex!important;flex-direction:column-reverse;align-items:stretch;gap:0;padding:var(--sat) 12px 0 24px!important}' +
       '#places .plHead>div{padding:8px 12px 0 0}#places .plCtl{height:48px;justify-content:flex-end;gap:0}' +
       '#places .plCtl button{min-width:44px;min-height:44px;padding:0 10px;font:400 13px/16px var(--sans);letter-spacing:0;text-transform:none;color:var(--ivory2);transition:color .18s linear}' +
-      '#places .plCtl button>span{text-decoration:none}#places .plCtl button:hover{color:var(--ivory)}#places .plCtl .th{font:400 14px/1.4 var(--thai)}' +
+      '#plMute svg{width:18px;height:18px;display:block}#places .plCtl button>span{text-decoration:none}#places .plCtl button:hover{color:var(--ivory)}#places .plCtl .th{font:400 14px/1.4 var(--thai)}' +
       '#plTitle{font:400 32px/36px var(--serif)!important;letter-spacing:0}#plTitle .th{font:400 26px/1.4 var(--thaiSerif,var(--thai))!important}#plHint{display:none}' +
       '#plCity{display:flex;align-items:stretch;justify-content:space-between;margin:24px 24px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}' +
       '#plCityB{flex:1;display:flex;align-items:center;gap:16px;min-height:48px;padding:0;border:0;background:none;color:var(--ivory);cursor:pointer;text-align:left}' +
@@ -318,7 +318,7 @@
       /* map view: full screen, globe, legend and caption live here only */
       '#plWrap{display:none!important}#places.map #plWrap{display:flex!important;position:fixed;inset:0;z-index:5;flex-direction:column;background:#0B1323;padding:var(--sat) 0 var(--sab)}' +
       '#plWrap .mapBar{flex:none;display:flex;align-items:center;justify-content:space-between;height:48px;padding:0 24px}#plWrap .mh{font:400 13px/16px var(--sans);color:var(--ivory2)}' +
-      '#places.map #plStage{flex:1 1 auto;min-height:0}#plKey{padding:16px 24px 24px}#plKey .kc{font:400 13px/18px var(--sans)!important;letter-spacing:0!important;text-transform:none!important;color:var(--ivory2)}' +
+      '#plKey .kc{display:none!important}#places.map #plStage{flex:1 1 auto;min-height:0}#plKey{padding:16px 24px 24px}#plKey .kc{font:400 13px/18px var(--sans)!important;letter-spacing:0!important;text-transform:none!important;color:var(--ivory2)}' +
       '#plKey li{font:400 13px/18px var(--sans)!important;letter-spacing:0!important;text-transform:none!important}' +
       /* city index: two columns of square thumbnails */
       '#plList{display:none!important}' +
@@ -361,6 +361,16 @@
       '#plCard .acts .sec button::before{content:"";width:4px;height:4px;border-radius:50%;background:transparent;transition:background .24s cubic-bezier(.2,0,0,1)}' +
       '#plCard .acts .sec button[aria-pressed="true"]{color:var(--ivory)}#plCard .acts .sec button[aria-pressed="true"]::before{background:var(--gold)}' +
       '#plTrip{margin:16px 24px 0}' +
+      '#plIntro,#plSurW{display:none}#places.idx #plIntro{display:block;margin:24px 24px 0;font:400 24px/30px var(--serif);color:var(--ivory)}#places.idx #plIntro .th{font:400 20px/1.6 var(--thaiSerif,var(--thai))}' +
+      '#places.idx #plSurW{display:block;padding:0 24px calc(40px + var(--sab))}' +
+      '#places.idx #plList{gap:24px 12px}#places.idx #plList .tg,#places.idx~* .tg{display:none}' +
+      '#places button:focus{outline:none}#places button:focus-visible{outline:2px solid var(--gold)!important;outline-offset:3px!important}' +
+      '#plCard .sec2{display:flex;gap:24px;margin-top:24px;padding-top:16px;border-top:1px solid var(--line)}' +
+      '#plCard .sec2 button{min-height:44px;padding:0;border:0;background:none;color:var(--ivory2);cursor:pointer;font:400 15px/22px var(--sans);display:inline-flex;align-items:center;gap:8px}' +
+      '#plCard .sec2 button .th{font:400 15px/1.5 var(--thai)}#plCard .sec2 button::before{content:"";width:12px;height:12px;border:1px solid var(--line2);transition:background .24s,border-color .24s}' +
+      '#plCard .sec2 button[aria-pressed="true"]{color:var(--ivory)}#plCard .sec2 button[aria-pressed="true"]::before{background:var(--gold);border-color:var(--gold)}' +
+      '#plCard{padding-bottom:calc(72px + 16px + var(--sab))!important}#plCard .actw{padding:12px 24px calc(12px + var(--sab))!important}#plCard .acts .sec{display:none!important}' +
+      '@media (min-width:760px){#plIntro,#places.idx #plIntro,#plSurW,#places.idx #plSurW{max-width:960px;margin-left:auto!important;margin-right:auto!important}#places .plHead,#plCity,#plTrip,#plCard,#places.idx #plList{max-width:960px!important}#places.idx #plList{gap:24px!important}#plCity{margin-left:auto!important;margin-right:auto!important;width:calc(100% - 48px)}#places .plHead{padding-left:24px!important;padding-right:24px!important}}' +
       '#plSpin{margin-top:24px;min-height:44px;padding:0!important;border:0!important;background:none!important;color:var(--ivory)!important;font:400 15px/22px var(--sans)!important;letter-spacing:0!important;text-transform:none!important;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:6px;text-decoration-color:var(--line2)}' +
       '@media (min-width:760px){#places .plHead,#plCity,#plTrip,#plCard,#places.idx #plList{max-width:880px;margin-left:auto!important;margin-right:auto!important}#places .plHead{padding-left:24px!important}' +
         '#plCard .plMain{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;padding:0 24px}#plCard .art{margin:40px 0 0}#plCard .plBody{padding:40px 0 0!important}' +
@@ -379,8 +389,8 @@
       '<div id="plKey"><p class="kc">' + L(TX.links[0], TX.links[1]) + '</p><ul id="plKeyL">' +
         [['on', 'selected'], ['want', 'planned'], ['been', 'been'], ['nx', 'nextBtn']].map(function (k) {
           return '<li><canvas data-k="' + k[0] + '" aria-hidden="true"></canvas>' + L(TX[k[1]][0], TX[k[1]][1]) + '</li>'; }).join('') + '</ul></div></div>' +
-      '<div id="plList" role="group">' + P.map(function (p) { return '<button type="button" data-id="' + p.id + '" aria-pressed="false"><span class="thm" aria-hidden="true"' + (p.img ? ' style="background-image:url(' + p.img + ');background-position:' + (p.pos || '50% 50%') + '"' : '') + '>' + (p.img ? '' : '<b>' + p.s + '</b>') + '</span>' + L(p.s, p.sTh) + '<span class="tg"></span></button>'; }).join('') + '</div>' +
-      '<div id="plTrip" role="group" aria-labelledby="plTripL" hidden><span class="tb" id="plTripB">' +
+      '<p id="plIntro">' + T(TX.intro[0], TX.intro[1]) + '</p><div id="plList" role="group">' + P.map(function (p) { return '<button type="button" data-id="' + p.id + '" aria-pressed="false"><span class="thm" aria-hidden="true"' + (p.img ? ' style="background-image:url(' + p.img + ');background-position:' + (p.pos || '50% 50%') + '"' : '') + '>' + (p.img ? '' : '<b>' + p.s + '</b>') + '</span>' + L(p.s, p.sTh) + '<span class="tg"></span></button>'; }).join('') + '</div>' +
+      '<div id="plSurW"><button type="button" id="plSur" class="tl"><span>' + L(TX.spin[0], TX.spin[1]) + '</span></button></div><div id="plTrip" role="group" aria-labelledby="plTripL" hidden><span class="tb" id="plTripB">' +
         '<span class="lbl" id="plTripL">' + L(TX.nextBtn[0], TX.nextBtn[1]) + '</span><span class="tn" id="plTripN"></span>' +
         '<label class="fl"><span class="lbl">' + L(TX.month[0], TX.month[1]) + '</span><select id="plMonth"><option value=""></option>' +
           MON.map(function (m, i) { return '<option value="' + (i + 1) + '"></option>'; }).join('') + '</select></label>' +
@@ -401,6 +411,7 @@
     window.__plMode = mode;
     $('plCityB').addEventListener('click', function () { mode('idx', !$('places').classList.contains('idx')); });
     $('plMapB').addEventListener('click', function () { mode('map', true); });
+    $('plSur').addEventListener('click', function () { surprise(); mode('idx', false); $('plCityB').focus({ preventScroll: true }); $('places').scrollTop = 0; });
     $('plMapX').addEventListener('click', function () { mode('map', false); $('plMapB').focus({ preventScroll: true }); });
     var list = $('plList');
     list.addEventListener('click', function (e) { var b = e.target.closest && e.target.closest('button[data-id]'); if (b) { pick(b.getAttribute('data-id'), true); if ($('places').classList.contains('idx')) { mode('idx', false); $('plCityB').focus({ preventScroll: true }); var d = $('places'); d.scrollTop = 0; } } });
@@ -558,7 +569,7 @@
     ctl(); }
   // Mirror the page's mute and language buttons; their own handlers (audio.js, the inline script) keep the state.
   function ctl() { if (!built) return; var m = $('mute'), lb = $('lang'), b = $('plMute'), pl = $('plLang'), off = !!m && (m.getAttribute('data-muted') === '1' || m.classList.contains('off'));
-    b.hidden = !m; b.innerHTML = '<span>' + (off ? L(TX.unmute[0], TX.unmute[1]) : L(TX.mute[0], TX.mute[1])) + '</span>';
+    b.hidden = !m; var sv = m && m.querySelector(off ? '.i-off' : '.i-on'); b.innerHTML = sv ? sv.outerHTML.replace(/class="[^"]*"/, '') : ''; b.setAttribute('aria-label', off ? tx('unmute') : tx('mute'));
     pl.hidden = !lb; pl.innerHTML = '<span>' + (lb ? lb.textContent : '') + '</span>'; pl.setAttribute('aria-label', tx('lang') + ': ' + (lb ? lb.textContent : '')); }
   function press(el) { if (!el) return; try { el.dispatchEvent(new MouseEvent('click', { bubbles: true, cancelable: true, view: window })); } catch (e) { el.click(); } }
   function legend() { var dpr = Math.min(window.devicePixelRatio || 1, 2);
@@ -583,9 +594,9 @@
         '<dl class="facts">' + fact('best', p.monEn, p.monTh, p.monNote, p.monNoteTh) + fact('from', p.fly, p.flyTh, p.flyNote, p.flyNoteTh) + '</dl>' +
         (p.nyeEn ? '<div class="nye"><span class="ntag">' + L(TX.nye[0], TX.nye[1]) + '</span><p>' + T(p.nyeEn, p.nyeTh) + '</p></div>' : '') +
         '<p class="do"><span class="lbl">' + L(TX.tog[0], TX.tog[1]) + '</span>' + T(p.doEn, p.doTh) + '</p>' +
-        '<details class="src"><summary>' + L(TX.details[0], TX.details[1]) + '</summary><p class="chk">' + L(TX.src[0], TX.src[1]) + '</p><ul>' +
+        '<div class="sec2" role="group">' + actBtn('planned', 'planned') + actBtn('been', 'been') + '</div><details class="src"><summary>' + L(TX.details[0], TX.details[1]) + '</summary><p class="chk">' + L(TX.src[0], TX.src[1]) + '</p><ul>' +
           (p.src || []).concat(SRC_FLY).map(function (s) { return '<li>' + s + '</li>'; }).join('') + '</ul></details></div></div>' +
-        '<div class="actw"><div class="acts" role="group">' + actBtn('next', 'nextBtn') + '<span class="sec">' + actBtn('planned', 'planned') + actBtn('been', 'been') + '</span>' + '</div>' +
+        '<div class="actw"><div class="acts" role="group">' + actBtn('next', 'nextBtn') + '</div>' +
         '</div>'; }
     el.innerHTML = h;
     el.querySelector('.plBody').addEventListener('scroll', fit, { passive: true });
@@ -653,7 +664,7 @@
     if (!ensure() || isOpen()) return;
     opener = document.activeElement; $('places').classList.add('open'); setInert(true);
     if (!backing) push(); // if a back() from the last close is still landing, popstate pushes once it does
-    drift = !sel; lastT = 0; size(); render(); sync(); draw();
+    drift = !sel; lastT = 0; size(); render(); sync(); draw(); if (window.__plMode) window.__plMode('idx', true);
     setTimeout(function () { var c = $('plClose'); if (c && isOpen()) c.focus(); }, 30); }
   function close(fromHistory) {
     if (!isOpen()) return;
