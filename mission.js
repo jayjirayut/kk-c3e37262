@@ -5,10 +5,10 @@
              set: function (k, v) { try { localStorage.setItem(k, v); } catch (e) {} } };
   function ymd(d) { d = d || new Date(); return d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2); }
   var RIT = [
-    { id: 'spin', th: 'ปั่นสปิน', en: 'spin class', who: 'เกียวๆ', whoEn: 'Keaw Keaw' },
+    { id: 'spin', th: 'ปั่นสปิน', en: 'Spin class', who: 'เกียวๆ', whoEn: 'Keaw Keaw' },
     { id: 'his', th: null, en: "Jay's thing", who: 'เจ', whoEn: 'Jay' },
-    { id: 'coffee', th: 'กาแฟนม<wbr>ที่ระเบียง', en: 'coffee milk, balcony', who: 'สองคน', whoEn: 'Both' },
-    { id: 'kind', th: 'เรื่องดี ๆ<wbr>ให้กัน', en: 'one kind thing', who: 'สองคน', whoEn: 'Both' }
+    { id: 'coffee', th: 'กาแฟนม<wbr>ที่ระเบียง', en: 'Coffee milk, balcony', who: 'สองคน', whoEn: 'Both' },
+    { id: 'kind', th: 'เรื่องดี ๆ<wbr>ให้กัน', en: 'One kind thing', who: 'สองคน', whoEn: 'Both' }
   ];
   // Questions, not slogans. One per day.
   var DAILY = [
@@ -27,22 +27,24 @@
   function css() {
     var s = document.createElement('style');
     // A hairline table: four cells share 1px rules, no fills. Done reads as a gold frame and gold type.
-    s.textContent = '#mission .q{margin-bottom:18px;font:300 16px/1.55 var(--sans);color:var(--ivory)}#mission .q .th{font-family:var(--thai)}' +
+    s.textContent = '#mission .q{margin-bottom:18px;font:400 16px/1.55 var(--sans);color:var(--ivory)}#mission .q .th{font-family:var(--thai)}' +
       'html[data-lang="both"] #mission .q .en{display:block;margin-top:2px;font-size:14px;color:var(--ivory2)}' +
-      '#mission .grid{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line);border-left:1px solid var(--line)}' +
-      '#mission .r{display:flex;flex-direction:column;align-items:flex-start;gap:8px;min-height:92px;padding:14px 14px 16px;text-align:left;word-break:keep-all;' +
-        'border:0;border-right:1px solid var(--line);border-bottom:1px solid var(--line);border-radius:0;background:none;color:var(--ivory);' +
-        'font:300 15px/1.4 var(--sans);cursor:pointer;transition:color .8s var(--ease),box-shadow .8s var(--ease)}' +
-      '#mission .r .th{font:300 15.5px/1.45 var(--thai)}' +
-      '#mission .who{font:300 10px/1.4 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--ivory3);transition:color .8s var(--ease)}' +
-      '#mission .who .th{font:300 12px/1.4 var(--thai)}' +
+      '#mission .grid{display:block;border-top:1px solid rgba(241,235,221,.16)}' +
+      '#mission .r{position:relative;display:flex;align-items:center;justify-content:space-between;gap:16px;width:100%;min-height:56px;padding:12px 0 12px 18px;text-align:left;word-break:keep-all;' +
+        'border:0;border-bottom:1px solid rgba(241,235,221,.16);border-radius:0;background:none;color:var(--ivory);' +
+        'font:400 17px/1.4 var(--sans);cursor:pointer;transition:color .24s cubic-bezier(.2,0,0,1)}' +
+      '#mission .r::before{content:"";position:absolute;left:0;top:50%;width:6px;height:6px;margin-top:-3px;border-radius:50%;border:1px solid rgba(241,235,221,.3);transition:background .24s cubic-bezier(.2,0,0,1),border-color .24s}' +
+      '#mission .r.done::before{background:var(--gold);border-color:var(--gold)}#mission .lab{display:flex;flex-direction:column;gap:2px}' +
+      '#mission .r .th{font:400 17px/1.6 var(--thai)}' +
+      '#mission .who{flex:none;font:400 13px/1.4 var(--sans);color:var(--ivory2);text-align:right}' +
+      '#mission .who .th{font:400 13px/1.6 var(--thai)}' +
       '#mission .r.set{color:var(--ivory2)}' +
       '#mission .r.set>.th,#mission .r.set>.en{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:5px;text-decoration-color:var(--line2)}' +
-      '#mission .r.done{color:var(--gold);box-shadow:inset 0 0 0 1px var(--gold)}#mission .r.done .who{color:var(--gold)}' +
+      '#mission .r.done{color:var(--ivory)}' +
       '#mission .r:focus-visible{outline:1px solid var(--ivory);outline-offset:-6px}' +
       '#mission .r [contenteditable]{outline:none;border-bottom:1px solid var(--line2)}' +
-      '#mission .foot{margin-top:16px;font:300 13px/1.55 var(--sans);color:var(--ivory2)}#mission .foot .th{font-family:var(--thai)}' +
-      '#mission .foot.fine{margin-top:4px;font-size:11px;color:var(--ivory3)}' +
+      '#mission .foot{margin-top:16px;font:400 13px/1.55 var(--sans);color:var(--ivory2)}#mission .foot .th{font-family:var(--thai)}' +
+      '#mission .foot.fine{margin-top:4px;font-size:13px;color:var(--ivory2)}' +
       'html[data-lang="th"] #mission .en{display:none}html[data-lang="en"] #mission .th{display:none}' +
       'html[data-lang="both"] #mission .who .en{display:none}html[data-lang="both"] #mission .r>.en{font-size:12px;color:var(--ivory2)}' +
       'html[data-lang="both"] #mission .r.done>.en{color:inherit}';
@@ -58,11 +60,11 @@
       if (r.id === 'his' && !his) { return; }
       var label = r.id === 'his' ? '<span class="th" data-his>' + his.replace(/</g, '&lt;') + '</span>' : '<span class="th">' + r.th + '</span>';
       h += '<button type="button" class="r' + (done.indexOf(r.id) > -1 ? ' done' : '') + '" data-id="' + r.id + '" aria-pressed="' + (done.indexOf(r.id) > -1) + '">' +
-        who + label + '<span class="en">' + r.en + '</span></button>';
+        '<span class="lab">' + label + '<span class="en">' + r.en + '</span></span>' + who + '</button>';
     });
     var n = days(log), s = run(log);
     h += '</div><p class="foot">' + (n ? '<span class="th">บันทึกไว้แล้ว ' + n + ' วัน' + (s > 1 ? ' (ติดกัน ' + s + ' วัน)' : '') + '</span> <span class="en">' + n + ' days logged' + (s > 1 ? ', ' + s + ' in a row' : '') + '</span>'
-      : '<span class="th">แตะสิ่งที่ทำวันนี้ ไม่ต้องครบก็ได้</span> <span class="en">Tap what happened today. No need for all four.</span>') + '</p>' +
+      : '<span class="th">เลือกสักอย่างสำหรับวันนี้</span> <span class="en">Pick one for today.</span>') + '</p>' +
       '<p class="foot fine"><span class="th">บันทึกไว้ในเครื่องนี้เท่านั้น ไม่ได้ซิงก์กับอีกเครื่อง</span> <span class="en">Saved on this device only. Not synced.</span></p>';
     el.innerHTML = h; el.dataset.day = today;
   }

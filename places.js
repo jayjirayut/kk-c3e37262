@@ -8,65 +8,65 @@
   // pos: focal point for the crop (x for the tall phone crop, y for the wide one); alt/altTh describe the photograph.
   var P = [
     { id: 'tyo', lat: 35.68, lon: 139.69, en: 'Tokyo, Japan', th: 'โตเกียว ญี่ปุ่น', s: 'Tokyo', sTh: 'โตเกียว',
-      img: 'img/tyo.webp', pos: '50% 55%', alt: 'A rain-wet shopping street at night, glowing boutique windows and towers beyond',
-      altTh: 'ทางเดินหินเปียกฝนระหว่างโคมไฟ มีวิหารและเจดีย์อยู่ในหมอก มีคนสองคนกำลังเดิน',
+      img: 'img/tyo.webp', pos: '50% 55%', alt: 'A rain-wet shopping street at night, lit boutique windows and towers beyond',
+      altTh: 'ถนนช้อปปิ้งเปียกฝนยามค่ำ หน้าร้านเปิดไฟ มีตึกสูงอยู่ไกล ๆ',
       nyeEn: '~6h direct. Around midnight, temple bells are rung 108 times: joya no kane.',
       nyeTh: '~6 ชม. บินตรง ราวเที่ยงคืนวัดตีระฆัง 108 ครั้ง เรียกว่า โจยะ โนะ คาเนะ',
-      whyEn: 'The shopping, the tech, the skyline. Basically a wishlist with a flight attached.',
-      whyTh: 'ทั้งช้อปปิ้ง ทั้งเทคโนโลยี ทั้งวิวเมือง พูดง่าย ๆ คือวิชลิสต์ที่มีตั๋วเครื่องบินแนบมาด้วย',
+      whyEn: 'Ginza, Shibuya and teamLab: shopping, design and digital art in one city.',
+      whyTh: 'กินซ่า ชิบุยะ และ teamLab ช้อปปิ้ง ดีไซน์ และศิลปะดิจิทัลในเมืองเดียว',
       monEn: 'Mid Nov to early Dec', monTh: 'กลาง พ.ย. ถึงต้น ธ.ค.', monNote: 'for autumn colour; peak varies', monNoteTh: 'สำหรับใบไม้เปลี่ยนสี ช่วงพีคแต่ละปีไม่เท่ากัน',
       fly: '~6h nonstop (HND or NRT)', flyTh: '~6 ชม. บินตรง (HND หรือ NRT)',
       src: ['flightroutes.com', 'flightsfrom.com', 'flightmapper.net'],
-      doEn: 'Ginza flagships by day, the Shibuya crossing at night, then teamLab: finally, screen time that counts as culture.',
-      doTh: 'กลางวันไล่ช้อปร้านแฟล็กชิปย่านกินซ่า กลางคืนไปข้ามแยกชิบุยะ แล้วต่อที่ teamLab ในที่สุดการจ้องจอก็นับเป็นการดูงานศิลปะได้' },
+      doEn: 'Ginza flagships by day, the Shibuya crossing at night, teamLab the next morning.',
+      doTh: 'กลางวันเดินร้านแฟล็กชิปย่านกินซ่า กลางคืนข้ามแยกชิบุยะ เช้าวันต่อมาไป teamLab' },
     { id: 'sel', lat: 37.57, lon: 126.98, en: 'Seoul, South Korea', th: 'โซล เกาหลีใต้', s: 'Seoul', sTh: 'โซล',
       img: 'img/sel.webp', pos: '50% 50%', alt: 'A quiet street at night lined with lit brick boutiques, towers glowing at the end',
-      whyEn: 'Beauty and tech at every turn. Like a weeknight series, except we are in it.',
-      whyTh: 'บิวตี้กับเทคโนโลยีอยู่ทุกมุมเมือง เหมือนซีรีส์คืนวันธรรมดา แต่รอบนี้เราอยู่ในเรื่องเอง',
+      whyEn: 'Gangnam and Seongsu, for beauty and tech.',
+      whyTh: 'กังนัมกับซองซู เมืองของบิวตี้และเทคโนโลยี',
       monEn: 'Late Mar to Apr, or Oct to Nov', monTh: 'ปลาย มี.ค. ถึง เม.ย. หรือ ต.ค. ถึง พ.ย.', monNote: 'cherry blossom or autumn leaves', monNoteTh: 'ช่วงซากุระบาน หรือช่วงใบไม้เปลี่ยนสี',
       fly: '~5 to 5.5h nonstop (ICN)', flyTh: '~5 ถึง 5.5 ชม. บินตรง (ICN)',
       src: ['flightq.app', 'kayak', 'getyourguide.com'],
-      doEn: 'Gangnam, then Seongsu: a beauty haul, a tech haul, and a debate about which suitcase still closes.',
-      doTh: 'กังนัมต่อด้วยซองซู กวาดของบิวตี้ กวาดของไอที แล้วค่อยมาลุ้นกันว่ากระเป๋าใบไหนยังปิดได้' },
-    { id: 'sin', lat: 1.29, lon: 103.85, en: 'Singapore, Singapore', th: 'สิงคโปร์ สิงคโปร์', s: 'Singapore', sTh: 'สิงคโปร์',
-      img: 'img/sin.webp', pos: '50% 50%', alt: 'Marina Bay Sands and the bay at night, two figures on the waterfront',
-      whyEn: 'The shortest flight on the list, so more of the trip goes to shopping.',
-      whyTh: 'บินสั้นที่สุดในลิสต์ เวลาที่เหลือเลยยกให้การช้อปปิ้งได้เต็มที่',
+      doEn: 'Gangnam in the afternoon, Seongsu cafés and pop-up stores the next day.',
+      doTh: 'บ่ายเดินกังนัม วันต่อมาไปคาเฟ่และป๊อปอัปสโตร์ที่ซองซู' },
+    { id: 'sin', lat: 1.29, lon: 103.85, en: 'Singapore, City-state', th: 'สิงคโปร์ นครรัฐ', s: 'Singapore', sTh: 'สิงคโปร์',
+      img: 'img/sin.webp', pos: '50% 50%', alt: 'Marina Bay Sands and the bay at night', altTh: 'มารีน่าเบย์แซนด์สและอ่าวยามค่ำ',
+      whyEn: 'The closest city on the list, about two and a half hours away.',
+      whyTh: 'ใกล้ที่สุดในลิสต์ บินราวสองชั่วโมงครึ่ง',
       monEn: 'Feb to Apr', monTh: 'ก.พ. ถึง เม.ย.', monNote: 'driest months', monNoteTh: 'ช่วงที่ฝนน้อยที่สุด',
       fly: '~2.5h nonstop (SIN)', flyTh: '~2.5 ชม. บินตรง (SIN)',
       src: ['eoob.sg', 'kayak.sg', 'bangkokknowledge.com'],
-      doEn: 'Orchard Road by day, Gardens by the Bay in the evening, Marina Bay to finish. Jay is on bag duty throughout.',
-      doTh: 'กลางวันเดินถนนออร์ชาร์ด ตอนเย็นไปการ์เดนส์บายเดอะเบย์ ปิดท้ายที่มารีน่าเบย์ ส่วนเจรับหน้าที่ถือถุงตลอดทริป' },
+      doEn: 'Orchard Road by day, Gardens by the Bay in the evening, Marina Bay to finish.',
+      doTh: 'กลางวันเดินถนนออร์ชาร์ด เย็นไป Gardens by the Bay ปิดท้ายที่มารีน่าเบย์' },
     { id: 'sha', lat: 31.24, lon: 121.50, en: 'Shanghai, China', th: 'เซี่ยงไฮ้ จีน', s: 'Shanghai', sTh: 'เซี่ยงไฮ้',
-      img: 'img/sha.webp', pos: '50% 50%', alt: 'The Lujiazui skyline across the river at night, two figures on the promenade',
-      whyEn: 'Our river view at home, except the other bank looks like it came from the future.',
-      whyTh: 'เหมือนวิวแม่น้ำที่บ้าน แต่ฝั่งตรงข้ามล้ำเหมือนหลุดมาจากอนาคต',
+      img: 'img/sha.webp', pos: '50% 50%', alt: 'The Lujiazui skyline across the river at night', altTh: 'เส้นขอบฟ้าลู่เจียจุ่ยริมแม่น้ำยามค่ำ',
+      whyEn: 'Another river city: the Bund on one bank, Lujiazui on the other.',
+      whyTh: 'อีกเมืองริมแม่น้ำ เดอะบันด์อยู่ฝั่งหนึ่ง ลู่เจียจุ่ยอยู่อีกฝั่ง',
       monEn: 'Oct to Nov', monTh: 'ต.ค. ถึง พ.ย.', monNote: 'mild and settled; spring also mild but rainier', monNoteTh: 'อากาศกำลังสบาย ไม่ค่อยแปรปรวน หน้าใบไม้ผลิก็สบายเหมือนกันแต่ฝนเยอะกว่า',
       fly: '~4.5h nonstop (PVG)', flyTh: '~4.5 ชม. บินตรง (PVG)',
       src: ['airportoverview.com', '2lnr.com', 'Google Flights'],
-      doEn: 'A slow walk along the Bund after dark, with Lujiazui lit up across the river. Coffee milk in hand, obviously.',
-      doTh: 'เดินเล่นช้า ๆ ริมเดอะบันด์ตอนค่ำ มองแสงไฟของลู่เจียจุ่ยอีกฝั่งแม่น้ำ ในมือมีกาแฟนมอยู่แล้วแน่นอน' },
+      doEn: 'A walk along the Bund after dark, Lujiazui lit across the river.',
+      doTh: 'เดินริมเดอะบันด์ตอนค่ำ มองลู่เจียจุ่ยเปิดไฟอยู่อีกฝั่ง' },
     { id: 'dxb', lat: 25.20, lon: 55.27, en: 'Dubai, United Arab Emirates', th: 'ดูไบ สหรัฐอาหรับเอมิเรตส์', s: 'Dubai', sTh: 'ดูไบ',
       img: 'img/dxb.webp', pos: '50% 50%', alt: 'A palm-lined promenade at night beside still water, the Burj Khalifa on the skyline',
-      whyEn: 'A city that treats shopping as a sport and the future as a museum.',
-      whyTh: 'เมืองที่ถือว่าช้อปปิ้งเป็นกีฬา แล้วจับอนาคตมาทำเป็นพิพิธภัณฑ์',
+      whyEn: 'Dubai Mall and the Museum of the Future, six hours from home.',
+      whyTh: 'ดูไบมอลล์กับพิพิธภัณฑ์แห่งอนาคต บินจากบ้านราวหกชั่วโมง',
       monEn: 'Nov to Mar', monTh: 'พ.ย. ถึง มี.ค.', monNote: 'cooler months', monNoteTh: 'ช่วงที่อากาศเย็นกว่า',
       fly: '~6h nonstop (DXB)', flyTh: '~6 ชม. บินตรง (DXB)',
       src: ['emirates.com', '2lnr.com', 'agoda'],
-      doEn: 'The Museum of the Future first, while we still have energy, then Dubai Mall until the step counter gives up.',
-      doTh: 'ไปพิพิธภัณฑ์แห่งอนาคตก่อนตอนยังมีแรง แล้วค่อยลุยดูไบมอลล์จนแอปนับก้าวยอมแพ้' },
+      doEn: 'The Museum of the Future in the morning, Dubai Mall in the afternoon.',
+      doTh: 'เช้าไปพิพิธภัณฑ์แห่งอนาคต บ่ายเดินดูไบมอลล์' },
     { id: 'nyc', lat: 40.71, lon: -74.01, en: 'New York, United States', th: 'นิวยอร์ก สหรัฐอเมริกา', s: 'New York', sTh: 'นิวยอร์ก',
       img: 'img/nyc.webp', pos: '50% 50%', alt: 'Manhattan at night, a lit avenue of shopfronts between towers',
-      whyEn: 'The classic big-city shopping trip. Long flight, longer receipt.',
-      whyTh: 'ทริปช้อปเมืองใหญ่แบบคลาสสิก บินไกล แต่ใบเสร็จยาวกว่า',
+      whyEn: 'Fifth Avenue and SoHo, in autumn.',
+      whyTh: 'ฟิฟท์อเวนิวกับโซโห ในฤดูใบไม้ร่วง',
       monEn: 'Sep to Nov', monTh: 'ก.ย. ถึง พ.ย.', monNote: 'autumn; October mildest', monNoteTh: 'ฤดูใบไม้ร่วง ตุลาคมอากาศสบายที่สุด',
       fly: '~20 to 21h, 1 stop (JFK)', flyTh: '~20 ถึง 21 ชม. ต่อเครื่อง 1 ครั้ง (JFK)', flyNote: 'no nonstop', flyNoteTh: 'ไม่มีบินตรง',
       src: ['flightroutes.com', 'momondo.com', 'weather.gov normals'],
-      doEn: 'Fifth Avenue one day, SoHo the next, and a Lululemon stop that is definitely not planned.',
-      doTh: 'วันหนึ่งเดินฟิฟท์อเวนิว อีกวันเดินโซโห แล้วแวะ Lululemon แบบไม่ได้ตั้งใจเลยจริง ๆ' },
+      doEn: 'Fifth Avenue one day, SoHo the next.',
+      doTh: 'วันหนึ่งเดินฟิฟท์อเวนิว อีกวันไปโซโห' },
     { id: 'kef', lat: 64.15, lon: -21.94, en: 'Reykjavik, Iceland', th: 'เรคยาวิก ไอซ์แลนด์', s: 'Reykjavik', sTh: 'เรคยาวิก',
-      img: 'img/kef.webp', pos: '60% 55%', alt: 'Green aurora over a lagoon of floating ice, two figures on the dark shore',
-      altTh: 'แสงเหนือสีเขียวเหนือทะเลสาบที่มีก้อนน้ำแข็งลอย มีคนสองคนยืนอยู่บนฝั่ง',
+      img: 'img/kef.webp', pos: '60% 55%', alt: 'Green aurora over a lagoon of floating ice',
+      altTh: 'แสงเหนือสีเขียวเหนือทะเลสาบที่มีก้อนน้ำแข็งลอย',
       nyeEn: 'Inside aurora season. At midnight, residents set off fireworks across the whole city.',
       nyeTh: 'อยู่ในฤดูแสงเหนือ เที่ยงคืนชาวเมืองจุดพลุกันทั่วทั้งเมือง',
       whyEn: 'We both love Interstellar. One evening, just looking up.',
@@ -77,8 +77,8 @@
       doEn: 'Drive past the city lights on a clear night with a thermos of coffee milk, and wait for the sky to move.',
       doTh: 'ขับรถออกนอกเมืองคืนฟ้าใส พกกระติกกาแฟนมไปด้วย แล้วนั่งรอให้ฟ้าเริ่มขยับ' },
     { id: 'tek', lat: -44.0, lon: 170.48, en: 'Lake Tekapo, New Zealand', th: 'ทะเลสาบเทคาโป นิวซีแลนด์', s: 'Tekapo', sTh: 'เทคาโป',
-      img: 'img/tek.webp', pos: '10% 62%', alt: 'The Milky Way over a still lake and snowy peaks, a small stone church lit on the far shore, two figures on the rocks',
-      altTh: 'ทางช้างเผือกเหนือทะเลสาบนิ่งและยอดเขาหิมะ โบสถ์หินหลังเล็กเปิดไฟอยู่อีกฝั่ง มีคนสองคนยืนบนโขดหิน',
+      img: 'img/tek.webp', pos: '10% 62%', alt: 'The Milky Way over a still lake and snowy peaks, a small stone church lit on the far shore',
+      altTh: 'ทางช้างเผือกเหนือทะเลสาบนิ่งและยอดเขาหิมะ มีโบสถ์หินหลังเล็กเปิดไฟอยู่อีกฝั่ง',
       whyEn: 'For our Interstellar habit, with hot pools afterwards.',
       whyTh: 'ดูดาวให้เต็มตา แล้วไปแช่น้ำอุ่นกัน',
       monEn: 'Jun to Aug', monTh: 'มิ.ย. ถึง ส.ค.', monNote: 'for winter stargazing', monNoteTh: 'สำหรับดูดาวหน้าหนาว',
@@ -92,8 +92,8 @@
     title: ['Places we go together', 'ที่ที่อยากไปด้วยกัน'],
     hint: ['Drag to spin. No spin class required.', 'ลากเพื่อหมุน ไม่ต้องเข้าคลาสสปิน'],
     close: ['Close', 'ปิด'],
-    intro: ['Eight ideas for a trip together. Shopping, tech cities and two skies.', 'แปดไอเดียสำหรับทริปด้วยกัน มีทั้งช้อปปิ้ง เมืองไฮเทค และท้องฟ้าสองแห่ง'],
-    pick: ['Tap a pin or a name, or let the globe decide.', 'แตะหมุดหรือชื่อ หรือจะให้โลกช่วยเลือกก็ได้'],
+    intro: ['Eight ideas for a trip together.', 'แปดไอเดียสำหรับทริปด้วยกัน'],
+    pick: ['Choose a city to begin.', 'เลือกเมืองเพื่อเริ่มดู'],
     spin: ['Spin for it', 'หมุนวัดดวง'],
     next: ['Next trip: ', 'ทริปต่อไป: '],
     saved: ['Saved on this device', 'บันทึกไว้ในเครื่องนี้'],
@@ -107,7 +107,7 @@
     home: ['Bangkok', 'กรุงเทพฯ'],
     planned: ['Want to go', 'อยากไป'],
     been: ['Been there', 'ไปมาแล้ว'],
-    nextBtn: ['Next trip', 'ทริปต่อไป'],
+    nextBtn: ['Pick for next trip', 'เลือกเป็นทริปถัดไป'], nextOn: ['Our next trip', 'ทริปถัดไปของเรา'], city: ['City', 'เมือง'], map: ['View map', 'ดูแผนที่'], mapClose: ['Close map', 'ปิดแผนที่'], explore: ['Drag to explore', 'ลากเพื่อหมุนดู'], details: ['Details', 'รายละเอียด'],
     nye: ['New Year’s Eve', 'ส่งท้ายปี'],
     links: ['Destination links, not flight routes', 'เส้นเชื่อมจุดหมาย ไม่ใช่เส้นทางบิน'],
     key: ['Key', 'สัญลักษณ์'],
@@ -189,7 +189,7 @@
     return ring; }
 
   function css() {
-    var s = document.createElement('style'), LB = 'font:300 10.5px/1.4 var(--sans);letter-spacing:.12em;text-transform:uppercase;', SEP = '{content:" \\00b7  "}';
+    var s = document.createElement('style'), LB = 'font:400 10.5px/1.4 var(--sans);letter-spacing:.12em;text-transform:uppercase;', SEP = '{content:" \\00b7  "}';
     s.textContent =
       '#places{position:fixed;inset:0;z-index:35;display:none;flex-direction:column;color:var(--ivory);padding:0 var(--sar) 0 var(--sal);background:var(--ink)}' +
       '#places.open{display:flex;animation:plIn .8s var(--ease) both}@keyframes plIn{from{opacity:0}to{opacity:1}}' +
@@ -198,45 +198,45 @@
       // header: one serif headline, a quiet line beneath, and the text links where the page keeps its top controls
       '#places .plHead{flex:none;display:flex;align-items:flex-start;gap:8px;padding:calc(18px + var(--sat)) 6px 0 24px}' +
       '#places .plHead>div{flex:1;min-width:0;padding-top:6px}' +
-      '#places h2{font:400 30px/1.08 var(--serif);letter-spacing:-.005em}#places h2 .th{font:300 20px/1.4 var(--thai)}' +
-      '#plHint{margin-top:8px;font:300 12.5px/1.5 var(--sans);color:var(--ivory2)}' +
+      '#places h2{font:400 30px/1.08 var(--serif);letter-spacing:-.005em}#places h2 .th{font:400 20px/1.4 var(--thai)}' +
+      '#plHint{margin-top:8px;font:400 12.5px/1.5 var(--sans);color:var(--ivory2)}' +
       // sound, language and close: three text links that drive the page's own controls
       '#places .plCtl{flex:none;display:flex;align-items:center}' +
       '#places .plCtl button{flex:none;min-width:44px;min-height:44px;padding:0 8px;border:0;border-radius:0;background:none;color:var(--ivory);cursor:pointer;' + LB + '}' +
-      '#places .plCtl button>span{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:7px;text-decoration-color:var(--line2)}#places .plCtl .th{font:300 14px/1.4 var(--thai)}' +
+      '#places .plCtl button>span{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:7px;text-decoration-color:var(--line2)}#places .plCtl .th{font:400 14px/1.4 var(--thai)}' +
       '#plMute,#plLang{color:var(--ivory2)!important}' +
       '#plWrap{flex:1 1 auto;min-height:150px;display:flex;flex-direction:column}' +
       '#plStage{position:relative;flex:1 1 auto;min-height:0}' +
       '#plGlobe{position:absolute;inset:0;width:100%;height:100%;display:block;touch-action:none;cursor:grab}#plGlobe.drag{cursor:grabbing}#plGlobe.hot{cursor:pointer}' +
       // under the globe: what the lines mean, then the marks, drawn by the same function as the pins
       '#plKey{flex:none;display:flex;flex-wrap:wrap;align-items:center;gap:2px 16px;padding:4px 20px 8px}' +
-      '#plKey .kc{font:300 11px/1.5 var(--sans);color:var(--ivory3)}#plKey .kc .th{font-family:var(--thai)}' +
+      '#plKey .kc{font:400 11px/1.5 var(--sans);color:var(--ivory3)}#plKey .kc .th{font-family:var(--thai)}' +
       '#plKey ul{display:flex;flex-wrap:wrap;gap:2px 14px;list-style:none}' +
-      '#plKey li{display:inline-flex;align-items:center;gap:4px;font:300 9px/1.4 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--ivory2)}#plKey li .th{font:300 11px/1.4 var(--thai)}' +
+      '#plKey li{display:inline-flex;align-items:center;gap:4px;font:400 9px/1.4 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--ivory2)}#plKey li .th{font:400 11px/1.4 var(--thai)}' +
       '#plKey canvas{flex:none;display:block;width:18px;height:18px}' +
       // names wrap onto rows, no sideways scrolling; the chosen one is underlined in gold
       '#plList{flex:none;display:flex;flex-wrap:wrap;padding:3px 12px;border-top:1px solid var(--line)}' +
       '#plList button{flex:none;display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 10px;border:0;border-radius:0;background:none;color:var(--ivory2);white-space:nowrap;cursor:pointer;' + LB + 'transition:color .8s var(--ease)}' +
-      '#plList button .th{font:300 14px/1.4 var(--thai)}' +
+      '#plList button .th{font:400 14px/1.4 var(--thai)}' +
       '#plList button>.th,#plList button>.en{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:8px;text-decoration-color:transparent;transition:text-decoration-color .8s var(--ease)}' +
       '#plList button.on{color:var(--ivory)}#plList button.on>.th,#plList button.on>.en{text-decoration-color:var(--gold)}' +
       '#plList .tg{display:inline-flex}#plList .tg:empty{display:none}' +
       // status is a quiet word in gold, never a symbol
-      '#places .mk{font:300 9px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}#places .mk .th{font:300 11.5px/1 var(--thai)}' +
+      '#places .mk{font:400 9px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}#places .mk .th{font:400 11.5px/1 var(--thai)}' +
       // next trip: one compact line that stays put whichever card is open
       '#plTrip{flex:none;display:flex;flex-wrap:wrap;align-items:center;gap:0 14px;padding:0 20px;border-top:1px solid var(--line)}' +
       '#plTrip .tb,#plUndo{display:contents}' +
-      '#plTrip .lbl{' + LB + 'color:var(--gold)}#plTrip .lbl .th{font:300 12.5px/1.4 var(--thai)}' +
-      '#plTrip .tn{font:300 14px/1.4 var(--sans)}#plTrip .tn .th{font-family:var(--thai)}' +
+      '#plTrip .lbl{' + LB + 'color:var(--gold)}#plTrip .lbl .th{font:400 12.5px/1.4 var(--thai)}' +
+      '#plTrip .tn{font:400 14px/1.4 var(--sans)}#plTrip .tn .th{font-family:var(--thai)}' +
       '#plTrip .fl{display:inline-flex;align-items:center;gap:8px;min-height:44px;cursor:pointer}#plTrip .fl .lbl{color:var(--ivory3)}' +
-      '#plTrip select,#plTrip input{-webkit-appearance:none;appearance:none;min-height:44px;padding:0 2px;border:0;border-bottom:1px solid var(--line2);border-radius:0;background:none;color:var(--ivory);font:300 16px/1.4 var(--sans);cursor:pointer}' +
+      '#plTrip select,#plTrip input{-webkit-appearance:none;appearance:none;min-height:44px;padding:0 2px;border:0;border-bottom:1px solid var(--line2);border-radius:0;background:none;color:var(--ivory);font:400 16px/1.4 var(--sans);cursor:pointer}' +
       '#plTrip select{min-width:4em}#plTrip option{background:var(--ink);color:var(--ivory)}' +
       '#plTrip input{width:3em;-moz-appearance:textfield;cursor:text;user-select:text;-webkit-user-select:text}' +
       '#plTrip input::-webkit-inner-spin-button,#plTrip input::-webkit-outer-spin-button{-webkit-appearance:none;margin:0}' +
-      '#plTrip .tl{min-height:44px;padding:0 4px;border:0;border-radius:0;background:none;color:var(--ivory2);cursor:pointer;' + LB + '}#plTrip .tl .th{font:300 13px/1.3 var(--thai)}' +
+      '#plTrip .tl{min-height:44px;padding:0 4px;border:0;border-radius:0;background:none;color:var(--ivory2);cursor:pointer;' + LB + '}#plTrip .tl .th{font:400 13px/1.3 var(--thai)}' +
       '#plTrip .tl>span{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:7px;text-decoration-color:var(--line2)}' +
       '#plUndoB{color:var(--gold)!important}#plUndoB>span{text-decoration-color:var(--gold)!important}' +
-      '#plTrip .um{font:300 13px/1.4 var(--sans);color:var(--ivory2)}#plTrip .um .th{font-family:var(--thai)}' +
+      '#plTrip .um{font:400 13px/1.4 var(--sans);color:var(--ivory2)}#plTrip .um .th{font-family:var(--thai)}' +
       // fixed card height so the globe never jumps between places; the text scrolls, the actions stay put
       '#plCard{flex:none;display:flex;flex-direction:column;height:clamp(240px,44vh,400px);height:clamp(240px,44svh,400px);border-top:1px solid var(--line);overflow:hidden}' +
       '#plCard .plMain{flex:1;min-height:0;display:flex}' +
@@ -250,35 +250,35 @@
       '#plCard .plate b{font:400 clamp(34px,10vw,52px)/1 var(--serif);font-size:min(56px,21cqh);letter-spacing:.01em;white-space:nowrap;writing-mode:vertical-rl}' +
       '#plCard .plate small{display:none;' + LB + 'color:var(--gold)}' +
       '#plCard h3{display:flex;flex-direction:column-reverse;gap:8px;font-weight:300}' +
-      '#plCard h3 .nm{font:400 30px/1.06 var(--serif);letter-spacing:-.005em}#plCard h3 .nm .th{font:300 21px/1.35 var(--thai)}' +
-      '#plCard h3 .ctry{' + LB + 'color:var(--gold)}#plCard h3 .ctry .th{font:300 12.5px/1.4 var(--thai)}' +
-      '#plCard .why{margin-top:12px;font:300 14.5px/1.6 var(--sans)}' +
+      '#plCard h3 .nm{font:400 30px/1.06 var(--serif);letter-spacing:-.005em}#plCard h3 .nm .th{font:400 21px/1.35 var(--thai)}' +
+      '#plCard h3 .ctry{' + LB + 'color:var(--gold)}#plCard h3 .ctry .th{font:400 12.5px/1.4 var(--thai)}' +
+      '#plCard .why{margin-top:12px;font:400 14.5px/1.6 var(--sans)}' +
       '#plCard .facts{display:grid;gap:16px;margin-top:18px;padding-top:16px;border-top:1px solid var(--line)}' +
-      '#plCard .lbl{display:block;margin-bottom:6px;' + LB + 'color:var(--gold)}#plCard .lbl .th{font:300 12.5px/1.4 var(--thai)}' +
-      '#plCard dd{font:300 14px/1.5 var(--sans)}#plCard dd small{display:block;margin-top:4px;font-size:12.5px;line-height:1.45;color:var(--ivory2)}' +
+      '#plCard .lbl{display:block;margin-bottom:6px;' + LB + 'color:var(--gold)}#plCard .lbl .th{font:400 12.5px/1.4 var(--thai)}' +
+      '#plCard dd{font:400 14px/1.5 var(--sans)}#plCard dd small{display:block;margin-top:4px;font-size:12.5px;line-height:1.45;color:var(--ivory2)}' +
       '#plCard .nye{margin-top:18px;padding-top:16px;border-top:1px solid var(--line)}' +
-      '#plCard .ntag{display:inline-block;padding:6px 10px 5px;border:1px solid var(--gold);border-radius:0;font:300 9.5px/1.2 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}#plCard .ntag .th{font:300 12px/1.2 var(--thai)}' +
-      '#plCard .nye p{margin-top:12px;font:300 14px/1.55 var(--sans)}' +
-      '#plCard .do{margin-top:18px;padding-top:16px;border-top:1px solid var(--line);font:300 14px/1.6 var(--sans)}' +
+      '#plCard .ntag{display:inline-block;padding:6px 10px 5px;border:1px solid var(--gold);border-radius:0;font:400 9.5px/1.2 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}#plCard .ntag .th{font:400 12px/1.2 var(--thai)}' +
+      '#plCard .nye p{margin-top:12px;font:400 14px/1.55 var(--sans)}' +
+      '#plCard .do{margin-top:18px;padding-top:16px;border-top:1px solid var(--line);font:400 14px/1.6 var(--sans)}' +
       // sources: a closed hairline row at the foot of the card
       '#plCard .src{margin-top:18px;border-top:1px solid var(--line)}' +
       '#plCard .src summary{display:flex;align-items:center;gap:10px;min-height:44px;list-style:none;cursor:pointer;' + LB + 'color:var(--ivory2)}' +
-      '#plCard .src summary::-webkit-details-marker{display:none}#plCard .src summary .th{font:300 12.5px/1.4 var(--thai)}' +
+      '#plCard .src summary::-webkit-details-marker{display:none}#plCard .src summary .th{font:400 12.5px/1.4 var(--thai)}' +
       '#plCard .src summary::before{content:"";flex:none;width:12px;height:1px;background:var(--gold);transition:width .8s var(--ease)}#plCard .src[open] summary::before{width:24px}' +
       '#plCard .src ul{display:flex;flex-wrap:wrap;gap:4px 16px;padding:2px 0 4px 22px;list-style:none}' +
-      '#plCard .src li{font:300 12.5px/1.5 var(--sans);color:var(--ivory2);user-select:text;-webkit-user-select:text}' +
+      '#plCard .src li{font:400 12.5px/1.5 var(--sans);color:var(--ivory2);user-select:text;-webkit-user-select:text}' +
       '#plCard .actw{flex:none;padding:0 8px var(--sab);border-top:1px solid var(--line)}#plCard .acts{display:flex}' +
-      '#plCard .saved{padding:0 0 8px;text-align:center;font:300 9.5px/1.3 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--ivory3)}#plCard .saved .th{font:300 11.5px/1.3 var(--thai)}' +
+      '#plCard .saved{padding:0 0 8px;text-align:center;font:400 9.5px/1.3 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--ivory3)}#plCard .saved .th{font:400 11.5px/1.3 var(--thai)}' +
       '#plCard .acts button{flex:1 1 0;min-width:0;min-height:48px;display:inline-flex;align-items:center;justify-content:center;padding:4px 6px;border:0;background:none;color:var(--ivory2);cursor:pointer;' + LB + 'transition:color .8s var(--ease)}' +
-      '#plCard .acts .th{font:300 13px/1.3 var(--thai)}' +
+      '#plCard .acts .th{font:400 13px/1.3 var(--thai)}' +
       '#plCard .acts .tx{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:7px;text-decoration-color:var(--line2);transition:text-decoration-color .8s var(--ease)}' +
       '#plCard .acts [aria-pressed="true"]{color:var(--gold)}#plCard .acts [aria-pressed="true"] .tx{text-decoration-color:var(--gold)}' +
       // the opening card, before a place is chosen
       '#plCard .intro{padding:24px 24px calc(24px + var(--sab))}' +
-      '#plCard .lead{font:300 16.5px/1.6 var(--sans)}' +
-      '#plCard .pick{margin-top:20px;font:300 14px/1.55 var(--sans);color:var(--ivory2)}' +
+      '#plCard .lead{font:400 16.5px/1.6 var(--sans)}' +
+      '#plCard .pick{margin-top:20px;font:400 14px/1.55 var(--sans);color:var(--ivory2)}' +
       '#plSpin{margin-top:16px}' +
-      '#plCard .note{margin-top:20px;font:300 11.5px/1.5 var(--sans);color:var(--ivory3)}' +
+      '#plCard .note{margin-top:20px;font:400 11.5px/1.5 var(--sans);color:var(--ivory3)}' +
       '#places button:focus-visible,#places select:focus-visible,#places input:focus-visible,#places summary:focus-visible,#plCard .plBody:focus-visible{outline:1px solid var(--gold);outline-offset:3px}#plCard .plBody:focus-visible{outline-offset:-4px}' +
       '#places .vh{position:absolute!important;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;border:0}' +
       'html[data-lang="en"] #places .th{display:none}html[data-lang="th"] #places .en{display:none}' +
@@ -299,6 +299,72 @@
         '#plCard .art{flex:none;height:clamp(120px,30vh,260px)}#plCard .art.type{padding:16px 16px 0}' +
         '#plCard .plate b{font-size:clamp(40px,6vw,60px);writing-mode:horizontal-tb}#plCard .plate small{display:block}' +
         '#plCard .plBody{padding:20px 28px 24px}}' +
+      /* editorial pass: one column, image first, globe and city index behind their own buttons */
+      '#places{--ink:#0B1323;--ivory:#F1EBDD;--ivory2:#B7B1A8;--gold:#B99A68;--line:rgba(241,235,221,.12);--line2:rgba(241,235,221,.24);background:#0B1323}' +
+      '#places.open{display:block!important;overflow-y:auto;overscroll-behavior:contain;animation-duration:.3s}' +
+      '#places *{letter-spacing:0}#places .th,#places [lang="th"]{letter-spacing:0!important;text-transform:none!important;line-height:1.6}' +
+      '#places .plHead{display:flex!important;flex-direction:column-reverse;align-items:stretch;gap:0;padding:var(--sat) 12px 0 24px!important}' +
+      '#places .plHead>div{padding:8px 12px 0 0}#places .plCtl{height:48px;justify-content:flex-end;gap:0}' +
+      '#places .plCtl button{min-width:44px;min-height:44px;padding:0 10px;font:400 13px/16px var(--sans);letter-spacing:0;text-transform:none;color:var(--ivory2);transition:color .18s linear}' +
+      '#places .plCtl button>span{text-decoration:none}#places .plCtl button:hover{color:var(--ivory)}#places .plCtl .th{font:400 14px/1.4 var(--thai)}' +
+      '#plTitle{font:400 32px/36px var(--serif)!important;letter-spacing:0}#plTitle .th{font:400 26px/1.4 var(--thaiSerif,var(--thai))!important}#plHint{display:none}' +
+      '#plCity{display:flex;align-items:stretch;justify-content:space-between;margin:24px 24px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}' +
+      '#plCityB{flex:1;display:flex;align-items:center;gap:16px;min-height:48px;padding:0;border:0;background:none;color:var(--ivory);cursor:pointer;text-align:left}' +
+      '#plCityB .lbl{font:400 13px/16px var(--sans);color:var(--ivory2);letter-spacing:0;text-transform:none;margin:0}#plCityB .cn{font:400 17px/24px var(--sans)}#plCityB .cn .th{font:400 17px/1.6 var(--thai)}' +
+      '#plCityB .chev{width:7px;height:7px;margin:-4px 0 0 2px;border-right:1px solid var(--ivory2);border-bottom:1px solid var(--ivory2);transform:rotate(45deg);transition:transform .24s cubic-bezier(.2,0,0,1)}' +
+      '#places.idx #plCityB .chev{transform:rotate(225deg);margin-top:4px}' +
+      '#places .tl{min-height:44px;padding:0;border:0;background:none;color:var(--ivory);cursor:pointer;font:400 15px/22px var(--sans)}#places .tl>span{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:6px;text-decoration-color:var(--line2)}' +
+      '#plMapB{padding-left:16px!important}' +
+      /* map view: full screen, globe, legend and caption live here only */
+      '#plWrap{display:none!important}#places.map #plWrap{display:flex!important;position:fixed;inset:0;z-index:5;flex-direction:column;background:#0B1323;padding:var(--sat) 0 var(--sab)}' +
+      '#plWrap .mapBar{flex:none;display:flex;align-items:center;justify-content:space-between;height:48px;padding:0 24px}#plWrap .mh{font:400 13px/16px var(--sans);color:var(--ivory2)}' +
+      '#places.map #plStage{flex:1 1 auto;min-height:0}#plKey{padding:16px 24px 24px}#plKey .kc{font:400 13px/18px var(--sans)!important;letter-spacing:0!important;text-transform:none!important;color:var(--ivory2)}' +
+      '#plKey li{font:400 13px/18px var(--sans)!important;letter-spacing:0!important;text-transform:none!important}' +
+      /* city index: two columns of square thumbnails */
+      '#plList{display:none!important}' +
+      '#places.idx #plList{display:grid!important;grid-template-columns:1fr 1fr;gap:24px 12px;margin:0;padding:24px;border:0}' +
+      '#places.idx #plList~#plTrip,#places.idx #plList~#plCard{display:none!important}' +
+      '#places.idx #plList button{position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:8px;min-height:0;padding:0;white-space:normal;font:400 15px/22px var(--sans);letter-spacing:0;text-transform:none;color:var(--ivory2);transition:color .18s linear}' +
+      '#places.idx #plList button>.th,#places.idx #plList button>.en{text-decoration:none}#places.idx #plList button .th{font:400 15px/1.6 var(--thai)}' +
+      '#places.idx #plList .thm{display:flex;align-items:center;justify-content:center;width:100%;aspect-ratio:1/1;background:#111b30 center/cover no-repeat;border:1px solid var(--line)}' +
+      '#places.idx #plList .thm b{font:400 22px/1 var(--serif);color:var(--ivory)}' +
+      '#places.idx #plList button.on{color:var(--ivory)}#places.idx #plList button.on .thm{border-color:var(--ivory)}' +
+      '#places.idx #plList button.on::after{content:"";position:absolute;right:10px;top:8px;width:6px;height:12px;border-right:1px solid var(--ivory);border-bottom:1px solid var(--ivory);transform:rotate(45deg)}' +
+      '#places.idx #plList .tg{display:none}' +
+      /* the card: full-width 4:5 art, then name, note and three groups */
+      '#plCard{display:block!important;height:auto!important;overflow:visible!important;border-top:0!important;padding-bottom:calc(96px + 16px + var(--sab))}' +
+      '#plCard .plMain{display:block!important}' +
+      '#plCard .art{display:block;position:relative;width:auto;margin:24px 24px 0;aspect-ratio:4/5;flex:none!important;height:auto!important;background:#111b30}' +
+      '#plCard .art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}' +
+      '#plCard .art.type{display:flex;padding:0!important;border:1px solid var(--line)}#plCard .art.type .plate{border:0}#plCard .plate b{writing-mode:horizontal-tb!important;font-size:44px!important}#plCard .plate small{display:block!important;font:500 12px/16px var(--sans);letter-spacing:.08em;color:var(--ivory2)}' +
+      '#plCard .plBody{overflow:visible!important;height:auto!important;padding:24px 24px 0!important;mask:none!important;-webkit-mask:none!important}' +
+      '#plCard h3{gap:8px}#plCard h3 .nm{font:400 30px/34px var(--serif)!important}#plCard h3 .nm .th{font:400 24px/1.5 var(--thaiSerif,var(--thai))!important}' +
+      '#plCard h3 .ctry{font:500 12px/16px var(--sans)!important;letter-spacing:.08em!important;text-transform:uppercase;color:var(--ivory2)!important}#plCard h3 .ctry .th{font:500 13px/1.6 var(--thai)!important;text-transform:none}' +
+      '#plCard .why,#plCard .lead{margin-top:16px;font:400 16px/25px var(--sans)!important;color:var(--ivory)}#plCard .why .th,#plCard .lead .th{font:400 16px/1.6 var(--thai)}' +
+      '#plCard .facts{display:block!important;margin-top:24px;padding-top:24px;border-top:1px solid var(--line)}#plCard .facts>div+div{margin-top:24px}' +
+      '#plCard .lbl{display:block;margin-bottom:8px;font:400 13px/16px var(--sans)!important;letter-spacing:0!important;text-transform:none!important;color:var(--ivory2)!important}' +
+      '#plCard dd{font:400 16px/25px var(--sans)!important}#plCard dd small{font:400 13px/19px var(--sans)!important;color:var(--ivory2)}' +
+      '#plCard .do{margin-top:24px;padding-top:0;border-top:0;font:400 16px/25px var(--sans)!important}' +
+      '#plCard .nye{margin-top:24px;padding-top:24px}#plCard .ntag{padding:0;border:0;font:400 13px/16px var(--sans)!important;letter-spacing:0;text-transform:none;color:var(--gold)}#plCard .nye p{font:400 16px/25px var(--sans)!important}' +
+      '#plCard .src{margin-top:24px}#plCard .src summary{font:400 13px/16px var(--sans)!important;letter-spacing:0!important;text-transform:none!important}#plCard .src summary::before{background:var(--ivory2)}' +
+      '#plCard .src .chk{font:400 13px/19px var(--sans);color:var(--ivory2);padding:0 0 8px 22px}#plCard .src li{font:400 13px/19px var(--sans)!important}' +
+      '#plCard .intro{padding:24px!important}#plCard .pick{font:400 15px/22px var(--sans)!important}#plCard .note{display:none}' +
+      /* actions: one primary, two quiet toggles, pinned to the foot */
+      '#plCard .actw{position:fixed;left:0;right:0;bottom:0;z-index:3;padding:12px 24px calc(12px + var(--sab))!important;background:#0B1323;border-top:1px solid var(--line)}' +
+      '#plCard .acts{display:flex;flex-direction:column;gap:4px}' +
+      '#plCard .acts>button[data-a="next"]{min-height:48px;width:100%;background:#F1EBDD;color:#0B1323;font:500 16px/20px var(--sans)!important;letter-spacing:0!important;text-transform:none!important;transition:opacity .09s linear}' +
+      '#plCard .acts>button[data-a="next"]:active{opacity:.8}#plCard .acts>button[data-a="next"] .tx{text-decoration:none}#plCard .acts>button[data-a="next"] .th{font:500 16px/1.4 var(--thai)}' +
+      '#plCard .acts>button[data-a="next"][aria-pressed="true"]{background:none;color:var(--ivory);border:1px solid var(--line2)}' +
+      '#plCard .acts .sec{display:flex;justify-content:center;gap:24px}' +
+      '#plCard .acts .sec button{flex:none;min-height:44px;padding:0;border:0;background:none;color:var(--ivory2);cursor:pointer;font:400 15px/22px var(--sans)!important;letter-spacing:0!important;text-transform:none!important;display:inline-flex;align-items:center;gap:8px;transition:color .24s cubic-bezier(.2,0,0,1)}' +
+      '#plCard .acts .sec .th{font:400 15px/1.5 var(--thai)}#plCard .acts .sec .tx{text-decoration:none}' +
+      '#plCard .acts .sec button::before{content:"";width:4px;height:4px;border-radius:50%;background:transparent;transition:background .24s cubic-bezier(.2,0,0,1)}' +
+      '#plCard .acts .sec button[aria-pressed="true"]{color:var(--ivory)}#plCard .acts .sec button[aria-pressed="true"]::before{background:var(--gold)}' +
+      '#plTrip{margin:16px 24px 0}' +
+      '#plSpin{margin-top:24px;min-height:44px;padding:0!important;border:0!important;background:none!important;color:var(--ivory)!important;font:400 15px/22px var(--sans)!important;letter-spacing:0!important;text-transform:none!important;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:6px;text-decoration-color:var(--line2)}' +
+      '@media (min-width:760px){#places .plHead,#plCity,#plTrip,#plCard,#places.idx #plList{max-width:880px;margin-left:auto!important;margin-right:auto!important}#places .plHead{padding-left:24px!important}' +
+        '#plCard .plMain{display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;padding:0 24px}#plCard .art{margin:40px 0 0}#plCard .plBody{padding:40px 0 0!important}' +
+        '#places.idx #plList{grid-template-columns:repeat(4,1fr)}#plCard .actw{left:50%;transform:translateX(-50%);max-width:880px;width:100%}}' +
       '@media (prefers-reduced-motion:reduce){#places.open{animation:none}#places button,#plCard .art img{transition:none}}';
     document.head.appendChild(s);
   }
@@ -307,11 +373,13 @@
     d.innerHTML = '<header class="plHead"><div><h2 id="plTitle">' + T(TX.title[0], TX.title[1]) + '</h2><p id="plHint">' + T(TX.hint[0], TX.hint[1]) + '</p></div>' +
       '<div class="plCtl"><button id="plMute" type="button"></button><button id="plLang" type="button"></button>' +
       '<button id="plClose" type="button">' + L(TX.close[0], TX.close[1]) + '</button></div></header>' +
-      '<div id="plWrap"><div id="plStage"><canvas id="plGlobe" role="img"></canvas></div>' +
+      '<div id="plCity"><button id="plCityB" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="plList"><span class="lbl">' + L(TX.city[0], TX.city[1]) + '</span><span class="cn" id="plCityN"></span><span class="chev" aria-hidden="true"></span></button>' +
+      '<button id="plMapB" type="button" class="tl"><span>' + L(TX.map[0], TX.map[1]) + '</span></button></div>' +
+      '<div id="plWrap"><div class="mapBar"><p class="mh">' + L(TX.explore[0], TX.explore[1]) + '</p><button id="plMapX" type="button" class="tl"><span>' + L(TX.mapClose[0], TX.mapClose[1]) + '</span></button></div><div id="plStage"><canvas id="plGlobe" role="img"></canvas></div>' +
       '<div id="plKey"><p class="kc">' + L(TX.links[0], TX.links[1]) + '</p><ul id="plKeyL">' +
         [['on', 'selected'], ['want', 'planned'], ['been', 'been'], ['nx', 'nextBtn']].map(function (k) {
           return '<li><canvas data-k="' + k[0] + '" aria-hidden="true"></canvas>' + L(TX[k[1]][0], TX[k[1]][1]) + '</li>'; }).join('') + '</ul></div></div>' +
-      '<div id="plList" role="group">' + P.map(function (p) { return '<button type="button" data-id="' + p.id + '" aria-pressed="false">' + L(p.s, p.sTh) + '<span class="tg"></span></button>'; }).join('') + '</div>' +
+      '<div id="plList" role="group">' + P.map(function (p) { return '<button type="button" data-id="' + p.id + '" aria-pressed="false"><span class="thm" aria-hidden="true"' + (p.img ? ' style="background-image:url(' + p.img + ');background-position:' + (p.pos || '50% 50%') + '"' : '') + '>' + (p.img ? '' : '<b>' + p.s + '</b>') + '</span>' + L(p.s, p.sTh) + '<span class="tg"></span></button>'; }).join('') + '</div>' +
       '<div id="plTrip" role="group" aria-labelledby="plTripL" hidden><span class="tb" id="plTripB">' +
         '<span class="lbl" id="plTripL">' + L(TX.nextBtn[0], TX.nextBtn[1]) + '</span><span class="tn" id="plTripN"></span>' +
         '<label class="fl"><span class="lbl">' + L(TX.month[0], TX.month[1]) + '</span><select id="plMonth"><option value=""></option>' +
@@ -327,8 +395,15 @@
     $('plMute').addEventListener('click', function () { press($('mute')); ctl(); });
     $('plLang').addEventListener('click', function () { press($('lang')); ctl(); });
     var mb = $('mute'); if (mb && window.MutationObserver) new MutationObserver(ctl).observe(mb, { attributes: true, attributeFilter: ['data-muted', 'class'] });
+    function mode(m, on) { var d = $('places'); d.classList.toggle(m, on); if (m === 'idx') $('plCityB').setAttribute('aria-expanded', on ? 'true' : 'false');
+      if (m === 'map' && on) { size(); draw(); kick(); setTimeout(function () { $('plMapX').focus({ preventScroll: true }); }, 30); }
+      if (m === 'idx' && on) { var o = $('plList').querySelector('.on') || $('plList').querySelector('button'); if (o) setTimeout(function () { o.focus({ preventScroll: true }); }, 30); } }
+    window.__plMode = mode;
+    $('plCityB').addEventListener('click', function () { mode('idx', !$('places').classList.contains('idx')); });
+    $('plMapB').addEventListener('click', function () { mode('map', true); });
+    $('plMapX').addEventListener('click', function () { mode('map', false); $('plMapB').focus({ preventScroll: true }); });
     var list = $('plList');
-    list.addEventListener('click', function (e) { var b = e.target.closest && e.target.closest('button[data-id]'); if (b) pick(b.getAttribute('data-id'), true); });
+    list.addEventListener('click', function (e) { var b = e.target.closest && e.target.closest('button[data-id]'); if (b) { pick(b.getAttribute('data-id'), true); if ($('places').classList.contains('idx')) { mode('idx', false); $('plCityB').focus({ preventScroll: true }); var d = $('places'); d.scrollTop = 0; } } });
     list.addEventListener('keydown', function (e) { // arrows walk the chips across rows; Enter or Space picks
       var cs = [].slice.call(list.children), i = cs.indexOf(document.activeElement), j = -1; if (i < 0) return;
       if (e.key === 'ArrowRight' || e.key === 'ArrowDown') j = (i + 1) % cs.length; else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') j = (i + cs.length - 1) % cs.length;
@@ -358,7 +433,7 @@
     cv.addEventListener('pointercancel', function () { drag = null; cv.classList.remove('drag'); });
     // While open: Escape closes, Tab stays inside, and keys never reach the page's scene navigation behind.
     document.addEventListener('keydown', function (e) { if (!isOpen()) return;
-      if (e.key === 'Escape') { e.preventDefault(); close(); } else if (e.key === 'Tab') trap(e);
+      if (e.key === 'Escape') { e.preventDefault(); var d = $('places'); if (d.classList.contains('idx')) { window.__plMode('idx', false); $('plCityB').focus(); } else if (d.classList.contains('map')) { window.__plMode('map', false); $('plMapB').focus(); } else close(); } else if (e.key === 'Tab') trap(e);
       e.stopPropagation(); });
     // Phone back button or swipe closes the overlay instead of leaving the gift.
     addEventListener('popstate', function () {
@@ -382,7 +457,7 @@
     if (!g || !isOpen() || W < 2 || H < 2) return; setRot(); g.clearRect(0, 0, W, H);
     grid(); land();
     g.strokeStyle = 'rgba(244,236,220,.36)'; g.lineWidth = 1; g.beginPath(); g.arc(cx, cy, R, 0, TAU); g.stroke();
-    routes(); pins();
+    g.save(); g.beginPath(); g.arc(cx, cy, R - .5, 0, TAU); g.clip(); routes(); g.restore(); pins();
   }
   function grid() { var k, q, on, la, lo; g.strokeStyle = 'rgba(244,236,220,.075)'; g.lineWidth = .75; g.beginPath();
     for (la = -60; la <= 60; la += 30) { on = false; for (k = 0; k <= 90; k++) { q = view(vec(la, -180 + k * 4)); if (q.z < 0) { on = false; continue; } if (on) g.lineTo(q.x, q.y); else { g.moveTo(q.x, q.y); on = true; } } }
@@ -396,11 +471,11 @@
       for (i = 0; i < n; i++) { z = SZ[i]; if (z <= k * .25 || z > k * .25 + .25) continue; g.moveTo(SX[i] + r, SY[i]); g.arc(SX[i], SY[i], r, 0, TAU); }
       g.fillStyle = 'rgba(244,236,220,' + [.07, .11, .15, .2][k] + ')'; g.fill(); } }
   function line(pts, upto) { var n = Math.round((pts.length - 1) * upto), on = false, q = null;
-    for (var i = 0; i <= n; i++) { q = view(pts[i]); if (q.z < 0 && !q.out) { on = false; continue; } if (on) g.lineTo(q.x, q.y); else { g.moveTo(q.x, q.y); on = true; } }
+    for (var i = 0; i <= n; i++) { q = view(pts[i]); if (q.z < 0 || q.out) { on = false; continue; } if (on) g.lineTo(q.x, q.y); else { g.moveTo(q.x, q.y); on = true; } }
     return q; }
   // Links are great-circle (slerp) arcs from home; they show where, not how the flights go.
   function routes() { g.lineCap = 'round'; g.lineJoin = 'round'; g.lineWidth = .75;
-    P.forEach(function (p) { if (p.id === sel) return; var nx = st.next === p.id;
+    P.forEach(function (p) { if (true) return; var nx = st.next === p.id;
       g.strokeStyle = nx ? 'rgba(184,149,106,.6)' : has(p.id, 'planned') ? 'rgba(184,149,106,.36)' : has(p.id, 'been') ? 'rgba(244,236,220,.26)' : 'rgba(184,149,106,.16)';
       g.setLineDash(nx ? [2, 4] : []); g.beginPath(); line(GEO[p.id].arc, 1); g.stroke(); });
     g.setLineDash([]);
@@ -459,12 +534,13 @@
     ks.slice(1).forEach(function (k) { h += '<span class="vh">' + L(', ' + TX[k][0].toLowerCase(), ', ' + TX[k][1]) + '</span>'; });
     return h; }
   // Reflect state in place, so a focused chip or button keeps focus.
-  function sync() {
+  function sync() { var cn = $('plCityN'), sp = byId(sel); if (cn) cn.innerHTML = sp ? L(sp.s, sp.sTh) : L('Choose', 'เลือก');
     if (!built) return; var nb = $('placesNext'), nx = byId(st.next);
     [].forEach.call($('plList').children, function (b) { var id = b.getAttribute('data-id'), on = id === sel;
       b.classList.toggle('on', on); b.setAttribute('aria-pressed', on ? 'true' : 'false'); b.querySelector('.tg').innerHTML = tags(byId(id)); });
     [].forEach.call($('plCard').querySelectorAll('[data-a]'), function (b) { var a = b.getAttribute('data-a');
-      b.setAttribute('aria-pressed', (a === 'next' ? st.next === sel : has(sel, a)) ? 'true' : 'false'); });
+      var pr = (a === 'next' ? st.next === sel : has(sel, a)); b.setAttribute('aria-pressed', pr ? 'true' : 'false');
+      if (a === 'next') b.querySelector('.tx').innerHTML = pr ? L(TX.nextOn[0], TX.nextOn[1]) : L(TX.nextBtn[0], TX.nextBtn[1]); });
     if (nb) nb.innerHTML = nx ? L(TX.next[0] + nx.s, TX.next[1] + nx.sTh) : '';
     trip(); labels(); kick(); }
   // The next-trip line: destination, an optional month and number of days, Clear, and for a few seconds after a change, Undo.
@@ -499,7 +575,7 @@
     var el = $('plCard'), p = byId(sel), c, i, h, im, dt;
     if (!p) h = '<div class="plMain"><div class="plBody intro"><p class="lead">' + T(TX.intro[0], TX.intro[1]) + '</p>' +
       '<p class="pick">' + T(TX.pick[0], TX.pick[1]) + '</p><button type="button" id="plSpin" class="btn">' + L(TX.spin[0], TX.spin[1]) + '</button>' +
-      '<p class="note">' + L(TX.saved[0], TX.saved[1]) + '</p></div></div>';
+      '</div></div>';
     else { c = p.en.split(', '); i = p.th.lastIndexOf(' ');
       h = '<div class="plMain">' + art(p) + '<div class="plBody"><h3 id="plName"><span class="nm">' + T(c[0], p.th.slice(0, i)) + '</span>' +
         '<span class="ctry">' + L(c[1], p.th.slice(i + 1)) + '</span></h3>' +
@@ -507,10 +583,10 @@
         '<dl class="facts">' + fact('best', p.monEn, p.monTh, p.monNote, p.monNoteTh) + fact('from', p.fly, p.flyTh, p.flyNote, p.flyNoteTh) + '</dl>' +
         (p.nyeEn ? '<div class="nye"><span class="ntag">' + L(TX.nye[0], TX.nye[1]) + '</span><p>' + T(p.nyeEn, p.nyeTh) + '</p></div>' : '') +
         '<p class="do"><span class="lbl">' + L(TX.tog[0], TX.tog[1]) + '</span>' + T(p.doEn, p.doTh) + '</p>' +
-        '<details class="src"><summary>' + L(TX.src[0], TX.src[1]) + '</summary><ul>' +
+        '<details class="src"><summary>' + L(TX.details[0], TX.details[1]) + '</summary><p class="chk">' + L(TX.src[0], TX.src[1]) + '</p><ul>' +
           (p.src || []).concat(SRC_FLY).map(function (s) { return '<li>' + s + '</li>'; }).join('') + '</ul></details></div></div>' +
-        '<div class="actw"><div class="acts" role="group">' + actBtn('planned', 'planned') + actBtn('been', 'been') + actBtn('next', 'nextBtn') + '</div>' +
-        '<p class="saved">' + L(TX.saved[0], TX.saved[1]) + '</p></div>'; }
+        '<div class="actw"><div class="acts" role="group">' + actBtn('next', 'nextBtn') + '<span class="sec">' + actBtn('planned', 'planned') + actBtn('been', 'been') + '</span>' + '</div>' +
+        '</div>'; }
     el.innerHTML = h;
     el.querySelector('.plBody').addEventListener('scroll', fit, { passive: true });
     dt = el.querySelector('details'); if (dt) dt.addEventListener('toggle', fit);
@@ -581,7 +657,7 @@
     setTimeout(function () { var c = $('plClose'); if (c && isOpen()) c.focus(); }, 30); }
   function close(fromHistory) {
     if (!isOpen()) return;
-    $('places').classList.remove('open'); setInert(false); cancelAnimationFrame(raf); raf = 0; spin = fling = drag = null; lastT = 0;
+    $('places').classList.remove('open', 'idx', 'map'); setInert(false); cancelAnimationFrame(raf); raf = 0; spin = fling = drag = null; lastT = 0;
     if (pushed) { pushed = false; if (fromHistory !== true) { backing = true; try { history.back(); } catch (e) { backing = false; } } }
     var b = opener && opener !== document.body && document.contains(opener) ? opener : $('placesBtn'); opener = null;
     if (b && b.focus) b.focus({ preventScroll: true }); }
