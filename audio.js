@@ -235,6 +235,6 @@
       } catch (x) {}
     });
 
-    window.KKAudio = { start: start, toggle: toggleMute };
+    window.KKAudio = { start: start, toggle: toggleMute, state: function () { return ctx ? ctx.state : 'none'; } };
   } catch (err) {}
 })();

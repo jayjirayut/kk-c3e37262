@@ -64,16 +64,24 @@ html[data-lang="en"] .cap .th, html[data-lang="en"] .note .th{display:none}
 html[data-lang="en"] .cap .en.l{font-size:clamp(22px,5.6vw,28px);color:var(--ivory)}
 @media (min-width:820px){.cap{padding:0 0 calc(110px + var(--sab)) calc(64px + var(--sal));background:linear-gradient(to top,rgba(11,19,36,.7),transparent 40%)}}
 
+.cue{display:block;margin-top:10px;font-size:15px;color:var(--amber)}
+.cue .en{font-size:17px}
+html[data-lang="th"] .cue .en, html[data-lang="th"] .note .en, html[data-lang="th"] .ui .en{display:none}
+html[data-lang="en"] .ui .th, html[data-lang="en"] #gate .th, html[data-lang="en"] #letter .th{display:none}
+html[data-lang="th"] #gate .en, html[data-lang="th"] #letter .en{display:none}
+html[data-lang="both"] .cue .en::before{content:" · "}
+#fade{position:fixed;inset:0;z-index:5;background:#070b1c;opacity:0;pointer-events:none;transition:opacity .28s}
+#fade.on{opacity:1}
 /* elevator buttons (scene 3) */
 #lift{display:flex;gap:12px;margin-top:14px;pointer-events:auto}
 #lift button{font:500 14px "Sarabun";letter-spacing:.08em;padding:10px 16px;border-radius:6px;border:1px solid var(--line);background:rgba(244,236,220,.06);color:var(--ivory2)}
 #lift button.lit{background:var(--amber);color:var(--ink);border-color:var(--amber)}
 
 /* ending (scene 9) */
-.cap[data-scene="9"]{top:0;display:flex;align-items:flex-end;justify-content:center;background:linear-gradient(to top,rgba(11,19,36,.9),transparent 70%);
+.cap[data-scene="9"]{top:0;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;background:linear-gradient(to top,rgba(11,19,36,.9),transparent 70%);
   padding:calc(60px + var(--sat)) calc(16px + var(--sar)) calc(70px + var(--sab)) calc(16px + var(--sal));overflow-y:auto}
 .cap[data-scene="9"].on{pointer-events:auto}
-#panel9{width:100%;max-width:480px;user-select:text;-webkit-user-select:text}
+#panel9{margin-top:auto;width:100%;max-width:480px;user-select:text;-webkit-user-select:text}
 #panel9 .lead{font-size:clamp(21px,5.6vw,26px);font-weight:400;line-height:1.5}
 #panel9 .lead .en{display:block;font-size:20px;color:var(--ivory2)}
 html[data-lang="th"] #panel9 .lead .en{display:none} html[data-lang="en"] #panel9 .lead .th{display:none}
@@ -116,12 +124,13 @@ html.fast *,html.fast *::before,html.fast *::after{transition-duration:0s!import
 </head>
 <body data-scene="0">
 <canvas id="gl"></canvas>
+<div id="fade"></div>
 
 <div id="gate" role="button" tabindex="0" aria-label="เริ่ม · begin">
   <p class="q"><span class="th"><span class="nw">เกียวๆ</span> <span class="nw">พร้อมออกเดินทางหรือยัง?</span></span><span class="en">Keaw Keaw, ready?</span></p>
   <span class="pulse"></span>
-  <span class="tap">แตะเพื่อเริ่ม <span class="en">· tap to begin</span></span>
-  <button id="resume" type="button">ไปที่เรื่องเล็ก ๆ วันนี้ <span class="en">· skip to today</span></button>
+  <span class="tap"><span class="th">แตะเพื่อเริ่ม</span> <span class="en">tap to begin</span></span>
+  <button id="resume" type="button"><span class="th">ไปที่เรื่องเล็ก ๆ วันนี้</span> <span class="en">skip to today</span></button>
 </div>
 
 <div id="cap">
@@ -132,14 +141,17 @@ html.fast *,html.fast *::before,html.fast *::after{transition-duration:0s!import
   </section>
   <section class="cap" data-scene="2">
     <span class="tag">ห้องเครื่อง · <span class="en">engine room</span></span>
-    <p class="th"><span class="nw">ยานลำนี้ใช้พลัง</span><wbr><span class="nw">จากคลาสสปิน</span><wbr> <span class="nw">ปัดเพื่อปั่น</span></p>
-    <span class="en l">Ship powered by spin class. Swipe to spin.</span>
-    <span class="note"><span class="th">นักบิน: ดอกไม้ปะทะ</span> <span class="en">· Jay's cardio: under review.</span></span>
+    <p class="th"><span class="nw">ยานลำนี้ใช้พลัง</span><wbr><span class="nw">จากคลาสสปิน</span><wbr> </p>
+    <span class="en l">Ship powered by spin class.</span>
+    <span class="note"><span class="th">นักบิน: ดอกไม้ปะทะ</span><span class="en"> Pilot: ดอกไม้ปะทะ</span></span>
+    <span class="cue"><span class="th">ส่วนคาร์ดิโอของเจ… ยังอยู่ระหว่างประเมิน</span><span class="en">Jay's cardio: under review.</span></span>
+    <span class="cue"><span class="th">ปัดที่ล้อเพื่อปั่น</span><span class="en">Swipe the wheel to spin.</span></span>
   </section>
   <section class="cap" data-scene="3">
     <span class="tag">ลิฟต์ · <span class="en">the lift</span></span>
     <p class="th"><span class="nw">วันนี้เลิกงานแล้ว</span><wbr> <span class="nw">ไปพักกัน</span></p>
     <span class="en l">Off duty. Your outie has declined another meeting.</span>
+    <span class="cue"><span class="th">กดปุ่มลิฟต์</span><span class="en">Press a lift button.</span></span>
     <div id="lift"><button type="button" data-f="work">WORK</button><button type="button" data-f="off">OFF DUTY</button></div>
   </section>
   <section class="cap" data-scene="4">
@@ -154,13 +166,15 @@ html.fast *,html.fast *::before,html.fast *::after{transition-duration:0s!import
   </section>
   <section class="cap" data-scene="6">
     <span class="tag">เกียวๆ want coffee milk</span>
-    <p class="th"><span class="nw">วิธีชงกาแฟนม</span><wbr><span class="nw">ที่ล้ำเกินจำเป็น</span><wbr> <span class="nw">ลากเพื่อคน</span></p>
-    <span class="en l">An unnecessarily advanced way to make coffee milk. Drag to stir.</span>
+    <p class="th"><span class="nw">วิธีชงกาแฟนม</span><wbr><span class="nw">ที่ล้ำเกินจำเป็น</span><wbr> </p>
+    <span class="cue"><span class="th">ลากบนแก้วเพื่อคน</span><span class="en">Drag to stir.</span></span>
+    <span class="en l">An unnecessarily advanced way to make coffee milk.</span>
   </section>
   <section class="cap" data-scene="7">
     <span class="tag">สองวง · <span class="en">two rings</span></span>
     <p class="th"><span class="nw">คนละจังหวะ</span><wbr> <span class="nw">ก็หาจังหวะร่วมกันได้</span></p>
-    <span class="en l">Different rhythms. Room for both. Drag one, watch the other.</span>
+    <span class="en l">Different rhythms. Room for both.</span>
+    <span class="cue"><span class="th">ลองลากวงหนึ่ง แล้วดูอีกวงขยับตาม</span><span class="en">Drag one ring, watch the other move.</span></span>
   </section>
   <section class="cap" data-scene="8">
     <span class="tag">ชั้นวางของวันธรรมดา</span>
@@ -171,23 +185,24 @@ html.fast *,html.fast *::before,html.fast *::after{transition-duration:0s!import
     <div id="panel9">
       <p class="lead"><span class="th"><span class="nw">เกียวๆ ขอบคุณ</span><wbr><span class="nw">ที่ค่อย ๆ หาจังหวะ</span><wbr><span class="nw">ไปด้วยกันนะ</span></span><span class="en">Thank you for finding the rhythm with me.</span></p>
       <div class="tabs" role="tablist">
-        <button role="tab" aria-selected="true" data-tab="mission">เรื่องเล็ก ๆ วันนี้</button>
-        <button role="tab" aria-selected="false" data-tab="letter">อ่านข้อความจากเจ</button>
+        <button role="tab" class="ui" aria-selected="true" data-tab="mission"><span class="th">เรื่องเล็ก ๆ วันนี้</span><span class="en">Today</span></button>
+        <button role="tab" class="ui" aria-selected="false" data-tab="letter"><span class="th">อ่านข้อความจากเจ</span><span class="en">Note from Jay</span></button>
       </div>
       <div id="mission" class="tabpane on"></div>
       <div id="letter" class="tabpane">
-        <p><span class="nw">ตั้งแต่ธันวาคม 2023</span><wbr> <span class="nw">เรื่องที่ชอบที่สุด</span><wbr><span class="nw">ไม่ใช่เรื่องใหญ่</span><wbr> <span class="nw">แต่เป็นกาแฟนม</span> <span class="nw">คลาสสปิน</span><wbr> <span class="nw">กับซีรีส์คืนวันธรรมดา</span></p>
-        <p class="en">Since December 2023, my favourite things have been the small ones: coffee milk, spin class, a weeknight show.</p>
+        <p class="th"><span class="nw">ชอบวันธรรมดา</span><wbr><span class="nw">ที่ได้กินกาแฟนมกับเกียวๆ</span><wbr> <span class="nw">แล้วก็ดูซีรีส์ด้วยกัน</span></p>
+        <p class="en">I like the ordinary days: coffee milk with you, then a show together.</p>
+        <p style="font-size:13px;color:var(--ivory2);margin-top:6px">ธันวาคม 2023 · <span class="en" style="font-size:15px">since December 2023</span></p>
         <!-- JAY: EDIT THIS LINE (read-only for her; open the page with ?edit=1 to change it) -->
         <p id="jayline" spellcheck="false"></p>
         <p class="en" style="color:var(--amber)">Jay</p>
       </div>
-      <button id="storyBtn" class="btn" type="button">เก็บเป็นการ์ด <span class="en">· make a card</span></button>
+      <button id="storyBtn" class="btn ui" type="button"><span class="th">เก็บเป็นการ์ด</span><span class="en">Make a card</span></button>
     </div>
   </section>
 </div>
 
-<div id="nav"><button id="prev" type="button">ย้อนกลับ</button><div id="dots" aria-hidden="true"></div><button id="next" type="button">ต่อไป</button></div>
+<div id="nav"><button id="prev" class="ui" type="button"><span class="th">ย้อนกลับ</span><span class="en">Back</span></button><div id="dots" aria-hidden="true"></div><button id="next" class="ui" type="button"><span class="th">ต่อไป</span><span class="en">Next</span></button></div>
 
 <button id="lang" class="topbtn" type="button" aria-label="language">TH</button>
 <button id="mute" class="topbtn" type="button" aria-label="sound on/off" aria-pressed="false">
@@ -203,6 +218,7 @@ html.fast *,html.fast *::before,html.fast *::after{transition-duration:0s!import
     <button id="dlBtn" class="btn ghost" type="button">บันทึกภาพ</button>
     <button id="storyClose" class="btn ghost" type="button">ปิด</button>
   </div>
+  <p id="shareMsg" style="font-size:14px;color:var(--ivory2);min-height:1.4em" aria-live="polite"></p>
 </div>
 
 <script>
@@ -291,20 +307,20 @@ html.fast *,html.fast *::before,html.fast *::after{transition-duration:0s!import
   function closeStory(){ story.classList.remove('open'); story.setAttribute('aria-hidden', 'true'); window.dispatchEvent(new CustomEvent('storyclose')); if (opener) opener.focus(); }
   document.getElementById('storyBtn').addEventListener('click', function(){
     opener = this; story.classList.add('open'); story.setAttribute('aria-hidden', 'false');
-    window.dispatchEvent(new CustomEvent('storyopen')); setTimeout(function(){ document.getElementById('shareBtn').focus(); }, 50);
+    window.dispatchEvent(new CustomEvent('storyopen')); setTimeout(function(){ var f = [].filter.call(story.querySelectorAll('button,input'), function(x){ return x.offsetParent !== null; }); if (f[0]) f[0].focus(); }, 50);
   });
   document.getElementById('storyClose').addEventListener('click', closeStory);
   story.addEventListener('keydown', function(e){
     if (e.key === 'Escape') { closeStory(); return; }
     if (e.key !== 'Tab') return;
-    var f = [].slice.call(story.querySelectorAll('button,input')), a = document.activeElement;
+    var f = [].filter.call(story.querySelectorAll('button,input'), function(x){ return x.offsetParent !== null; }), a = document.activeElement;
     if (e.shiftKey && a === f[0]) { e.preventDefault(); f[f.length - 1].focus(); }
     else if (!e.shiftKey && a === f[f.length - 1]) { e.preventDefault(); f[0].focus(); }
   });
 
   // JAY: EDIT THIS LINE. Change DEF to the line you want her to see. It is read-only for her;
   // open the page with ?edit=1 on your own phone to type a new one (saved in that browser only).
-  var KEY = 'kk_jayline', DEF = 'วันนี้เป็นไงบ้าง เล่าให้ฟังหน่อย';
+  var KEY = 'kk_jayline', DEF = 'วันนี้เป็นไงบ้าง มีอะไรอยากเล่าไหม?';
   var jl = document.getElementById('jayline'), saved = null;
   try { saved = edit ? localStorage.getItem(KEY) : null; } catch (e) {}
   jl.textContent = saved && saved.trim() ? saved : DEF;

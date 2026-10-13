@@ -15,7 +15,7 @@
     ['วันนี้อยากให้ช่วยอะไรไหม?', 'Anything I can help with today?'],
     ['วันนี้มีอะไรอยากเล่าให้ฟังไหม?', 'Anything you want to tell me about today?'],
     ['วันนี้เริ่มจากกาแฟก่อน', 'Coffee first today.'],
-    ['คืนนี้ดูต่อตอนไหนดี?', 'Which episode tonight?'],
+    ['คืนนี้ดูตอนต่อไปกันไหม?', 'Next episode tonight?'],
     ['วันนี้พักบ้างนะ', 'Take a break today.'],
     ['ปั่นเสร็จแล้วกินอะไรดี?', 'After spin, what are we eating?']
   ];
@@ -30,7 +30,7 @@
       '#mission .grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}' +
       '#mission .r{display:flex;flex-direction:column;align-items:flex-start;gap:2px;text-align:left;min-height:60px;padding:9px 12px;word-break:keep-all;border-radius:12px;border:1px solid var(--line);background:rgba(244,236,220,.05);color:var(--ivory);font:400 15px Sarabun;cursor:pointer}' +
       '#mission .r small{font-size:12px;color:var(--ivory2)}#mission .r .ico{color:var(--ivory2);font-size:14px}' +
-      '#mission .r.done{background:rgba(230,178,106,.18);border-color:rgba(230,178,106,.6)}#mission .r.done .ico{color:var(--amber)}' +
+      '#mission .r.set{border-style:dashed;color:var(--ivory2)}#mission .r.done{background:rgba(230,178,106,.18);border-color:rgba(230,178,106,.6)}#mission .r.done .ico{color:var(--amber)}' +
       '#mission .r [contenteditable]{outline:none;border-bottom:1px dashed rgba(244,236,220,.3)}' +
       '#mission .foot{margin-top:10px;font-size:14px;color:var(--ivory2)}' +
       'html[data-lang="th"] #mission .en{display:none}html[data-lang="en"] #mission .th{display:none}';
@@ -39,29 +39,31 @@
   function render() {
     var el = document.getElementById('mission'); if (!el) return;
     var log = load(), today = ymd(), done = log[today] || [], dq = DAILY[Math.floor(Date.now() / 864e5) % DAILY.length];
-    var his = LS.get('kk_hisgoal', 'เป้าหมายของเจ');
+    var his = LS.get('kk_hisgoal', '');
     var h = '<p class="q"><span class="th">' + dq[0] + '</span> <span class="en">' + dq[1] + '</span></p><div class="grid">';
     RIT.forEach(function (r) {
-      var label = r.id === 'his' ? '<span contenteditable="true" spellcheck="false" data-his>' + his.replace(/</g, '&lt;') + '</span>' : '<span class="th">' + r.th + '</span>';
+      if (r.id === 'his' && !his) { h += '<button type="button" class="r set" data-set="1"><span class="ico">+ <small>เจ</small></span><span class="th">ตั้งกิจกรรมของเจ</span><small class="en">set Jay\'s activity</small></button>'; return; }
+      var label = r.id === 'his' ? '<span class="th" data-his>' + his.replace(/</g, '&lt;') + '</span>' : '<span class="th">' + r.th + '</span>';
       h += '<button type="button" class="r' + (done.indexOf(r.id) > -1 ? ' done' : '') + '" data-id="' + r.id + '" aria-pressed="' + (done.indexOf(r.id) > -1) + '">' +
         '<span class="ico">' + r.ico + ' <small>' + r.who + '</small></span>' + label + '<small class="en">' + r.en + '</small></button>';
     });
     var n = days(log), s = run(log);
-    h += '</div><p class="foot">' + (n ? '<span class="th">ทำเรื่องเล็ก ๆ ด้วยกันมาแล้ว ' + n + ' วัน' + (s > 1 ? ' (ติดกัน ' + s + ' วัน)' : '') + '</span> <span class="en">' + n + ' small days so far' + (s > 1 ? ', ' + s + ' in a row' : '') + '</span>'
-      : '<span class="th">แตะสิ่งที่ทำวันนี้ ไม่ต้องครบก็ได้</span> <span class="en">Tap what happened today. No need for all four.</span>') + '</p>';
-    el.innerHTML = h;
+    h += '</div><p class="foot">' + (n ? '<span class="th">บันทึกไว้แล้ว ' + n + ' วัน' + (s > 1 ? ' (ติดกัน ' + s + ' วัน)' : '') + '</span> <span class="en">' + n + ' days logged' + (s > 1 ? ', ' + s + ' in a row' : '') + '</span>'
+      : '<span class="th">แตะสิ่งที่ทำวันนี้ ไม่ต้องครบก็ได้</span> <span class="en">Tap what happened today. No need for all four.</span>') + '</p>' +
+      '<p class="foot" style="font-size:12px;opacity:.75"><span class="th">บันทึกไว้ในเครื่องนี้เท่านั้น ไม่ได้ซิงก์กับอีกเครื่อง</span> <span class="en">Saved on this device only. Not synced.</span></p>';
+    el.innerHTML = h; el.dataset.day = today;
   }
   function bind() {
     var el = document.getElementById('mission'); if (!el) return;
     el.addEventListener('click', function (e) {
-      if (e.target.closest('[data-his]')) return;
       var b = e.target.closest('.r'); if (!b) return;
+      if (b.dataset.set || (e.target.closest('[data-his]') && e.detail === 2)) { var v = prompt('กิจกรรมของเจ (เช่น วิ่ง 5 กม.) · Jay\'s activity', LS.get('kk_hisgoal', '')); if (v != null) { LS.set('kk_hisgoal', v.trim()); render(); } return; }
       var log = load(), k = ymd(), d = log[k] || [], i = d.indexOf(b.dataset.id);
       if (i > -1) d.splice(i, 1); else d.push(b.dataset.id);
       log[k] = d; save(log); render();
     });
-    el.addEventListener('input', function (e) { if (e.target.hasAttribute('data-his')) LS.set('kk_hisgoal', e.target.textContent.trim() || 'เป้าหมายของเจ'); });
-    el.addEventListener('keydown', function (e) { if (e.target.hasAttribute && e.target.hasAttribute('data-his') && e.key === 'Enter') { e.preventDefault(); e.target.blur(); } e.stopPropagation(); });
+    document.addEventListener('visibilitychange', function () { if (!document.hidden) render(); });
+    setInterval(function () { if (el.dataset.day !== ymd()) render(); }, 60000);
   }
 
   // ---------- Story card 1080x1920: her stirred coffee galaxy inside one silver ring ----------
@@ -91,19 +93,22 @@
   }
   function show() {
     var p = document.getElementById('storyPreview'), cb = document.getElementById('withName');
-    var go = function () { var c = draw(cb && cb.checked); if (p && !p.contains(c)) { p.innerHTML = ''; p.appendChild(c); } };
+    var go = function () { var c = draw(cb && cb.checked); if (p && !p.contains(c)) { p.innerHTML = ''; p.appendChild(c); } prep(); };
     (document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve()).then(go, go);
   }
   function blob(cb) { draw(document.getElementById('withName') && document.getElementById('withName').checked).toBlob(cb, 'image/png'); }
   function download() { blob(function (b) { var a = document.createElement('a'); a.href = URL.createObjectURL(b); a.download = 'keawkeaw_story.png'; document.body.appendChild(a); a.click(); setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 1500); }); }
+  var ready = null;
+  function msg(t) { var p = document.getElementById('shareMsg'); if (p) p.textContent = t; }
+  function prep() { ready = null; blob(function (b) { try { ready = new File([b], 'keawkeaw_story.png', { type: 'image/png' }); } catch (e) { ready = b; } }); }
   function share() {
-    blob(function (b) {
-      try {
-        var f = new File([b], 'keawkeaw_story.png', { type: 'image/png' });
-        if (navigator.canShare && navigator.canShare({ files: [f] })) { navigator.share({ files: [f] }).catch(function () {}); return; }
-      } catch (e) {}
-      download();
-    });
+    msg('');
+    var f = ready;
+    if (f && navigator.canShare && f instanceof File && navigator.canShare({ files: [f] })) {
+      navigator.share({ files: [f] }).catch(function (e) { if (e && e.name === 'AbortError') return; msg('แชร์ไม่ได้ บันทึกภาพแทนแล้ว · Share failed, saved instead.'); download(); });
+      return;
+    }
+    msg('บันทึกภาพแทน · Saved the image instead.'); download();
   }
   window.__storyCanvas = function () { return new Promise(function (r) { (document.fonts ? document.fonts.ready : Promise.resolve()).then(function () { r(draw(false)); }); }); };
 
@@ -113,7 +118,7 @@
       window.addEventListener('storyopen', show);
       var cb = document.getElementById('withName'); if (cb) cb.addEventListener('change', show);
       var d = document.getElementById('dlBtn'); if (d) d.addEventListener('click', download);
-      var s = document.getElementById('shareBtn'); if (s) { s.addEventListener('click', share); if (!navigator.share) s.style.display = 'none'; }
+      var s = document.getElementById('shareBtn'); if (s) { s.addEventListener('click', share); if (!navigator.share || !navigator.canShare) s.style.display = 'none'; }
       window.addEventListener('scene', function (e) { if (e.detail === 9) render(); });
     } catch (e) {}
   }
