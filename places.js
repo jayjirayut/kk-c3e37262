@@ -8,8 +8,8 @@
   // pos: focal point for the crop (x for the tall phone crop, y for the wide one); alt/altTh describe the photograph.
   var P = [
     { id: 'tyo', lat: 35.68, lon: 139.69, en: 'Tokyo, Japan', th: 'โตเกียว ญี่ปุ่น', s: 'Tokyo', sTh: 'โตเกียว',
-      img: 'img/tyo.webp', pos: '50% 55%', alt: 'A rain-wet shopping street at night, lit boutique windows and towers beyond',
-      altTh: 'ถนนช้อปปิ้งเปียกฝนยามค่ำ หน้าร้านเปิดไฟ มีตึกสูงอยู่ไกล ๆ',
+      img: 'img/tyo.webp', pos: '50% 50%', alt: 'A wide city avenue in daylight, zebra crossings and tree-lined pavements between modern buildings',
+      altTh: 'ถนนกว้างกลางเมืองยามกลางวัน มีทางม้าลายและต้นไม้ริมทางระหว่างตึกสมัยใหม่',
       nyeEn: '~6h direct. Around midnight, temple bells are rung 108 times: joya no kane.',
       nyeTh: '~6 ชม. บินตรง ราวเที่ยงคืนวัดตีระฆัง 108 ครั้ง เรียกว่า โจยะ โนะ คาเนะ',
       whyEn: 'Ginza, Shibuya and teamLab: shopping, design and digital art in one city.',
@@ -20,7 +20,7 @@
       doEn: 'Ginza flagships by day, the Shibuya crossing at night, teamLab the next morning.',
       doTh: 'กลางวันเดินร้านแฟล็กชิปย่านกินซ่า กลางคืนข้ามแยกชิบุยะ เช้าวันต่อมาไป teamLab' },
     { id: 'sel', lat: 37.57, lon: 126.98, en: 'Seoul, South Korea', th: 'โซล เกาหลีใต้', s: 'Seoul', sTh: 'โซล',
-      img: 'img/sel.webp', pos: '50% 50%', alt: 'A quiet street at night lined with lit brick boutiques, towers glowing at the end',
+      img: 'img/sel.webp', pos: '50% 50%', alt: 'A sunny side street with a brick café, potted plants and outdoor tables', altTh: 'ซอยแดดอุ่นกับคาเฟ่ผนังอิฐ กระถางต้นไม้ และโต๊ะริมทาง',
       whyEn: 'Gangnam and Seongsu, for beauty and tech.',
       whyTh: 'กังนัมกับซองซู เมืองของบิวตี้และเทคโนโลยี',
       monEn: 'Late Mar to Apr, or Oct to Nov', monTh: 'ปลาย มี.ค. ถึง เม.ย. หรือ ต.ค. ถึง พ.ย.', monNote: 'cherry blossom or autumn leaves', monNoteTh: 'ช่วงซากุระบาน หรือช่วงใบไม้เปลี่ยนสี',
@@ -29,7 +29,7 @@
       doEn: 'Gangnam in the afternoon, Seongsu cafés and pop-up stores the next day.',
       doTh: 'บ่ายเดินกังนัม วันต่อมาไปคาเฟ่และป๊อปอัปสโตร์ที่ซองซู' },
     { id: 'sin', lat: 1.29, lon: 103.85, en: 'Singapore, Southeast Asia', th: 'สิงคโปร์ เอเชียตะวันออกเฉียงใต้', s: 'Singapore', sTh: 'สิงคโปร์',
-      img: 'img/sin.webp', pos: '50% 50%', alt: 'Marina Bay Sands and the bay at night', altTh: 'มารีน่าเบย์แซนด์สและอ่าวยามค่ำ',
+      img: 'img/sin.webp', pos: '50% 50%', alt: 'The Supertrees at Gardens by the Bay, covered in plants, under a bright sky', altTh: 'ซูเปอร์ทรีที่ Gardens by the Bay ปกคลุมด้วยต้นไม้ ใต้ฟ้าสว่าง',
       whyEn: 'The closest city on the list, about two and a half hours away.',
       whyTh: 'ใกล้ที่สุดในลิสต์ บินราวสองชั่วโมงครึ่ง',
       monEn: 'Feb to Apr', monTh: 'ก.พ. ถึง เม.ย.', monNote: 'driest months', monNoteTh: 'ช่วงที่ฝนน้อยที่สุด',
@@ -38,7 +38,7 @@
       doEn: 'Orchard Road by day, Gardens by the Bay in the evening, Marina Bay to finish.',
       doTh: 'กลางวันเดินถนนออร์ชาร์ด เย็นไป Gardens by the Bay ปิดท้ายที่มารีน่าเบย์' },
     { id: 'sha', lat: 31.24, lon: 121.50, en: 'Shanghai, China', th: 'เซี่ยงไฮ้ จีน', s: 'Shanghai', sTh: 'เซี่ยงไฮ้',
-      img: 'img/sha.webp', pos: '50% 50%', alt: 'The Lujiazui skyline across the river at night', altTh: 'เส้นขอบฟ้าลู่เจียจุ่ยริมแม่น้ำยามค่ำ',
+      img: 'img/sha.webp', pos: '50% 50%', alt: 'The Lujiazui skyline across the river at dawn, the Oriental Pearl Tower and Shanghai Tower', altTh: 'เส้นขอบฟ้าลู่เจียจุ่ยริมแม่น้ำยามเช้า มีหอไข่มุกตะวันออกและเซี่ยงไฮ้ทาวเวอร์',
       whyEn: 'Another river city: the Bund on one bank, Lujiazui on the other.',
       whyTh: 'อีกเมืองริมแม่น้ำ เดอะบันด์อยู่ฝั่งหนึ่ง ลู่เจียจุ่ยอยู่อีกฝั่ง',
       monEn: 'Oct to Nov', monTh: 'ต.ค. ถึง พ.ย.', monNote: 'mild and settled; spring also mild but rainier', monNoteTh: 'อากาศกำลังสบาย ไม่ค่อยแปรปรวน หน้าใบไม้ผลิก็สบายเหมือนกันแต่ฝนเยอะกว่า',
@@ -47,7 +47,7 @@
       doEn: 'A walk along the Bund after dark, Lujiazui lit across the river.',
       doTh: 'เดินริมเดอะบันด์ตอนค่ำ มองลู่เจียจุ่ยเปิดไฟอยู่อีกฝั่ง' },
     { id: 'dxb', lat: 25.20, lon: 55.27, en: 'Dubai, United Arab Emirates', th: 'ดูไบ สหรัฐอาหรับเอมิเรตส์', s: 'Dubai', sTh: 'ดูไบ',
-      img: 'img/dxb.webp', pos: '50% 50%', alt: 'A palm-lined promenade at night beside still water, the Burj Khalifa on the skyline',
+      img: 'img/dxb.webp', pos: '50% 50%', alt: 'A close view of a curved steel facade with flowing cut-out shapes, against a blue sky', altTh: 'ด้านหน้าอาคารโลหะโค้งที่มีลวดลายเจาะเป็นเส้นโค้ง ตัดกับฟ้าสีฟ้า',
       whyEn: 'Dubai Mall and the Museum of the Future, six hours from home.',
       whyTh: 'ดูไบมอลล์กับพิพิธภัณฑ์แห่งอนาคต บินจากบ้านราวหกชั่วโมง',
       monEn: 'Nov to Mar', monTh: 'พ.ย. ถึง มี.ค.', monNote: 'cooler months', monNoteTh: 'ช่วงที่อากาศเย็นกว่า',
@@ -56,7 +56,7 @@
       doEn: 'The Museum of the Future in the morning, Dubai Mall in the afternoon.',
       doTh: 'เช้าไปพิพิธภัณฑ์แห่งอนาคต บ่ายเดินดูไบมอลล์' },
     { id: 'nyc', lat: 40.71, lon: -74.01, en: 'New York, United States', th: 'นิวยอร์ก สหรัฐอเมริกา', s: 'New York', sTh: 'นิวยอร์ก',
-      img: 'img/nyc.webp', pos: '50% 50%', alt: 'Manhattan at night, a lit avenue of shopfronts between towers',
+      img: 'img/nyc.webp', pos: '50% 50%', alt: 'A brownstone street in autumn, iron railings and stoops under orange leaves', altTh: 'ถนนตึกบราวน์สโตนในฤดูใบไม้ร่วง ราวเหล็กและบันไดหน้าบ้านใต้ใบไม้สีส้ม',
       whyEn: 'An autumn walk through SoHo, with time to stop for coffee.',
       whyTh: 'เดินเล่นโซโหในฤดูใบไม้ร่วง แวะพักกินกาแฟกันระหว่างทาง',
       monEn: 'Sep to Nov', monTh: 'ก.ย. ถึง พ.ย.', monNote: 'autumn; October mildest', monNoteTh: 'ฤดูใบไม้ร่วง ตุลาคมอากาศสบายที่สุด',
@@ -65,8 +65,8 @@
       doEn: 'Window shopping along Fifth Avenue.',
       doTh: 'เดินดูร้านไปตามฟิฟท์อเวนิว' },
     { id: 'kef', lat: 64.15, lon: -21.94, en: 'Reykjavik, Iceland', th: 'เรคยาวิก ไอซ์แลนด์', s: 'Reykjavik', sTh: 'เรคยาวิก',
-      img: 'img/kef.webp', pos: '60% 55%', alt: 'Green aurora over a lagoon of floating ice',
-      altTh: 'แสงเหนือสีเขียวเหนือทะเลสาบที่มีก้อนน้ำแข็งลอย',
+      img: 'img/kef.webp', pos: '50% 50%', alt: 'Hallgrímskirkja above the coloured rooftops of Reykjavik at dusk',
+      altTh: 'โบสถ์ฮัลล์กรีมสเคิร์กจาเหนือหลังคาหลากสีของเรคยาวิกยามโพล้เพล้',
       nyeEn: 'Inside aurora season. At midnight, residents set off fireworks across the whole city.',
       nyeTh: 'อยู่ในฤดูแสงเหนือ เที่ยงคืนชาวเมืองจุดพลุกันทั่วทั้งเมือง',
       whyEn: 'We both love Interstellar. One evening, just looking up.',
@@ -77,8 +77,8 @@
       doEn: 'Drive past the city lights on a clear night with a thermos of coffee milk, and wait for the sky to move.',
       doTh: 'ขับรถออกนอกเมืองคืนฟ้าใส พกกระติกกาแฟนมไปด้วย แล้วนั่งรอให้ฟ้าเริ่มขยับ' },
     { id: 'tek', lat: -44.0, lon: 170.48, en: 'Lake Tekapo, New Zealand', th: 'ทะเลสาบเทคาโป นิวซีแลนด์', s: 'Tekapo', sTh: 'เทคาโป',
-      img: 'img/tek.webp', pos: '10% 62%', alt: 'The Milky Way over a still lake and snowy peaks, a small stone church lit on the far shore',
-      altTh: 'ทางช้างเผือกเหนือทะเลสาบนิ่งและยอดเขาหิมะ มีโบสถ์หินหลังเล็กเปิดไฟอยู่อีกฝั่ง',
+      img: 'img/tek.webp', pos: '50% 50%', alt: 'Lupins on the shore of turquoise Lake Tekapo, snowy mountains beyond',
+      altTh: 'ดอกลูพินริมทะเลสาบเทคาโปสีเทอร์ควอยซ์ มีภูเขาหิมะอยู่ไกล ๆ',
       whyEn: 'For our Interstellar habit, with hot pools afterwards.',
       whyTh: 'ดูดาวให้เต็มตา แล้วไปแช่น้ำอุ่นกัน',
       monEn: 'Jun to Aug', monTh: 'มิ.ย. ถึง ส.ค.', monNote: 'for winter stargazing', monNoteTh: 'สำหรับดูดาวหน้าหนาว',
@@ -364,7 +364,7 @@
       '#plIntro,#plSurW{display:none}#places.idx #plIntro{display:block;margin:24px 24px 0;font:400 24px/30px var(--serif);color:var(--ivory)}#places.idx #plIntro .th{font:400 20px/1.6 var(--thaiSerif,var(--thai))}' +
       '#places.idx #plSurW{display:block;padding:0 24px calc(40px + var(--sab))}' +
       '#places.idx #plList{gap:24px 12px}#places.idx #plList .tg,#places.idx~* .tg{display:none}' +
-      '#places button:focus{outline:none}#places button:focus-visible{outline:2px solid var(--gold)!important;outline-offset:3px!important}' +
+      '#places button:focus:not(:focus-visible),#plClose:focus:not(:focus-visible){outline:none!important}#places button:focus{outline:none}#places button:focus-visible{outline:2px solid var(--gold)!important;outline-offset:3px!important}' +
       '#plCard .sec2{display:flex;gap:24px;margin-top:24px;padding-top:16px;border-top:1px solid var(--line)}' +
       '#plCard .sec2 button{min-height:44px;padding:0;border:0;background:none;color:var(--ivory2);cursor:pointer;font:400 15px/22px var(--sans);display:inline-flex;align-items:center;gap:8px}' +
       '#plCard .sec2 button .th{font:400 15px/1.5 var(--thai)}#plCard .sec2 button::before{content:"";width:12px;height:12px;border:1px solid var(--line2);transition:background .24s,border-color .24s}' +
@@ -665,7 +665,7 @@
     opener = document.activeElement; $('places').classList.add('open'); setInert(true);
     if (!backing) push(); // if a back() from the last close is still landing, popstate pushes once it does
     drift = !sel; lastT = 0; size(); render(); sync(); draw(); if (window.__plMode) window.__plMode('idx', true);
-    setTimeout(function () { var c = $('plClose'); if (c && isOpen()) c.focus(); }, 30); }
+    setTimeout(function () { var c = $('plClose'); if (c && isOpen()) c.focus({ preventScroll: true, focusVisible: false }); }, 30); }
   function close(fromHistory) {
     if (!isOpen()) return;
     $('places').classList.remove('open', 'idx', 'map'); setInert(false); cancelAnimationFrame(raf); raf = 0; spin = fling = drag = null; lastT = 0;
