@@ -33,7 +33,7 @@ function points(pos, col, size, color = IVORY) {
   if (col) g.setAttribute('color', new THREE.Float32BufferAttribute(col, 3));
   return new THREE.Points(g, new THREE.PointsMaterial({ size, map: dotTex, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, vertexColors: !!col, color: col ? 0xffffff : color, fog: false }));
 }
-function label(text, w = 512, h = 96, font = '500 44px Sarabun', color = '#f5ead8', bg = null) {
+function label(text, w = 512, h = 96, font = '500 44px Inter, "IBM Plex Sans Thai"', color = '#f5ead8', bg = null) {
   const c = document.createElement('canvas'); c.width = w; c.height = h; const g = c.getContext('2d');
   if (bg) { g.fillStyle = bg; g.fillRect(0, 0, w, h); }
   g.fillStyle = color; g.font = font; g.textAlign = 'center'; g.textBaseline = 'middle'; g.fillText(text, w / 2, h / 2);
@@ -101,11 +101,11 @@ let nameStars;
   for (let i = 0; i < N; i++) start.push(rand(-500, 500), rand(-300, 300), rand(-200, 100));
   nameStars = points(start, null, small ? 3.6 : 2.8, 0xd9b48a); nameStars.material.opacity = .8; g.add(nameStars); nameStars.userData = { start: Float32Array.from(start), tgt, t: 0 };
   const sample = () => { const c = document.createElement('canvas'); c.width = 1024; c.height = 360; const q = c.getContext('2d');
-    q.fillStyle = '#fff'; q.font = '600 220px Sarabun, "Noto Sans Thai", sans-serif'; q.textAlign = 'center'; q.textBaseline = 'middle'; q.fillText('เกียวๆ', 512, 190);
+    q.fillStyle = '#fff'; q.font = '600 220px Inter, "IBM Plex Sans Thai", "Noto Sans Thai", sans-serif'; q.textAlign = 'center'; q.textBaseline = 'middle'; q.fillText('เกียวๆ', 512, 190);
     const d = q.getImageData(0, 0, 1024, 360).data, pts = []; for (let y = 0; y < 360; y += 3) for (let x = 0; x < 1024; x += 3) if (d[(y * 1024 + x) * 4 + 3] > 128) pts.push([x, y]);
     const sc = small ? .25 : .5; for (let i = 0; i < N; i++) { const p = pts.length ? pts[(Math.random() * pts.length) | 0] : [512, 180];
       tgt[i * 3] = (p[0] - 512) * sc; tgt[i * 3 + 1] = (180 - p[1]) * sc + 60; tgt[i * 3 + 2] = rand(-4, 4); } };
-  Promise.race([document.fonts ? document.fonts.load('600 220px Sarabun') : 0, new Promise(r => setTimeout(r, 2000))]).then(sample, sample); }
+  Promise.race([document.fonts ? document.fonts.load('600 220px "IBM Plex Sans Thai"', 'เกียว') : 0, new Promise(r => setTimeout(r, 2000))]).then(sample, sample); }
 A[0] = [new THREE.Vector3(0, 1400, -2620), new THREE.Vector3(0, 1430, -3000)];
 
 // ---------- 2 flywheel: swipe to spin ----------
@@ -125,7 +125,7 @@ let liftOpen = 0, liftTarget = 0;
   const warm = new THREE.Mesh(new THREE.PlaneGeometry(56, 86), new THREE.MeshBasicMaterial({ map: (() => { const c = document.createElement('canvas'); c.width = 64; c.height = 128; const q = c.getContext('2d'); const g = q.createRadialGradient(32, 90, 4, 32, 80, 90); g.addColorStop(0, '#d9925a'); g.addColorStop(.5, '#6b3f34'); g.addColorStop(1, '#1a1426'); q.fillStyle = g; q.fillRect(0, 0, 64, 128); const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; return t; })() })); warm.position.z = .2; g.add(warm);
   const dm = std(0xcfd4dc, .9, .25), L = new THREE.Mesh(new THREE.BoxGeometry(28, 86, 2), dm), Rr = new THREE.Mesh(new THREE.BoxGeometry(28, 86, 2), dm);
   L.position.set(-14, 0, 1.5); Rr.position.set(14, 0, 1.5); g.add(L, Rr);
-  const panel = new THREE.Mesh(new THREE.PlaneGeometry(40, 10), new THREE.MeshBasicMaterial({ map: label('WORK   ·   OFF DUTY', 512, 128, '500 46px Sarabun', '#f0bd7a', '#141a30') })); panel.position.set(0, 56, 1); g.add(panel);
+  const panel = new THREE.Mesh(new THREE.PlaneGeometry(40, 10), new THREE.MeshBasicMaterial({ map: label('WORK   ·   OFF DUTY', 512, 128, '500 46px Inter, "IBM Plex Sans Thai"', '#f0bd7a', '#141a30') })); panel.position.set(0, 56, 1); g.add(panel);
   const fl = new THREE.Mesh(new THREE.PlaneGeometry(220, 220), std(0x2a2f4c, .3, .7)); fl.rotation.x = -Math.PI / 2; fl.position.y = -43; g.add(fl);
   g.userData = { L, Rr }; }
 addEventListener('lift', e => { liftTarget = e.detail === 'off' ? 1 : 0; });
@@ -186,7 +186,7 @@ A[7] = [new THREE.Vector3(12000, 0, -1840), new THREE.Vector3(12000, 0, -2000)];
   for (const y of [-30, 10]) { const b = new THREE.Mesh(new THREE.BoxGeometry(150, 3, 26), wood); b.position.y = y; g.add(b); }
   const acts = [['กาแฟนม', '#e6b26a'], ['ปั่นสปิน', '#e3a9a6'], ['ซีรีส์', '#9fb0d8'], ['ข้อความฝันดี', '#d9dee6'], ['ช่วยกันนิดหน่อย', '#c9a07a'], ['พัก', '#b8c9b0']];
   acts.forEach(([t, col], i) => { const c = document.createElement('canvas'); c.width = 128; c.height = 512; const q = c.getContext('2d');
-    q.fillStyle = col; q.fillRect(0, 0, 128, 512); q.save(); q.translate(64, 256); q.rotate(-Math.PI / 2); q.fillStyle = '#141a30'; q.font = '600 52px Sarabun'; q.textAlign = 'center'; q.textBaseline = 'middle'; q.fillText(t, 0, 0); q.restore();
+    q.fillStyle = col; q.fillRect(0, 0, 128, 512); q.save(); q.translate(64, 256); q.rotate(-Math.PI / 2); q.fillStyle = '#141a30'; q.font = '600 52px Inter, "IBM Plex Sans Thai"'; q.textAlign = 'center'; q.textBaseline = 'middle'; q.fillText(t, 0, 0); q.restore();
     const tex = new THREE.CanvasTexture(c); tex.colorSpace = THREE.SRGBColorSpace;
     const mats = [std(col, 0, .9), std(col, 0, .9), std(col, 0, .9), std(col, 0, .9), new THREE.MeshStandardMaterial({ map: tex, roughness: .9 }), std(col, 0, .9)];
     const bk = new THREE.Mesh(new THREE.BoxGeometry(10, 34, 22), mats); const row = i < 3 ? 0 : 1;

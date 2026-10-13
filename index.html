@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="th">
+<html lang="en">
 <head><meta name="robots" content="noindex,nofollow">
 <link rel="icon" href="data:,">
 <meta charset="utf-8">
@@ -8,7 +8,7 @@
 <title>Small adjustments · เกียวๆ</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,400;1,500&family=Sarabun:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=IBM+Plex+Sans+Thai:wght@300;400;500;600&display=swap" rel="stylesheet">
 <script type="importmap">
 { "imports": {
   "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
@@ -25,11 +25,11 @@
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{height:100%;background:var(--ink);color:var(--ivory);overflow:hidden}
-body{font-family:"Sarabun",system-ui,sans-serif;font-weight:300;font-size:17px;line-height:1.6;
+body{font-family:"Inter","IBM Plex Sans Thai",system-ui,sans-serif;font-weight:300;font-size:17px;line-height:1.6;
   -webkit-font-smoothing:antialiased;touch-action:manipulation;-webkit-tap-highlight-color:transparent;
   user-select:none;-webkit-user-select:none;word-break:keep-all;line-break:strict;overflow-wrap:anywhere}
 .nw{white-space:nowrap}
-.en{font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;font-weight:400;letter-spacing:.01em}
+.en{font-family:"Inter","IBM Plex Sans Thai",system-ui,sans-serif;font-weight:300;letter-spacing:-.005em}
 #gl{position:fixed;inset:0;width:100%;height:100%;display:block;z-index:0}
 
 
@@ -74,7 +74,7 @@ html[data-lang="both"] .cue .en::before{content:" · "}
 #fade.on{opacity:1}
 /* elevator buttons (scene 3) */
 #lift{display:flex;gap:12px;margin-top:14px;pointer-events:auto}
-#lift button{font:500 14px "Sarabun";letter-spacing:.08em;padding:10px 16px;border-radius:6px;border:1px solid var(--line);background:rgba(244,236,220,.06);color:var(--ivory2)}
+#lift button{font:500 14px "Inter","IBM Plex Sans Thai";letter-spacing:.08em;padding:10px 16px;border-radius:6px;border:1px solid var(--line);background:rgba(244,236,220,.06);color:var(--ivory2)}
 #lift button.lit{background:var(--amber);color:var(--ink);border-color:var(--amber)}
 
 /* ending (scene 9) */
@@ -86,7 +86,7 @@ html[data-lang="both"] .cue .en::before{content:" · "}
 #panel9 .lead .en{display:block;font-size:20px;color:var(--ivory2)}
 html[data-lang="th"] #panel9 .lead .en{display:none} html[data-lang="en"] #panel9 .lead .th{display:none}
 .tabs{display:flex;gap:6px;margin:16px 0 10px}
-.tabs button{flex:1;font:400 15px "Sarabun";padding:9px 6px;border-radius:999px;border:1px solid var(--line);background:none;color:var(--ivory2)}
+.tabs button{flex:1;font:400 15px "Inter","IBM Plex Sans Thai";padding:9px 6px;border-radius:999px;border:1px solid var(--line);background:none;color:var(--ivory2)}
 .tabs button[aria-selected="true"]{background:rgba(244,236,220,.12);color:var(--ivory);border-color:rgba(244,236,220,.35)}
 .tabpane{display:none}.tabpane.on{display:block}
 #letter p{font-size:17px;line-height:1.7;margin-top:8px}#letter .en{font-size:19px;color:var(--ivory2)}
@@ -98,14 +98,14 @@ html.edit #jayline{border-bottom:1px dashed rgba(230,178,106,.5)}
 
 /* chrome: nav controls, dots, mute, lang */
 #nav{position:fixed;z-index:20;left:0;right:0;bottom:calc(14px + var(--sab));display:flex;align-items:center;justify-content:space-between;padding:0 calc(10px + var(--sal)) 0 calc(10px + var(--sar));pointer-events:none}
-#nav button{pointer-events:auto;min-width:88px;min-height:48px;font:400 15px "Sarabun";color:var(--ivory);background:rgba(11,19,36,.35);border:1px solid var(--line);border-radius:999px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+#nav button{pointer-events:auto;min-width:88px;min-height:48px;font:400 15px "Inter","IBM Plex Sans Thai";color:var(--ivory);background:rgba(11,19,36,.35);border:1px solid var(--line);border-radius:999px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
 #nav #next{background:rgba(244,236,220,.14)}
 #dots{display:flex;gap:7px}
 #dots i{width:6px;height:6px;border-radius:50%;background:var(--ivory);opacity:.25;transition:all .6s var(--ease)}
 #dots i.on{opacity:1;background:var(--amber);width:16px;border-radius:3px}
 body[data-scene="0"] #nav{opacity:0;visibility:hidden}
 body[data-scene="9"] #next{visibility:hidden}
-.topbtn{position:fixed;z-index:25;top:calc(12px + var(--sat));width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:rgba(11,19,36,.4);color:var(--ivory);display:grid;place-items:center;font:500 13px "Sarabun";backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.topbtn{position:fixed;z-index:25;top:calc(12px + var(--sat));width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:rgba(11,19,36,.4);color:var(--ivory);display:grid;place-items:center;font:500 13px "Inter","IBM Plex Sans Thai";backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
 #mute{right:calc(12px + var(--sar))}#lang{right:calc(64px + var(--sar))}
 #mute svg{width:18px;height:18px}#mute .i-off,#mute.off .i-on{display:none}#mute.off .i-off{display:block}
 
@@ -247,9 +247,9 @@ html.fast *,html.fast *::before,html.fast *::after{transition-duration:0s!import
   try { if (localStorage.getItem('kk_seen') === '1') body.classList.add('returning'); } catch (e) {}
 
   // language toggle (both by default on desktop, TH on small phones)
-  var lang = 'both'; try { lang = localStorage.getItem('kk_lang') || (innerWidth < 500 ? 'th' : 'both'); } catch (e) {}
+  var lang = 'en'; try { lang = localStorage.getItem('kk_lang2') || 'en'; } catch (e) {}
   var lb = document.getElementById('lang');
-  function setLang(l){ lang = l; H.setAttribute('data-lang', l); lb.textContent = l === 'th' ? 'TH' : l === 'en' ? 'EN' : 'TH/EN'; lb.style.fontSize = l === 'both' ? '10px' : '13px'; try { localStorage.setItem('kk_lang', l); } catch (e) {} }
+  function setLang(l){ lang = l; H.setAttribute('data-lang', l); lb.textContent = l === 'th' ? 'TH' : l === 'en' ? 'EN' : 'TH/EN'; lb.style.fontSize = l === 'both' ? '10px' : '13px'; try { localStorage.setItem('kk_lang2', l); } catch (e) {} }
   setLang(lang);
   lb.addEventListener('click', function(){ setLang(lang === 'th' ? 'en' : lang === 'en' ? 'both' : 'th'); });
 

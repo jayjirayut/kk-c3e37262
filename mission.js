@@ -28,7 +28,7 @@
     var s = document.createElement('style');
     s.textContent = '#mission .q{font-size:15px;color:var(--ivory2);margin-bottom:10px}#mission .q .en{font-size:17px}' +
       '#mission .grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}' +
-      '#mission .r{display:flex;flex-direction:column;align-items:flex-start;gap:2px;text-align:left;min-height:60px;padding:9px 12px;word-break:keep-all;border-radius:12px;border:1px solid var(--line);background:rgba(244,236,220,.05);color:var(--ivory);font:400 15px Sarabun;cursor:pointer}' +
+      '#mission .r{display:flex;flex-direction:column;align-items:flex-start;gap:2px;text-align:left;min-height:60px;padding:9px 12px;word-break:keep-all;border-radius:12px;border:1px solid var(--line);background:rgba(244,236,220,.05);color:var(--ivory);font:400 15px Inter, "IBM Plex Sans Thai";cursor:pointer}' +
       '#mission .r small{font-size:12px;color:var(--ivory2)}#mission .r .ico{color:var(--ivory2);font-size:14px}' +
       '#mission .r.set{border-style:dashed;color:var(--ivory2)}#mission .r.done{background:rgba(230,178,106,.18);border-color:rgba(230,178,106,.6)}#mission .r.done .ico{color:var(--amber)}' +
       '#mission .r [contenteditable]{outline:none;border-bottom:1px dashed rgba(244,236,220,.3)}' +
@@ -83,12 +83,12 @@
       g.fillStyle = 'rgba(' + (250 - t * 40) + ',' + (225 - t * 70) + ',' + (190 - t * 90) + ',' + (.8 - t * .5) + ')';
       g.beginPath(); g.arc(cx + Math.cos(ang) * r, cy + Math.sin(ang) * r * .82, rnd() * 3 + .6, 0, 7); g.fill();
     }
-    g.textAlign = 'center'; g.fillStyle = 'rgba(245,234,216,.8)'; g.font = '500 34px Sarabun'; g.letterSpacing = '12px';
+    g.textAlign = 'center'; g.fillStyle = 'rgba(245,234,216,.8)'; g.font = '500 34px Inter, "IBM Plex Sans Thai"'; g.letterSpacing = '12px';
     g.fillText('SMALL ADJUSTMENTS', cx, 330); g.letterSpacing = '0px';
     var y = 1440;
-    if (withName) { g.fillStyle = '#f5ead8'; g.font = '600 96px Sarabun'; g.fillText('เกียวๆ', cx, y); y += 110; }
-    g.fillStyle = '#f5ead8'; g.font = '400 54px Sarabun'; g.fillText('ค่อย ๆ ปรับ แล้วไปกินกาแฟกัน', cx, y);
-    g.fillStyle = '#e6b26a'; g.font = 'italic 500 52px "Cormorant Garamond", serif'; g.fillText('Small adjustments. Then coffee.', cx, y + 76);
+    if (withName) { g.fillStyle = '#f5ead8'; g.font = '600 96px Inter, "IBM Plex Sans Thai"'; g.fillText('เกียวๆ', cx, y); y += 110; }
+    g.fillStyle = '#f5ead8'; g.font = '400 54px Inter, "IBM Plex Sans Thai"'; g.fillText('ค่อย ๆ ปรับ แล้วไปกินกาแฟกัน', cx, y);
+    g.fillStyle = '#e6b26a'; g.font = '500 50px Inter, sans-serif'; g.fillText('Small adjustments. Then coffee.', cx, y + 76);
     return c;
   }
   function show() {

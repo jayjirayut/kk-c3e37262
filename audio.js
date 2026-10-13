@@ -9,7 +9,7 @@
     var AC = window.AudioContext || window.webkitAudioContext;
     if (!AC) return;
 
-    var MASTER = 0.35, STEP = 0.5, SPC = 16; // 8th notes at 60 BPM, 8 s per chord
+    var MASTER = 0.6, STEP = 0.5, SPC = 16; // 8th notes at 60 BPM, 8 s per chord
     var ctx = null, master, swell, organBus, pianoBus, timer = null, started = false;
     var step = 0, nextT = 0, suspendTimer = null;
     var muted = false;
@@ -154,9 +154,29 @@
       }
     }
 
+
+    // iOS: play through the silent switch by using the media channel
+    var mediaEl = null;
+    function mediaUnlock() {
+      try {
+        if (navigator.audioSession) navigator.audioSession.type = 'playback';
+        if (!mediaEl) {
+          var sr = 8000, n = sr / 2, b = new ArrayBuffer(44 + n * 2), v = new DataView(b);
+          var w = function (o, t) { for (var i = 0; i < t.length; i++) v.setUint8(o + i, t.charCodeAt(i)); };
+          w(0, 'RIFF'); v.setUint32(4, 36 + n * 2, true); w(8, 'WAVEfmt '); v.setUint32(16, 16, true); v.setUint16(20, 1, true); v.setUint16(22, 1, true);
+          v.setUint32(24, sr, true); v.setUint32(28, sr * 2, true); v.setUint16(32, 2, true); v.setUint16(34, 16, true); w(36, 'data'); v.setUint32(40, n * 2, true);
+          mediaEl = document.createElement('audio');
+          mediaEl.src = URL.createObjectURL(new Blob([b], { type: 'audio/wav' }));
+          mediaEl.loop = true; mediaEl.setAttribute('playsinline', ''); mediaEl.setAttribute('x-webkit-airplay', 'deny');
+        }
+        var pr = mediaEl.play(); if (pr && pr.catch) pr.catch(function () {});
+      } catch (e) {}
+    }
+
     function start() {
       try {
         if (FAST) return;
+        mediaUnlock();
         if (!ctx) { ctx = new AC(); build(); unlock(); }
         if (ctx.state === 'suspended' && !muted) { var r = ctx.resume(); if (r && r.catch) r.catch(function () {}); }
         if (!started) {
@@ -206,10 +226,11 @@
     window.addEventListener('begin', start);
 
     // One-time gesture fallback (resume or start inside any first gesture)
-    var evs = ['pointerdown', 'touchend', 'keydown'];
+    var evs = ['pointerdown', 'touchend', 'click', 'keydown'];
     function fallback() {
-      evs.forEach(function (ev) { document.removeEventListener(ev, fallback, true); });
       start();
+      if (ctx && !muted && ctx.state !== 'running') { mediaUnlock(); var r = ctx.resume(); if (r && r.catch) r.catch(function () {}); return; }
+      if (ctx && ctx.state === 'running') evs.forEach(function (ev) { document.removeEventListener(ev, fallback, true); });
     }
     evs.forEach(function (ev) { document.addEventListener(ev, fallback, true); });
 
