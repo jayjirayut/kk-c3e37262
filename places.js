@@ -56,6 +56,7 @@
       doEn: 'The Museum of the Future first, while we still have energy, then Dubai Mall until the step counter gives up.',
       doTh: 'ไปพิพิธภัณฑ์แห่งอนาคตก่อนตอนยังมีแรง แล้วค่อยลุยดูไบมอลล์จนแอปนับก้าวยอมแพ้' },
     { id: 'nyc', lat: 40.71, lon: -74.01, en: 'New York, United States', th: 'นิวยอร์ก สหรัฐอเมริกา', s: 'New York', sTh: 'นิวยอร์ก',
+      img: 'img/nyc.webp', pos: '50% 50%', alt: 'Manhattan at night, a lit avenue of shopfronts between towers',
       whyEn: 'The classic big-city shopping trip. Long flight, longer receipt.',
       whyTh: 'ทริปช้อปเมืองใหญ่แบบคลาสสิก บินไกล แต่ใบเสร็จยาวกว่า',
       monEn: 'Sep to Nov', monTh: 'ก.ย. ถึง พ.ย.', monNote: 'autumn; October mildest', monNoteTh: 'ฤดูใบไม้ร่วง ตุลาคมอากาศสบายที่สุด',
