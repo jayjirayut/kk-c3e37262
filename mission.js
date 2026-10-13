@@ -5,10 +5,10 @@
              set: function (k, v) { try { localStorage.setItem(k, v); } catch (e) {} } };
   function ymd(d) { d = d || new Date(); return d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2); }
   var RIT = [
-    { id: 'spin', th: 'ปั่นสปิน', en: 'spin class', who: 'เกียวๆ', ico: '◐' },
-    { id: 'his', th: null, en: "Jay's thing", who: 'เจ', ico: '◇' },
-    { id: 'coffee', th: 'กาแฟนม<wbr>ที่ระเบียง', en: 'coffee milk, balcony', who: 'สองคน', ico: '◉' },
-    { id: 'kind', th: 'เรื่องดี ๆ<wbr>ให้กัน', en: 'one kind thing', who: 'สองคน', ico: '✦' }
+    { id: 'spin', th: 'ปั่นสปิน', en: 'spin class', who: 'เกียวๆ', whoEn: 'Keaw Keaw' },
+    { id: 'his', th: null, en: "Jay's thing", who: 'เจ', whoEn: 'Jay' },
+    { id: 'coffee', th: 'กาแฟนม<wbr>ที่ระเบียง', en: 'coffee milk, balcony', who: 'สองคน', whoEn: 'Both' },
+    { id: 'kind', th: 'เรื่องดี ๆ<wbr>ให้กัน', en: 'one kind thing', who: 'สองคน', whoEn: 'Both' }
   ];
   // Questions, not slogans. One per day.
   var DAILY = [
@@ -26,14 +26,26 @@
 
   function css() {
     var s = document.createElement('style');
-    s.textContent = '#mission .q{font-size:15px;color:var(--ivory2);margin-bottom:10px}#mission .q .en{font-size:17px}' +
-      '#mission .grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}' +
-      '#mission .r{display:flex;flex-direction:column;align-items:flex-start;gap:2px;text-align:left;min-height:60px;padding:9px 12px;word-break:keep-all;border-radius:12px;border:1px solid var(--line);background:rgba(244,236,220,.05);color:var(--ivory);font:400 15px Inter, "IBM Plex Sans Thai";cursor:pointer}' +
-      '#mission .r small{font-size:12px;color:var(--ivory2)}#mission .r .ico{color:var(--ivory2);font-size:14px}' +
-      '#mission .r.set{border-style:dashed;color:var(--ivory2)}#mission .r.done{background:rgba(230,178,106,.18);border-color:rgba(230,178,106,.6)}#mission .r.done .ico{color:var(--amber)}' +
-      '#mission .r [contenteditable]{outline:none;border-bottom:1px dashed rgba(244,236,220,.3)}' +
-      '#mission .foot{margin-top:10px;font-size:14px;color:var(--ivory2)}' +
-      'html[data-lang="th"] #mission .en{display:none}html[data-lang="en"] #mission .th{display:none}';
+    // A hairline table: four cells share 1px rules, no fills. Done reads as a gold frame and gold type.
+    s.textContent = '#mission .q{margin-bottom:18px;font:300 16px/1.55 var(--sans);color:var(--ivory)}#mission .q .th{font-family:var(--thai)}' +
+      'html[data-lang="both"] #mission .q .en{display:block;margin-top:2px;font-size:14px;color:var(--ivory2)}' +
+      '#mission .grid{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line);border-left:1px solid var(--line)}' +
+      '#mission .r{display:flex;flex-direction:column;align-items:flex-start;gap:8px;min-height:92px;padding:14px 14px 16px;text-align:left;word-break:keep-all;' +
+        'border:0;border-right:1px solid var(--line);border-bottom:1px solid var(--line);border-radius:0;background:none;color:var(--ivory);' +
+        'font:300 15px/1.4 var(--sans);cursor:pointer;transition:color .8s var(--ease),box-shadow .8s var(--ease)}' +
+      '#mission .r .th{font:300 15.5px/1.45 var(--thai)}' +
+      '#mission .who{font:300 10px/1.4 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--ivory3);transition:color .8s var(--ease)}' +
+      '#mission .who .th{font:300 12px/1.4 var(--thai)}' +
+      '#mission .r.set{color:var(--ivory2)}' +
+      '#mission .r.set>.th,#mission .r.set>.en{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:5px;text-decoration-color:var(--line2)}' +
+      '#mission .r.done{color:var(--gold);box-shadow:inset 0 0 0 1px var(--gold)}#mission .r.done .who{color:var(--gold)}' +
+      '#mission .r:focus-visible{outline:1px solid var(--ivory);outline-offset:-6px}' +
+      '#mission .r [contenteditable]{outline:none;border-bottom:1px solid var(--line2)}' +
+      '#mission .foot{margin-top:16px;font:300 13px/1.55 var(--sans);color:var(--ivory2)}#mission .foot .th{font-family:var(--thai)}' +
+      '#mission .foot.fine{margin-top:4px;font-size:11px;color:var(--ivory3)}' +
+      'html[data-lang="th"] #mission .en{display:none}html[data-lang="en"] #mission .th{display:none}' +
+      'html[data-lang="both"] #mission .who .en{display:none}html[data-lang="both"] #mission .r>.en{font-size:12px;color:var(--ivory2)}' +
+      'html[data-lang="both"] #mission .r.done>.en{color:inherit}';
     document.head.appendChild(s);
   }
   function render() {
@@ -42,15 +54,16 @@
     var his = LS.get('kk_hisgoal', '');
     var h = '<p class="q"><span class="th">' + dq[0] + '</span> <span class="en">' + dq[1] + '</span></p><div class="grid">';
     RIT.forEach(function (r) {
-      if (r.id === 'his' && !his) { h += '<button type="button" class="r set" data-set="1"><span class="ico">+ <small>เจ</small></span><span class="th">ตั้งกิจกรรมของเจ</span><small class="en">set Jay\'s activity</small></button>'; return; }
+      var who = '<small class="who"><span class="th">' + r.who + '</span><span class="en">' + r.whoEn + '</span></small>';
+      if (r.id === 'his' && !his) { h += '<button type="button" class="r set" data-set="1">' + who + '<span class="th">ตั้งกิจกรรมของเจ</span><span class="en">set Jay\'s activity</span></button>'; return; }
       var label = r.id === 'his' ? '<span class="th" data-his>' + his.replace(/</g, '&lt;') + '</span>' : '<span class="th">' + r.th + '</span>';
       h += '<button type="button" class="r' + (done.indexOf(r.id) > -1 ? ' done' : '') + '" data-id="' + r.id + '" aria-pressed="' + (done.indexOf(r.id) > -1) + '">' +
-        '<span class="ico">' + r.ico + ' <small>' + r.who + '</small></span>' + label + '<small class="en">' + r.en + '</small></button>';
+        who + label + '<span class="en">' + r.en + '</span></button>';
     });
     var n = days(log), s = run(log);
     h += '</div><p class="foot">' + (n ? '<span class="th">บันทึกไว้แล้ว ' + n + ' วัน' + (s > 1 ? ' (ติดกัน ' + s + ' วัน)' : '') + '</span> <span class="en">' + n + ' days logged' + (s > 1 ? ', ' + s + ' in a row' : '') + '</span>'
       : '<span class="th">แตะสิ่งที่ทำวันนี้ ไม่ต้องครบก็ได้</span> <span class="en">Tap what happened today. No need for all four.</span>') + '</p>' +
-      '<p class="foot" style="font-size:12px;opacity:.75"><span class="th">บันทึกไว้ในเครื่องนี้เท่านั้น ไม่ได้ซิงก์กับอีกเครื่อง</span> <span class="en">Saved on this device only. Not synced.</span></p>';
+      '<p class="foot fine"><span class="th">บันทึกไว้ในเครื่องนี้เท่านั้น ไม่ได้ซิงก์กับอีกเครื่อง</span> <span class="en">Saved on this device only. Not synced.</span></p>';
     el.innerHTML = h; el.dataset.day = today;
   }
   function bind() {
@@ -66,35 +79,53 @@
     setInterval(function () { if (el.dataset.day !== ymd()) render(); }, 60000);
   }
 
-  // ---------- Story card 1080x1920: her stirred coffee galaxy inside one silver ring ----------
-  var card = null;
+  // ---------- Story card 1080x1920: her stirred coffee galaxy inside one hairline gold ring ----------
+  var card = null, SERIF = '"Cormorant Garamond", Georgia, serif', SANS = 'Inter, sans-serif', THAI = '"IBM Plex Sans Thai", Inter, sans-serif';
+  // Tracked capitals, spaced by hand because canvas letterSpacing is missing on some phones. Latin only: Thai marks must never be split.
+  function tracked(g, t, x, y, ls) {
+    var i, w = -ls, cw = [], al = g.textAlign;
+    for (i = 0; i < t.length; i++) { cw.push(g.measureText(t.charAt(i)).width); w += cw[i] + ls; }
+    g.textAlign = 'left'; x -= w / 2;
+    for (i = 0; i < t.length; i++) { g.fillText(t.charAt(i), x, y); x += cw[i] + ls; }
+    g.textAlign = al;
+  }
+  // Canvas text only uses faces that are already loaded, so ask for the card's faces before drawing.
+  function fonts() {
+    var f = document.fonts; if (!f || !f.load) return Promise.resolve();
+    try {
+      return Promise.all([f.load('400 92px "Cormorant Garamond"', 'Small adjustments.'), f.load('italic 400 92px "Cormorant Garamond"', 'Then coffee.'),
+        f.load('300 28px Inter', 'SMALL ADJUSTMENTS'), f.load('300 42px "IBM Plex Sans Thai"', 'ค่อย ๆ ปรับ แล้วไปกินกาแฟกัน เกียวๆ')])
+        .then(function () { return f.ready; }, function () { return f.ready; });
+    } catch (e) { return Promise.resolve(); }
+  }
   function draw(withName) {
     var W = 1080, H = 1920, c = card || (card = document.createElement('canvas')); c.width = W; c.height = H;
     var g = c.getContext('2d'), st = window.KK || {}, seed = (st.swirl || 0) * 7 + (st.ring || 0) * 3 + 1;
     var rnd = (function (s) { return function () { s = (s * 16807 + 11) % 2147483647; return (s % 10000) / 10000; }; })(Math.floor(Math.abs(seed) * 1000) + 7);
-    var bg = g.createLinearGradient(0, 0, 0, H); bg.addColorStop(0, '#070b1c'); bg.addColorStop(.7, '#121b38'); bg.addColorStop(1, '#1c1f3a'); g.fillStyle = bg; g.fillRect(0, 0, W, H);
-    for (var i = 0; i < 260; i++) { g.fillStyle = 'rgba(245,234,216,' + (rnd() * .6 + .1) + ')'; g.beginPath(); g.arc(rnd() * W, rnd() * H, rnd() * 1.8 + .3, 0, 7); g.fill(); }
-    var cx = W / 2, cy = 860, R = 400, tw = (st.swirl || 0) * 0.6 + 2.2;
-    g.strokeStyle = 'rgba(214,222,232,.85)'; g.lineWidth = 6; g.beginPath(); g.arc(cx, cy, R, 0, 7); g.stroke();
-    g.strokeStyle = 'rgba(214,222,232,.18)'; g.lineWidth = 2; g.beginPath(); g.ellipse(cx, cy, R + 26, R * (0.3 + 0.6 * Math.abs(Math.cos(st.ring || 0))), (st.ring || 0) * .5, 0, 7); g.stroke();
-    var glow = g.createRadialGradient(cx, cy, 0, cx, cy, 300); glow.addColorStop(0, 'rgba(240,200,150,.55)'); glow.addColorStop(1, 'rgba(240,200,150,0)'); g.fillStyle = glow; g.beginPath(); g.arc(cx, cy, 300, 0, 7); g.fill();
+    g.fillStyle = '#0b1324'; g.fillRect(0, 0, W, H);
+    var cx = W / 2, cy = 860, R = 330, tw = (st.swirl || 0) * 0.6 + 2.2;
+    // fine grains from ivory to gold, no glow
     for (var a = 0; a < 2; a++) for (var k = 0; k < 900; k++) {
-      var t = k / 900, r = t * 300, ang = a * Math.PI + t * tw * Math.PI + (rnd() - .5) * .5;
-      g.fillStyle = 'rgba(' + (250 - t * 40) + ',' + (225 - t * 70) + ',' + (190 - t * 90) + ',' + (.8 - t * .5) + ')';
-      g.beginPath(); g.arc(cx + Math.cos(ang) * r, cy + Math.sin(ang) * r * .82, rnd() * 3 + .6, 0, 7); g.fill();
+      var t = k / 900, r = t * 250, ang = a * Math.PI + t * tw * Math.PI + (rnd() - .5) * .5;
+      g.fillStyle = 'rgba(' + Math.round(244 - t * 60) + ',' + Math.round(236 - t * 87) + ',' + Math.round(220 - t * 114) + ',' + (.62 - t * .42).toFixed(3) + ')';
+      g.beginPath(); g.arc(cx + Math.cos(ang) * r, cy + Math.sin(ang) * r * .82, rnd() * 2.2 + .5, 0, 7); g.fill();
     }
-    g.textAlign = 'center'; g.fillStyle = 'rgba(245,234,216,.8)'; g.font = '500 34px Inter, "IBM Plex Sans Thai"'; g.letterSpacing = '12px';
-    g.fillText('SMALL ADJUSTMENTS', cx, 330); g.letterSpacing = '0px';
-    var y = 1440;
-    if (withName) { g.fillStyle = '#f5ead8'; g.font = '600 96px Inter, "IBM Plex Sans Thai"'; g.fillText('เกียวๆ', cx, y); y += 110; }
-    g.fillStyle = '#f5ead8'; g.font = '400 54px Inter, "IBM Plex Sans Thai"'; g.fillText('ค่อย ๆ ปรับ แล้วไปกินกาแฟกัน', cx, y);
-    g.fillStyle = '#e6b26a'; g.font = '500 50px Inter, sans-serif'; g.fillText('Small adjustments. Then coffee.', cx, y + 76);
+    // two hairlines: the faint orbit from her rings, then one gold ring
+    g.strokeStyle = 'rgba(244,236,220,.16)'; g.lineWidth = 1.5; g.beginPath(); g.ellipse(cx, cy, R + 34, R * (0.3 + 0.6 * Math.abs(Math.cos(st.ring || 0))), (st.ring || 0) * .5, 0, 7); g.stroke();
+    g.strokeStyle = '#b8956a'; g.lineWidth = 2.5; g.beginPath(); g.arc(cx, cy, R, 0, 7); g.stroke();
+    g.textAlign = 'center'; g.textBaseline = 'alphabetic';
+    g.fillStyle = '#b8956a'; g.font = '300 28px ' + SANS; tracked(g, 'SMALL ADJUSTMENTS', cx, 300, 6);
+    var y = 1395;
+    if (withName) { g.fillStyle = '#f4ecdc'; g.font = '300 84px ' + THAI; g.fillText('เกียวๆ', cx, y); y += 128; } else y += 40;
+    g.fillStyle = '#f4ecdc'; g.font = '400 92px ' + SERIF; g.fillText('Small adjustments.', cx, y);
+    g.font = 'italic 400 92px ' + SERIF; g.fillText('Then coffee.', cx, y + 100);
+    g.fillStyle = 'rgba(244,236,220,.72)'; g.font = '300 42px ' + THAI; g.fillText('ค่อย ๆ ปรับ แล้วไปกินกาแฟกัน', cx, y + 212);
     return c;
   }
   function show() {
     var p = document.getElementById('storyPreview'), cb = document.getElementById('withName');
     var go = function () { var c = draw(cb && cb.checked); if (p && !p.contains(c)) { p.innerHTML = ''; p.appendChild(c); } prep(); };
-    (document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve()).then(go, go);
+    fonts().then(go, go);
   }
   function blob(cb) { draw(document.getElementById('withName') && document.getElementById('withName').checked).toBlob(cb, 'image/png'); }
   function download() { blob(function (b) { var a = document.createElement('a'); a.href = URL.createObjectURL(b); a.download = 'keawkeaw_story.png'; document.body.appendChild(a); a.click(); setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 1500); }); }
@@ -110,7 +141,7 @@
     }
     msg('บันทึกภาพแทน · Saved the image instead.'); download();
   }
-  window.__storyCanvas = function () { return new Promise(function (r) { (document.fonts ? document.fonts.ready : Promise.resolve()).then(function () { r(draw(false)); }); }); };
+  window.__storyCanvas = function () { return new Promise(function (r) { var go = function () { r(draw(false)); }; fonts().then(go, go); }); };
 
   function init() {
     try {
